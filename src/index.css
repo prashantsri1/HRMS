@@ -1,0 +1,11 @@
+@import "tailwindcss";
+
+/* 1. Theme Configuration (Colors) */
+@theme {
+  --color-primary: #0EA5A4;
+  --color-accent: #7C3AED;
+}
+
+/* 2. Dark Mode Configuration ('class' strategy) */
+/* Ye line wahi kaam karegi jo 'darkMode: class' karti thi */
+@variant dark (&:where(.dark, .dark *));
