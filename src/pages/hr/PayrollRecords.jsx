@@ -67,7 +67,7 @@ const PayrollRecords = () => {
 
             doc.setFontSize(10);
             doc.setFont("helvetica", "normal");
-            doc.text("Tech Park, Haridwar, Uttarakhand - 249403", 15, 28);
+            doc.text("Tech Park, London, UK", 15, 28);
 
             doc.setFontSize(16);
             doc.text("PAYSLIP", 180, 20, { align: "right" });

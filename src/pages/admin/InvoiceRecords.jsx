@@ -11,7 +11,7 @@ import {
 
 // --- CONSTANTS (Should match Generator) ---
 const BANKS = [
-  { name: "HDFC Bank", ac: "50200012345678", ifsc: "HDFC0001234", branch: "Haridwar Industrial Area" }
+  { name: "HDFC Bank", ac: "50200012345678", ifsc: "HDFC0001234", branch: "london" }
 ];
 
 const InvoiceRecords = () => {
@@ -122,7 +122,7 @@ const InvoiceRecords = () => {
     doc.text(`A/c No: ${BANKS[0].ac}`, 18, bankY + 18);
     doc.text(`IFSC: ${BANKS[0].ifsc}`, 18, bankY + 24);
 
-    doc.text("For HRMS LLP.", 195, bankY + 6, { align: "right" });
+    doc.text("For HRMS .", 195, bankY + 6, { align: "right" });
     doc.text("(Authorized Signatory)", 195, bankY + 30, { align: "right" });
 
     doc.save(`Invoice_${data.meta.invoiceNo}.pdf`);

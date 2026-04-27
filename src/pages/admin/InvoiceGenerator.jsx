@@ -25,7 +25,7 @@ const COMPANY_DETAILS = {
 };
 
 const BANKS = [
-  { name: "HDFC Bank", ac: "50200012345", ifsc: "HDFC0001234", branch: "Haridwar Industrial Area" }
+  { name: "HDFC Bank", ac: "50200012345", ifsc: "HDFC0001234", branch: "london" }
 ];
 
 // ✅ FINAL FIX: Valid JPEG Base64 (No PNG Chunk Errors)
@@ -311,7 +311,7 @@ const InvoiceGenerator = () => {
     doc.setFont("helvetica", "normal");
     doc.text("1. Goods once sold will not be taken back.", margin + 2, finalY + 33);
     doc.text("2. Interest @18% pa will be charged if payment delayed.", margin + 2, finalY + 37);
-    doc.text("3. Subject to Haridwar Jurisdiction.", margin + 2, finalY + 41);
+    doc.text("3. Subject to London Jurisdiction.", margin + 2, finalY + 41);
 
     // Totals
     let totalY = finalY + 6;
@@ -350,7 +350,7 @@ const InvoiceGenerator = () => {
     const sigY = finalY + footerH - 12;
     doc.setFontSize(8);
     doc.setFont("helvetica", "normal");
-    doc.text("For HRMS LLP", pageWidth - 15, sigY - 8, { align: "right" });
+    doc.text("For HRMS", pageWidth - 15, sigY - 8, { align: "right" });
     doc.text("Auth. Signatory", pageWidth - 15, sigY + 8, { align: "right" });
 
     doc.text(`Amount (in words): ${numToWords(totals.grandTotal)}`, margin + 2, finalY + footerH + 5);

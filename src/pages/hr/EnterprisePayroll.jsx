@@ -47,7 +47,7 @@ const EnterprisePayroll = () => {
     const [empDetails, setEmpDetails] = useState({
         name: '', id: '', designation: '', department: '',
         pan: '', uan: '', bank: '', bankName: '', doj: '',
-        pfNo: '', epsNo: '', location: 'Haridwar', role: ''
+        pfNo: '', epsNo: '', location: 'London', role: ''
     });
 
     const [salaryMode, setSalaryMode] = useState('yearly');
@@ -74,7 +74,7 @@ const EnterprisePayroll = () => {
                     pan: emp.pan || '', uan: emp.uan || '',
                     bank: emp.bankAccount || '', bankName: emp.bankName || 'HDFC Bank',
                     doj: emp.joiningDate || '', pfNo: emp.pfNo || '', epsNo: emp.epsNo || '',
-                    location: emp.location || 'Haridwar', role: emp.role || 'employee'
+                    location: emp.location || 'London', role: emp.role || 'employee'
                 }));
                 // If employee has a saved CTC, populate it (Assuming 'ctc' field exists)
                 if (emp.ctc) { setSalaryMode('yearly'); setSalaryInput(Number(emp.ctc)); }
@@ -185,7 +185,7 @@ const EnterprisePayroll = () => {
 
             doc.setFontSize(10);
             doc.setFont("helvetica", "normal");
-            doc.text("Tech Park, Haridwar, Uttarakhand - 249403", 15, 28);
+            doc.text("Tech Park, London, UK", 15, 28);
 
             doc.setFontSize(16);
             doc.text("PAYSLIP", 180, 20, { align: "right" });

@@ -111,7 +111,7 @@ export const generatePayslipBlob = (data) => {
     printRow("Designation", data.designation, "Department", data.department);
     printRow("PAN No.", data.panNo || data.pan, "Bank A/c No.", data.bankAccount || data.bank);
     printRow("UAN No.", data.uanNo || data.uan, "Bank Name", data.bankName);
-    printRow("PF No.", data.pfNo, "Location", data.location || "Haridwar");
+    printRow("PF No.", data.pfNo, "Location", data.location || "london");
 
     // Settings / Attendance
     const paidDays = data.settings?.paidDays ?? data.paidDays ?? 30;
