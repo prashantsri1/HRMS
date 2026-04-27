@@ -34,9 +34,9 @@ function LoadingSpinner({ message = "Just a moment...", fullScreen = false }) {
                 />
 
                 {/* Center Pulse Dot */}
-                {/* Added dark:bg-indigo-400 */}
+                {/* Added dark:bg-violet-400 */}
                 <motion.div
-                    className="w-3 h-3 bg-indigo-600 dark:bg-indigo-400 rounded-full shadow-lg shadow-indigo-500/50 dark:shadow-indigo-400/50"
+                    className="w-3 h-3 bg-violet-600 dark:bg-violet-400 rounded-full shadow-lg shadow-violet-500/50 dark:shadow-violet-400/50"
                     animate={{ scale: [1, 1.5, 1], opacity: [0.5, 1, 0.5] }}
                     transition={{ repeat: Infinity, duration: 1.5, ease: "easeInOut" }}
                 />
@@ -48,8 +48,8 @@ function LoadingSpinner({ message = "Just a moment...", fullScreen = false }) {
                     initial={{ opacity: 0, y: 10 }}
                     animate={{ opacity: 1, y: 0 }}
                     transition={{ delay: 0.2 }}
-                    // Added dark:from-indigo-400 dark:to-purple-400 for lighter text in dark mode
-                    className="mt-6 text-sm font-bold text-transparent bg-clip-text bg-gradient-to-r from-indigo-600 to-purple-600 dark:from-indigo-400 dark:to-purple-400 tracking-wider uppercase"
+                    // Added dark:from-violet-400 dark:to-purple-400 for lighter text in dark mode
+                    className="mt-6 text-sm font-bold text-transparent bg-clip-text bg-gradient-to-r from-violet-600 to-purple-600 dark:from-violet-400 dark:to-purple-400 tracking-wider uppercase"
                 >
                     {message}
                     <motion.span

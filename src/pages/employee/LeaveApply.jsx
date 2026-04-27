@@ -139,7 +139,7 @@ function LeaveApply() {
     };
 
     return (
-        <div className="min-h-screen bg-gradient-to-br from-indigo-50 via-purple-50 to-pink-50 dark:from-gray-900 dark:via-gray-800 dark:to-gray-900 p-4 md:p-8 flex items-center justify-center transition-colors duration-300">
+        <div className="min-h-screen bg-gradient-to-br from-violet-50 via-purple-50 to-pink-50 dark:from-gray-900 dark:via-gray-800 dark:to-gray-900 p-4 md:p-8 flex items-center justify-center transition-colors duration-300">
             
             <motion.div 
                 initial="hidden" animate="visible" variants={containerVariants}
@@ -148,14 +148,14 @@ function LeaveApply() {
                 <div className="flex flex-col md:flex-row h-full">
                     
                     {/* 🎨 LEFT SIDE: Visual Selector */}
-                    <div className="md:w-1/3 bg-gradient-to-br from-indigo-600 to-purple-700 dark:from-indigo-900 dark:to-purple-900 p-8 flex flex-col justify-between text-white relative overflow-hidden">
+                    <div className="md:w-1/3 bg-gradient-to-br from-violet-600 to-purple-700 dark:from-violet-900 dark:to-purple-900 p-8 flex flex-col justify-between text-white relative overflow-hidden">
                         {/* Abstract Shapes */}
                         <div className="absolute top-[-50px] left-[-50px] w-32 h-32 bg-white/10 rounded-full blur-3xl"></div>
                         <div className="absolute bottom-[-20px] right-[-20px] w-40 h-40 bg-pink-500/20 rounded-full blur-3xl"></div>
 
                         <div className="relative z-10">
                             <h2 className="text-3xl font-extrabold mb-2 text-white">Apply Now</h2>
-                            <p className="text-indigo-100 text-sm opacity-90">What's on your mind today?</p>
+                            <p className="text-violet-100 text-sm opacity-90">What's on your mind today?</p>
                         </div>
 
                         <div className="flex flex-col gap-4 mt-8 relative z-10">
@@ -164,10 +164,10 @@ function LeaveApply() {
                                 onClick={() => handleTypeSelect('leave')}
                                 className={`flex items-center gap-4 p-4 rounded-xl transition-all duration-300 border ${formData.type === 'leave' ? 'bg-white/20 border-white shadow-lg scale-105' : 'bg-white/5 border-transparent hover:bg-white/10'}`}
                             >
-                                <div className="p-2 bg-white rounded-lg text-indigo-600"><Calendar size={20} /></div>
+                                <div className="p-2 bg-white rounded-lg text-violet-600"><Calendar size={20} /></div>
                                 <div className="text-left">
                                     <h3 className="font-bold text-sm text-white">Leave Request</h3>
-                                    <p className="text-[10px] text-indigo-200">Sick, Casual, Annual</p>
+                                    <p className="text-[10px] text-violet-200">Sick, Casual, Annual</p>
                                 </div>
                             </button>
 
@@ -179,7 +179,7 @@ function LeaveApply() {
                                 <div className="p-2 bg-white rounded-lg text-purple-600"><Plane size={20} /></div>
                                 <div className="text-left">
                                     <h3 className="font-bold text-sm text-white">Business Travel</h3>
-                                    <p className="text-[10px] text-indigo-200">Visits, Sites, Events</p>
+                                    <p className="text-[10px] text-violet-200">Visits, Sites, Events</p>
                                 </div>
                             </button>
 
@@ -191,12 +191,12 @@ function LeaveApply() {
                                 <div className="p-2 bg-white rounded-lg text-pink-600"><MessageSquare size={20} /></div>
                                 <div className="text-left">
                                     <h3 className="font-bold text-sm text-white">Raise Query</h3>
-                                    <p className="text-[10px] text-indigo-200">Issues, Complaints</p>
+                                    <p className="text-[10px] text-violet-200">Issues, Complaints</p>
                                 </div>
                             </button>
                         </div>
                         
-                        <div className="mt-8 text-xs text-indigo-200 opacity-60 relative z-10">
+                        <div className="mt-8 text-xs text-violet-200 opacity-60 relative z-10">
                             *Approvals are routed to your Reporting Manager.
                         </div>
                     </div>
@@ -236,7 +236,7 @@ function LeaveApply() {
                                                 <div className="relative">
                                                     <Briefcase className="absolute left-3 top-3 text-gray-400 dark:text-gray-500" size={18} />
                                                     <select name="leaveType" value={formData.leaveType} onChange={handleChange}
-                                                        className="w-full pl-10 pr-4 py-3 bg-gray-50 dark:bg-gray-800 border border-gray-200 dark:border-gray-700 text-gray-900 dark:text-white rounded-xl focus:ring-2 focus:ring-indigo-500 focus:border-transparent outline-none transition-all appearance-none cursor-pointer hover:bg-white dark:hover:bg-gray-700"
+                                                        className="w-full pl-10 pr-4 py-3 bg-gray-50 dark:bg-gray-800 border border-gray-200 dark:border-gray-700 text-gray-900 dark:text-white rounded-xl focus:ring-2 focus:ring-violet-500 focus:border-transparent outline-none transition-all appearance-none cursor-pointer hover:bg-white dark:hover:bg-gray-700"
                                                     >
                                                         <option>Sick Leave</option>
                                                         <option>Casual Leave</option>
@@ -275,14 +275,14 @@ function LeaveApply() {
                                                 <label className="text-xs font-bold text-gray-500 dark:text-gray-400 uppercase tracking-wide mb-1 block">From</label>
                                                 <div className="relative">
                                                     <input type="date" name="startDate" value={formData.startDate} onChange={handleChange} required
-                                                        className="w-full px-4 py-3 bg-gray-50 dark:bg-gray-800 border border-gray-200 dark:border-gray-700 text-gray-900 dark:text-white rounded-xl focus:ring-2 focus:ring-indigo-500 outline-none text-sm dark:[color-scheme:dark]" />
+                                                        className="w-full px-4 py-3 bg-gray-50 dark:bg-gray-800 border border-gray-200 dark:border-gray-700 text-gray-900 dark:text-white rounded-xl focus:ring-2 focus:ring-violet-500 outline-none text-sm dark:[color-scheme:dark]" />
                                                 </div>
                                             </div>
                                             <div>
                                                 <label className="text-xs font-bold text-gray-500 dark:text-gray-400 uppercase tracking-wide mb-1 block">To</label>
                                                 <div className="relative">
                                                     <input type="date" name="endDate" value={formData.endDate} onChange={handleChange} required
-                                                        className="w-full px-4 py-3 bg-gray-50 dark:bg-gray-800 border border-gray-200 dark:border-gray-700 text-gray-900 dark:text-white rounded-xl focus:ring-2 focus:ring-indigo-500 outline-none text-sm dark:[color-scheme:dark]" />
+                                                        className="w-full px-4 py-3 bg-gray-50 dark:bg-gray-800 border border-gray-200 dark:border-gray-700 text-gray-900 dark:text-white rounded-xl focus:ring-2 focus:ring-violet-500 outline-none text-sm dark:[color-scheme:dark]" />
                                                 </div>
                                             </div>
                                         </div>
@@ -298,7 +298,7 @@ function LeaveApply() {
                                             <textarea 
                                                 name="reason" value={formData.reason} onChange={handleChange} rows="3" required
                                                 placeholder={formData.type === 'query' ? "Tell us exactly what happened..." : "Keep it brief and clear..."}
-                                                className="w-full pl-10 pr-4 py-3 bg-gray-50 dark:bg-gray-800 border border-gray-200 dark:border-gray-700 text-gray-900 dark:text-white rounded-xl focus:ring-2 focus:ring-indigo-500 outline-none resize-none transition-all hover:bg-white dark:hover:bg-gray-700 placeholder-gray-400"
+                                                className="w-full pl-10 pr-4 py-3 bg-gray-50 dark:bg-gray-800 border border-gray-200 dark:border-gray-700 text-gray-900 dark:text-white rounded-xl focus:ring-2 focus:ring-violet-500 outline-none resize-none transition-all hover:bg-white dark:hover:bg-gray-700 placeholder-gray-400"
                                             />
                                         </div>
                                     </div>
@@ -310,7 +310,7 @@ function LeaveApply() {
                                 <button 
                                     type="submit" disabled={loading}
                                     className={`w-full py-4 rounded-xl text-white font-bold shadow-lg flex justify-center items-center gap-2 transform transition-all duration-200
-                                    ${loading ? 'bg-gray-400 cursor-not-allowed' : 'bg-gradient-to-r from-indigo-600 to-purple-600 hover:scale-[1.02] hover:shadow-indigo-500/30 active:scale-95'}`}
+                                    ${loading ? 'bg-gray-400 cursor-not-allowed' : 'bg-gradient-to-r from-violet-600 to-purple-600 hover:scale-[1.02] hover:shadow-violet-500/30 active:scale-95'}`}
                                 >
                                     {loading ? (
                                         <>

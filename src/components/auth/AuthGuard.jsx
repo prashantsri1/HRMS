@@ -19,7 +19,7 @@ const AuthGuard = ({ children, allowedRoles }) => {
     if (loading) {
         return (
             <div className="flex items-center justify-center h-screen bg-gray-50 dark:bg-gray-900">
-                <div className="text-indigo-600 font-bold animate-pulse">Checking Permissions...</div>
+                <div className="text-violet-600 font-bold animate-pulse">Checking Permissions...</div>
             </div>
         );
     }

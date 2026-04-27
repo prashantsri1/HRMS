@@ -147,7 +147,7 @@ const PayrollRecords = () => {
                     <div className="flex items-center gap-4">
                         <button onClick={() => navigate(-1)} className="p-2 bg-white dark:bg-gray-800 rounded-full shadow hover:bg-gray-50 transition"><ArrowLeft size={20} className="text-gray-600 dark:text-gray-300" /></button>
                         <h1 className="text-3xl font-extrabold text-gray-900 dark:text-white flex items-center gap-2">
-                            <FileText className="text-indigo-600" /> Payroll Records
+                            <FileText className="text-violet-600" /> Payroll Records
                         </h1>
                     </div>
                 </div>
@@ -204,7 +204,7 @@ const PayrollRecords = () => {
                                             ₹{Number(doc.netSalary || 0).toLocaleString()}
                                         </td>
                                         <td className="p-4 text-center">
-                                            <button onClick={() => handleViewReceipt(doc)} className="inline-flex items-center gap-1 px-3 py-1.5 bg-indigo-50 dark:bg-indigo-900/30 text-indigo-600 dark:text-indigo-400 rounded-lg text-xs font-bold hover:bg-indigo-100 dark:hover:bg-indigo-900/50 transition-colors">
+                                            <button onClick={() => handleViewReceipt(doc)} className="inline-flex items-center gap-1 px-3 py-1.5 bg-violet-50 dark:bg-violet-900/30 text-violet-600 dark:text-violet-400 rounded-lg text-xs font-bold hover:bg-violet-100 dark:hover:bg-violet-900/50 transition-colors">
                                                 <Eye size={14} /> View Slip
                                             </button>
                                         </td>
@@ -223,7 +223,7 @@ const PayrollRecords = () => {
                         <div className="flex justify-between items-center px-6 py-4 border-b border-gray-200 dark:border-gray-700 bg-gray-50 dark:bg-gray-800">
                             <h3 className="font-bold text-lg text-gray-800 dark:text-white flex items-center gap-2"><FileText size={20} /> Payslip Preview</h3>
                             <div className="flex gap-3">
-                                <a href={viewData.url} download={viewData.name} className="flex items-center gap-2 px-4 py-2 bg-indigo-600 text-white text-sm font-bold rounded-lg hover:bg-indigo-700 transition shadow-md">
+                                <a href={viewData.url} download={viewData.name} className="flex items-center gap-2 px-4 py-2 bg-violet-600 text-white text-sm font-bold rounded-lg hover:bg-violet-700 transition shadow-md">
                                     <Download size={16} /> Download
                                 </a>
                                 <button onClick={closeViewer} className="p-2 text-gray-500 hover:bg-gray-200 dark:hover:bg-gray-700 rounded-lg transition"><X size={20} /></button>
@@ -238,7 +238,7 @@ const PayrollRecords = () => {
 
             <style>{`
         .input-field { width: 100%; padding: 10px 12px; border: 1px solid #e5e7eb; border-radius: 12px; outline: none; transition: all 0.2s; }
-        .input-field:focus { border-color: #6366f1; box-shadow: 0 0 0 3px rgba(99, 102, 241, 0.1); }
+        .input-field:focus { border-color: #7C3AED; box-shadow: 0 0 0 3px rgba(124, 58, 237, 0.1); }
       `}</style>
         </div>
     );

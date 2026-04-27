@@ -280,7 +280,7 @@ function UserManagement() {
 
                     <div className="relative w-full md:w-64">
                         <Search className="absolute left-3 top-3 text-gray-400 dark:text-gray-500" size={18} />
-                        <input type="text" placeholder="Search..." value={searchTerm} onChange={(e) => setSearchTerm(e.target.value)} className="w-full pl-10 pr-4 py-2.5 rounded-xl border border-gray-200 dark:border-gray-700 bg-white dark:bg-gray-800 text-gray-900 dark:text-white focus:ring-2 focus:ring-indigo-500 outline-none transition-all shadow-sm" />
+                        <input type="text" placeholder="Search..." value={searchTerm} onChange={(e) => setSearchTerm(e.target.value)} className="w-full pl-10 pr-4 py-2.5 rounded-xl border border-gray-200 dark:border-gray-700 bg-white dark:bg-gray-800 text-gray-900 dark:text-white focus:ring-2 focus:ring-violet-500 outline-none transition-all shadow-sm" />
                     </div>
                     
                     <button onClick={handleExportToExcel} className="flex items-center justify-center gap-2 px-4 py-2.5 bg-green-600 hover:bg-green-700 text-white rounded-xl shadow-md transition-all font-medium whitespace-nowrap active:scale-95">
@@ -293,7 +293,7 @@ function UserManagement() {
                 
                 {/* --- LEFT: CREATE USER FORM --- */}
                 <motion.div initial={{ opacity: 0, x: -20 }} animate={{ opacity: 1, x: 0 }} className="xl:col-span-1 bg-white dark:bg-gray-800 rounded-2xl shadow-xl border border-gray-100 dark:border-gray-700 overflow-hidden h-fit sticky top-6">
-                    <div className="bg-gradient-to-r from-indigo-600 to-purple-600 px-6 py-4 flex items-center gap-3">
+                    <div className="bg-gradient-to-r from-violet-600 to-purple-600 px-6 py-4 flex items-center gap-3">
                         <div className="p-2 bg-white/20 rounded-lg backdrop-blur-sm text-white"><UserPlus size={20} /></div>
                         <h3 className="text-white font-bold text-lg">Add New User</h3>
                     </div>
@@ -322,11 +322,11 @@ function UserManagement() {
                             <input type="password" placeholder="Password (min 6 chars)" value={newPassword} onChange={(e) => setNewPassword(e.target.value)} required className="w-full px-4 py-3 bg-gray-50 dark:bg-gray-700 border border-gray-200 dark:border-gray-600 rounded-xl outline-none" />
                             <input type="tel" placeholder="Phone Number" value={newPhone} onChange={(e) => setNewPhone(e.target.value)} className="w-full px-4 py-3 bg-gray-50 dark:bg-gray-700 border border-gray-200 dark:border-gray-600 rounded-xl outline-none" />
 
-                            <button type="submit" disabled={loadingForm} className="w-full py-3.5 rounded-xl font-bold text-white shadow-lg bg-gray-900 hover:bg-black dark:bg-indigo-600 dark:hover:bg-indigo-700 active:scale-95 transition-all">
+                            <button type="submit" disabled={loadingForm} className="w-full py-3.5 rounded-xl font-bold text-white shadow-lg bg-gray-900 hover:bg-black dark:bg-violet-600 dark:hover:bg-violet-700 active:scale-95 transition-all">
                                 {loadingForm ? 'Creating...' : 'Create Account'}
                             </button>
                         </form>
-                        {message && <div className="mt-4 p-3 bg-indigo-50 dark:bg-indigo-900/30 text-indigo-600 dark:text-indigo-300 rounded-xl text-center text-sm font-bold border border-indigo-100 dark:border-indigo-800">{message}</div>}
+                        {message && <div className="mt-4 p-3 bg-violet-50 dark:bg-violet-900/30 text-violet-600 dark:text-violet-300 rounded-xl text-center text-sm font-bold border border-violet-100 dark:border-violet-800">{message}</div>}
                     </div>
                 </motion.div>
 
@@ -344,11 +344,11 @@ function UserManagement() {
                                     className={`bg-white dark:bg-gray-800 p-5 rounded-2xl shadow-sm border ${user.isBlocked ? 'border-red-500 border-2' : 'border-gray-100 dark:border-gray-700'} hover:shadow-md transition-all group relative overflow-hidden`}
                                 >
                                     {user.isBlocked && <div className="absolute top-0 right-0 bg-red-600 text-white text-[10px] font-bold px-2 py-1 rounded-bl-lg z-10">FORCE STOPPED</div>}
-                                    <div className="absolute top-0 left-0 w-1 h-full bg-gradient-to-b from-indigo-500 to-purple-500 opacity-0 group-hover:opacity-100 transition-opacity"></div>
+                                    <div className="absolute top-0 left-0 w-1 h-full bg-gradient-to-b from-violet-500 to-purple-500 opacity-0 group-hover:opacity-100 transition-opacity"></div>
 
                                     <div className="flex justify-between items-start mb-4">
                                         <div className="flex items-center gap-3">
-                                            {user.profileImage ? <img src={user.profileImage} alt={user.name} className="w-12 h-12 rounded-full object-cover border-2 border-indigo-100" /> : <div className="w-12 h-12 rounded-full bg-gray-100 dark:bg-gray-700 flex items-center justify-center text-lg font-bold text-gray-600">{user.name?.charAt(0).toUpperCase()}</div>}
+                                            {user.profileImage ? <img src={user.profileImage} alt={user.name} className="w-12 h-12 rounded-full object-cover border-2 border-violet-100" /> : <div className="w-12 h-12 rounded-full bg-gray-100 dark:bg-gray-700 flex items-center justify-center text-lg font-bold text-gray-600">{user.name?.charAt(0).toUpperCase()}</div>}
                                             <div>
                                                 <h4 className="font-bold text-gray-800 dark:text-gray-100 leading-tight">{user.name}</h4>
                                                 <div className="flex items-center gap-2 mt-1">
@@ -369,7 +369,7 @@ function UserManagement() {
                                     </div>
 
                                     <div className="flex gap-2 pt-4 border-t border-gray-50 dark:border-gray-700">
-                                        <button onClick={() => handleEditSetup(user)} className="flex-1 py-2 rounded-lg bg-indigo-50 dark:bg-indigo-900/30 text-indigo-600 dark:text-indigo-400 text-xs font-bold hover:bg-indigo-100 transition-colors flex items-center justify-center gap-1"><Edit size={14} /> Edit</button>
+                                        <button onClick={() => handleEditSetup(user)} className="flex-1 py-2 rounded-lg bg-violet-50 dark:bg-violet-900/30 text-violet-600 dark:text-violet-400 text-xs font-bold hover:bg-violet-100 transition-colors flex items-center justify-center gap-1"><Edit size={14} /> Edit</button>
                                         
                                         {/* Force Stop (Only visible if you outrank them) */}
                                         {(ROLE_LEVELS[user.role] < currentLevel) && (
@@ -414,7 +414,7 @@ function UserManagement() {
                 {editingUser && (
                     <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/60 backdrop-blur-sm">
                         <motion.div initial={{ opacity: 0, scale: 0.95, y: 20 }} animate={{ opacity: 1, scale: 1, y: 0 }} exit={{ opacity: 0, scale: 0.95, y: 20 }} className="bg-white dark:bg-gray-800 rounded-2xl shadow-2xl w-full max-w-2xl overflow-hidden border border-gray-100 dark:border-gray-700 flex flex-col max-h-[90vh]">
-                            <div className="bg-gradient-to-r from-indigo-600 to-purple-600 px-6 py-4 flex justify-between items-center shrink-0">
+                            <div className="bg-gradient-to-r from-violet-600 to-purple-600 px-6 py-4 flex justify-between items-center shrink-0">
                                 <h3 className="text-white font-bold text-lg flex items-center gap-2"><Edit size={20} /> Edit User & Performance</h3>
                                 <button onClick={() => setEditingUser(null)} className="text-white/80 hover:text-white"><X size={20} /></button>
                             </div>
@@ -437,7 +437,7 @@ function UserManagement() {
                                     </div>
                                     
                                     <div className="flex justify-end pt-4">
-                                        <button type="submit" disabled={loadingForm} className="px-6 py-2 bg-indigo-600 hover:bg-indigo-700 text-white font-bold rounded-lg shadow transition">{loadingForm ? 'Saving...' : 'Update Details'}</button>
+                                        <button type="submit" disabled={loadingForm} className="px-6 py-2 bg-violet-600 hover:bg-violet-700 text-white font-bold rounded-lg shadow transition">{loadingForm ? 'Saving...' : 'Update Details'}</button>
                                     </div>
                                 </form>
                                 <div className="pt-6 border-t border-gray-200">

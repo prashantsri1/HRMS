@@ -251,7 +251,7 @@ const EnterprisePayroll = () => {
                 {/* --- HEADER --- */}
                 <div className="flex flex-col md:flex-row justify-between items-center bg-white dark:bg-gray-800 p-5 rounded-xl shadow-sm border border-gray-200 dark:border-gray-700">
                     <div>
-                        <h1 className="text-2xl font-bold flex items-center gap-3 text-indigo-600 dark:text-indigo-400">
+                        <h1 className="text-2xl font-bold flex items-center gap-3 text-violet-600 dark:text-violet-400">
                             <Building2 size={28} /> Enterprise Payroll
                             {userProfile?.role === 'super_admin' && <span className="text-xs bg-amber-100 text-amber-700 px-2 py-1 rounded-full border border-amber-200"><Crown size={12} className="inline mr-1" />Owner</span>}
                         </h1>
@@ -260,7 +260,7 @@ const EnterprisePayroll = () => {
                     <div className="flex gap-3">
                         <button onClick={() => navigate('/hr/payroll-management')} className="px-4 py-2 bg-gray-100 dark:bg-gray-700 rounded-lg text-sm font-bold flex items-center gap-2 hover:bg-gray-200 dark:hover:bg-gray-600"><List size={16} /> History</button>
                         <input type="month" value={targetMonth} onChange={(e) => setTargetMonth(e.target.value)} className="px-4 py-2 bg-gray-50 dark:bg-gray-700 border border-gray-300 dark:border-gray-600 rounded-lg font-bold text-sm outline-none dark:[color-scheme:dark]" />
-                        <button onClick={handleGeneratePDF} className="px-5 py-2 bg-indigo-600 text-white rounded-lg text-sm font-bold flex items-center gap-2 hover:bg-indigo-700 shadow-md"><Download size={16} /> Preview PDF</button>
+                        <button onClick={handleGeneratePDF} className="px-5 py-2 bg-violet-600 text-white rounded-lg text-sm font-bold flex items-center gap-2 hover:bg-violet-700 shadow-md"><Download size={16} /> Preview PDF</button>
                     </div>
                 </div>
 
@@ -271,10 +271,10 @@ const EnterprisePayroll = () => {
 
                         {/* 1. EMPLOYEE DETAILS CARD */}
                         <div className="bg-white dark:bg-gray-800 p-5 rounded-xl shadow-sm border border-gray-200 dark:border-gray-700">
-                            <h3 className="text-sm font-bold text-gray-500 dark:text-gray-400 uppercase mb-4 flex items-center gap-2"><UserCheck size={16} className="text-blue-500" /> Employee Details</h3>
+                            <h3 className="text-sm font-bold text-gray-500 dark:text-gray-400 uppercase mb-4 flex items-center gap-2"><UserCheck size={16} className="text-purple-500" /> Employee Details</h3>
 
                             <div className="space-y-3">
-                                <select value={selectedEmpUid} onChange={(e) => setSelectedEmpUid(e.target.value)} className="w-full p-2.5 bg-indigo-50 dark:bg-indigo-900/20 border border-indigo-200 dark:border-indigo-800 rounded-lg font-bold text-sm outline-none dark:text-white cursor-pointer">
+                                <select value={selectedEmpUid} onChange={(e) => setSelectedEmpUid(e.target.value)} className="w-full p-2.5 bg-violet-50 dark:bg-violet-900/20 border border-violet-200 dark:border-violet-800 rounded-lg font-bold text-sm outline-none dark:text-white cursor-pointer">
                                     <option value="">-- Select Employee --</option>
                                     {employees && employees.map(emp => <option key={emp.id} value={emp.id}>{emp.name} ({emp.role})</option>)}
                                 </select>
@@ -412,7 +412,7 @@ const EnterprisePayroll = () => {
 
 const InputField = ({ label, name, value, onChange, type = "text", icon, readOnly = false }) => (
     <div className="relative group">
-        <label className="text-[10px] font-bold text-gray-400 uppercase mb-1 block group-focus-within:text-indigo-500 transition-colors">{label}</label>
+        <label className="text-[10px] font-bold text-gray-400 uppercase mb-1 block group-focus-within:text-violet-500 transition-colors">{label}</label>
         <div className="relative">
             <input
                 type={type}
@@ -420,7 +420,7 @@ const InputField = ({ label, name, value, onChange, type = "text", icon, readOnl
                 value={value}
                 onChange={onChange}
                 readOnly={readOnly}
-                className={`w-full p-2 bg-gray-50 dark:bg-gray-700 border border-gray-300 dark:border-gray-600 rounded-lg outline-none text-sm font-medium focus:border-indigo-500 transition-all dark:text-white ${icon ? 'pl-8' : ''} ${readOnly ? 'opacity-60 cursor-not-allowed' : ''}`}
+                className={`w-full p-2 bg-gray-50 dark:bg-gray-700 border border-gray-300 dark:border-gray-600 rounded-lg outline-none text-sm font-medium focus:border-violet-500 transition-all dark:text-white ${icon ? 'pl-8' : ''} ${readOnly ? 'opacity-60 cursor-not-allowed' : ''}`}
             />
             {icon && <span className="absolute left-2.5 top-2.5 text-gray-400">{icon}</span>}
         </div>
@@ -429,13 +429,13 @@ const InputField = ({ label, name, value, onChange, type = "text", icon, readOnl
 
 const MoneyRow = ({ label, value, name, onChange, highlight }) => (
     <div className="flex justify-between items-center group">
-        <span className={`text-sm font-medium ${highlight ? 'text-indigo-600 dark:text-indigo-400' : 'text-gray-600 dark:text-gray-400'}`}>{label}</span>
+        <span className={`text-sm font-medium ${highlight ? 'text-violet-600 dark:text-violet-400' : 'text-gray-600 dark:text-gray-400'}`}>{label}</span>
         <input
             type="number"
             name={name}
             value={value}
             onChange={onChange}
-            className={`w-28 p-1.5 text-right bg-transparent border-b border-gray-300 dark:border-gray-600 text-sm font-bold outline-none focus:border-indigo-500 focus:bg-gray-50 dark:focus:bg-gray-800 transition-colors ${highlight ? 'text-indigo-600 dark:text-indigo-300' : 'text-gray-800 dark:text-white'}`}
+            className={`w-28 p-1.5 text-right bg-transparent border-b border-gray-300 dark:border-gray-600 text-sm font-bold outline-none focus:border-violet-500 focus:bg-gray-50 dark:focus:bg-gray-800 transition-colors ${highlight ? 'text-violet-600 dark:text-violet-300' : 'text-gray-800 dark:text-white'}`}
         />
     </div>
 );

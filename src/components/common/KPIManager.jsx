@@ -56,7 +56,7 @@ const calculateScore = (target, actual) => {
 
 const getScoreColor = (score) => {
     if (score >= 100) return 'text-emerald-600 bg-emerald-50 border-emerald-200';
-    if (score >= 80) return 'text-blue-600 bg-blue-50 border-blue-200';
+    if (score >= 80) return 'text-purple-600 bg-purple-50 border-purple-200';
     if (score >= 50) return 'text-orange-600 bg-orange-50 border-orange-200';
     return 'text-red-600 bg-red-50 border-red-200';
 };
@@ -73,13 +73,13 @@ const ScorecardView = ({ employee, kpiData, period, timeFrame, year, onBack, onE
     }, [kpiData]);
 
     const grade = overallScore >= 90 ? 'Outstanding' : overallScore >= 75 ? 'Exceeds Expectations' : overallScore >= 60 ? 'Meets Expectations' : 'Needs Improvement';
-    const gradeColor = overallScore >= 90 ? 'text-emerald-600' : overallScore >= 75 ? 'text-blue-600' : overallScore >= 60 ? 'text-orange-600' : 'text-red-600';
+    const gradeColor = overallScore >= 90 ? 'text-emerald-600' : overallScore >= 75 ? 'text-purple-600' : overallScore >= 60 ? 'text-orange-600' : 'text-red-600';
 
     return (
         <div className="bg-gray-50 dark:bg-gray-900 min-h-screen flex flex-col w-full h-full relative">
             {/* Toolbar */}
             <div className="bg-white dark:bg-gray-800 border-b border-gray-200 dark:border-gray-700 px-4 sm:px-8 py-4 flex flex-col sm:flex-row justify-between items-center gap-4 print:hidden sticky top-0 z-50 shadow-sm">
-                <button onClick={onBack} className="flex items-center gap-2 text-gray-600 dark:text-gray-300 hover:text-indigo-600 font-bold transition-colors">
+                <button onClick={onBack} className="flex items-center gap-2 text-gray-600 dark:text-gray-300 hover:text-violet-600 font-bold transition-colors">
                     <ArrowLeft size={20} /> Back to Dashboard
                 </button>
                 <div className="flex gap-3 w-full sm:w-auto">
@@ -95,18 +95,18 @@ const ScorecardView = ({ employee, kpiData, period, timeFrame, year, onBack, onE
             {/* Report Content */}
             <div className="flex-1 p-4 sm:p-8 overflow-y-auto custom-scrollbar print:overflow-visible print:h-auto print:p-0">
                 <div id="printable-area" className="max-w-4xl mx-auto bg-white dark:bg-gray-800 rounded-[2rem] shadow-2xl overflow-hidden print:shadow-none print:rounded-none print:w-full print:max-w-none print:bg-white print:text-black">
-                    <div className="bg-gradient-to-r from-indigo-600 to-purple-600 p-8 sm:p-10 text-white print:bg-none print:text-black print:p-0 print:mb-4 print:border-b-2 print:border-black">
+                    <div className="bg-gradient-to-r from-violet-600 to-purple-600 p-8 sm:p-10 text-white print:bg-none print:text-black print:p-0 print:mb-4 print:border-b-2 print:border-black">
                         <div className="flex flex-col sm:flex-row justify-between items-start sm:items-end gap-6 print:flex-row print:items-end">
                             <div>
                                 <h1 className="text-3xl sm:text-4xl font-black uppercase tracking-tight mb-2 flex items-center gap-3 print:text-3xl print:mb-1">
                                     Performance Scorecard
                                 </h1>
-                                <p className="text-lg text-indigo-100 font-medium print:text-black print:text-sm">{period} Review • {timeFrame} • {year}</p>
+                                <p className="text-lg text-violet-100 font-medium print:text-black print:text-sm">{period} Review • {timeFrame} • {year}</p>
                             </div>
                             <div className="text-left sm:text-right bg-white/10 p-4 rounded-xl backdrop-blur-sm print:bg-transparent print:p-0 print:text-right">
                                 <h2 className="text-2xl font-bold print:text-xl">{employee.name}</h2>
-                                <p className="text-sm text-indigo-100 uppercase tracking-widest font-bold print:text-black print:text-xs">{employee.designation || 'Employee'} • {employee.department || 'N/A'}</p>
-                                <p className="text-xs text-indigo-200 mt-1 font-mono print:text-black">ID: {employee.empId || employee.id}</p>
+                                <p className="text-sm text-violet-100 uppercase tracking-widest font-bold print:text-black print:text-xs">{employee.designation || 'Employee'} • {employee.department || 'N/A'}</p>
+                                <p className="text-xs text-violet-200 mt-1 font-mono print:text-black">ID: {employee.empId || employee.id}</p>
                             </div>
                         </div>
                     </div>
@@ -124,7 +124,7 @@ const ScorecardView = ({ employee, kpiData, period, timeFrame, year, onBack, onE
                         </div>
 
                         <div className="mb-10 print:mb-6">
-                            <h3 className="text-lg font-bold border-l-4 border-indigo-500 pl-3 mb-4 uppercase tracking-wider print:border-black print:mb-2 print:text-sm">Detailed Metrics</h3>
+                            <h3 className="text-lg font-bold border-l-4 border-violet-500 pl-3 mb-4 uppercase tracking-wider print:border-black print:mb-2 print:text-sm">Detailed Metrics</h3>
                             <div className="overflow-hidden rounded-xl border border-gray-200 dark:border-gray-700 print:border-gray-300 print:rounded-none">
                                 <table className="w-full text-left text-sm print:text-xs">
                                     <thead className="bg-gray-100 dark:bg-gray-700 text-gray-600 dark:text-gray-300 font-bold uppercase print:bg-gray-200 print:text-black">
@@ -145,7 +145,7 @@ const ScorecardView = ({ employee, kpiData, period, timeFrame, year, onBack, onE
                                                 </td>
                                                 <td className="px-4 py-4 text-center font-mono print:px-2 print:py-1">{kpi.weightage}%</td>
                                                 <td className="px-4 py-4 text-center font-mono print:px-2 print:py-1">{kpi.target}</td>
-                                                <td className="px-4 py-4 text-center font-mono font-bold text-indigo-600 dark:text-indigo-400 print:text-black print:px-2 print:py-1">{kpi.actual}</td>
+                                                <td className="px-4 py-4 text-center font-mono font-bold text-violet-600 dark:text-violet-400 print:text-black print:px-2 print:py-1">{kpi.actual}</td>
                                                 <td className="px-4 py-4 text-center print:px-2 print:py-1">
                                                     <span className="font-bold">{kpi.score}%</span>
                                                 </td>
@@ -411,7 +411,7 @@ const KPIManager = () => {
     <div className="min-h-screen bg-gray-50 dark:bg-gray-900 p-4 sm:p-6 md:p-10 font-sans text-gray-800 dark:text-gray-200">
       <div className="flex flex-col xl:flex-row justify-between items-start xl:items-center mb-8 sm:mb-10 gap-6">
         <div>
-          <h1 className="text-3xl sm:text-4xl font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-emerald-600 to-teal-500 flex items-center gap-3 flex-wrap">
+          <h1 className="text-3xl sm:text-4xl font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-emerald-600 to-emerald-500 flex items-center gap-3 flex-wrap">
              <BarChart2 size={32} className="text-emerald-500" /> KPI Management
              {isSuperAdmin && <span className="text-xs bg-amber-100 text-amber-700 px-2 py-1 rounded-full border border-amber-200"><Crown size={12} className="inline mr-1"/>Owner</span>}
           </h1>
@@ -432,14 +432,14 @@ const KPIManager = () => {
              )}
              <div className="h-8 w-px bg-gray-200 dark:bg-gray-600 mx-1 hidden sm:block"></div>
              <div className="flex items-center gap-2 bg-gray-50 dark:bg-gray-700 rounded-xl px-2">
-                 <button onClick={()=>setSelectedYear(prev => `FY ${parseInt(prev.split(' ')[1].split('-')[0]) - 1}-${parseInt(prev.split(' ')[1].split('-')[1]) - 1}`)} className="p-1 hover:text-indigo-500"><ChevronLeft size={16}/></button>
+                 <button onClick={()=>setSelectedYear(prev => `FY ${parseInt(prev.split(' ')[1].split('-')[0]) - 1}-${parseInt(prev.split(' ')[1].split('-')[1]) - 1}`)} className="p-1 hover:text-violet-500"><ChevronLeft size={16}/></button>
                  <span className="text-xs font-bold whitespace-nowrap">{selectedYear}</span>
-                 <button onClick={()=>setSelectedYear(prev => `FY ${parseInt(prev.split(' ')[1].split('-')[0]) + 1}-${parseInt(prev.split(' ')[1].split('-')[1]) + 1}`)} className="p-1 hover:text-indigo-500"><ChevronRight size={16}/></button>
+                 <button onClick={()=>setSelectedYear(prev => `FY ${parseInt(prev.split(' ')[1].split('-')[0]) + 1}-${parseInt(prev.split(' ')[1].split('-')[1]) + 1}`)} className="p-1 hover:text-violet-500"><ChevronRight size={16}/></button>
              </div>
              <select className="px-3 py-2.5 bg-gray-50 dark:bg-gray-700 border-none rounded-xl text-sm font-bold outline-none cursor-pointer flex-1 sm:flex-none" value={selectedPeriod} onChange={(e) => { setSelectedPeriod(e.target.value); setSelectedTimeFrame(e.target.value === 'Monthly' ? MONTHS[0] : QUARTERS[0]); }}>{PERIODS.map(p => <option key={p} value={p}>{p}</option>)}</select>
              <select className="px-3 py-2.5 bg-gray-50 dark:bg-gray-700 border-none rounded-xl text-sm font-bold outline-none cursor-pointer flex-1 sm:flex-none" value={selectedTimeFrame} onChange={(e) => setSelectedTimeFrame(e.target.value)}>{(selectedPeriod === 'Monthly' ? MONTHS : selectedPeriod === 'Quarterly' ? QUARTERS : selectedPeriod === 'Half-Yearly' ? ['H1 (Apr-Sep)', 'H2 (Oct-Mar)'] : ['Full Year']).map(t => <option key={t} value={t}>{t}</option>)}</select>
              {selectedEmployee && !dateError && (
-                 <button onClick={() => setViewMode('scorecard')} className="w-full sm:w-auto flex items-center justify-center gap-2 bg-indigo-600 hover:bg-indigo-700 text-white px-4 py-2.5 rounded-xl font-bold shadow-md transition-all active:scale-95 text-sm"><FileText size={16}/> View Scorecard</button>
+                 <button onClick={() => setViewMode('scorecard')} className="w-full sm:w-auto flex items-center justify-center gap-2 bg-violet-600 hover:bg-violet-700 text-white px-4 py-2.5 rounded-xl font-bold shadow-md transition-all active:scale-95 text-sm"><FileText size={16}/> View Scorecard</button>
              )}
         </div>
       </div>
@@ -461,10 +461,10 @@ const KPIManager = () => {
       ) : selectedEmployee && !dateError ? (
           <div className="grid grid-cols-1 lg:grid-cols-4 gap-8">
               <div className="lg:col-span-1 space-y-6">
-                 <motion.div initial={{ scale: 0.9, opacity: 0 }} animate={{ scale: 1, opacity: 1 }} className="bg-gradient-to-br from-indigo-600 to-violet-700 text-white p-6 rounded-3xl shadow-xl relative overflow-hidden">
+                 <motion.div initial={{ scale: 0.9, opacity: 0 }} animate={{ scale: 1, opacity: 1 }} className="bg-gradient-to-br from-violet-600 to-violet-700 text-white p-6 rounded-3xl shadow-xl relative overflow-hidden">
                     <div className="absolute top-0 right-0 p-4 opacity-10"><CheckCircle size={100} /></div>
-                    <h3 className="text-sm font-bold uppercase tracking-widest text-indigo-200 mb-1">Overall Score</h3>
-                    <div className="flex items-baseline gap-1 mt-2"><span className="text-5xl font-black">{calculatedOverallScore}</span><span className="text-xl font-bold text-indigo-200">%</span></div>
+                    <h3 className="text-sm font-bold uppercase tracking-widest text-violet-200 mb-1">Overall Score</h3>
+                    <div className="flex items-baseline gap-1 mt-2"><span className="text-5xl font-black">{calculatedOverallScore}</span><span className="text-xl font-bold text-violet-200">%</span></div>
                     <div className="mt-4 pt-4 border-t border-white/20"><p className="text-lg font-bold">{calculatedOverallScore >= 90 ? '🏆 Outstanding' : calculatedOverallScore >= 75 ? '🌟 Good' : '⚠️ Needs Imp.'}</p></div>
                  </motion.div>
                  
@@ -507,9 +507,9 @@ const KPIManager = () => {
                                                 <div className="font-bold text-gray-800 dark:text-gray-200">{kra.title}</div>
                                                 {kra.isMandatory && <span className="text-[10px] text-red-500 font-bold uppercase">Mandatory</span>}
                                              </td>
-                                             <td className="px-4 py-4 text-center"><input type="number" className="w-16 p-2 text-center bg-gray-100 dark:bg-gray-900 border border-transparent focus:border-indigo-500 rounded-lg text-sm font-bold outline-none" value={input.weightage} onChange={(e) => handleInputChange(kra.id, 'weightage', e.target.value)} disabled={!canManage}/></td>
-                                             <td className="px-4 py-4 text-center"><input type="number" placeholder="0" className="w-24 p-2 text-center bg-gray-50 dark:bg-gray-900 border border-gray-200 dark:border-gray-700 focus:border-indigo-500 rounded-lg text-sm font-bold outline-none" value={input.target} onChange={(e) => handleInputChange(kra.id, 'target', e.target.value)} disabled={!canManage}/></td>
-                                             <td className="px-4 py-4 text-center"><input type="number" placeholder="0" className="w-24 p-2 text-center bg-white dark:bg-gray-800 border-2 border-indigo-100 dark:border-gray-600 focus:border-indigo-500 rounded-lg text-sm font-bold outline-none text-indigo-600 dark:text-indigo-400" value={input.actual} onChange={(e) => handleInputChange(kra.id, 'actual', e.target.value)} disabled={!canManage}/></td>
+                                             <td className="px-4 py-4 text-center"><input type="number" className="w-16 p-2 text-center bg-gray-100 dark:bg-gray-900 border border-transparent focus:border-violet-500 rounded-lg text-sm font-bold outline-none" value={input.weightage} onChange={(e) => handleInputChange(kra.id, 'weightage', e.target.value)} disabled={!canManage}/></td>
+                                             <td className="px-4 py-4 text-center"><input type="number" placeholder="0" className="w-24 p-2 text-center bg-gray-50 dark:bg-gray-900 border border-gray-200 dark:border-gray-700 focus:border-violet-500 rounded-lg text-sm font-bold outline-none" value={input.target} onChange={(e) => handleInputChange(kra.id, 'target', e.target.value)} disabled={!canManage}/></td>
+                                             <td className="px-4 py-4 text-center"><input type="number" placeholder="0" className="w-24 p-2 text-center bg-white dark:bg-gray-800 border-2 border-violet-100 dark:border-gray-600 focus:border-violet-500 rounded-lg text-sm font-bold outline-none text-violet-600 dark:text-violet-400" value={input.actual} onChange={(e) => handleInputChange(kra.id, 'actual', e.target.value)} disabled={!canManage}/></td>
                                              <td className="px-4 py-4 text-center"><span className={`px-3 py-1 rounded-lg text-xs font-bold ${getScoreColor(score)}`}>{score}%</span></td>
                                          </tr>
                                       );
@@ -532,7 +532,7 @@ const KPIManager = () => {
         }
         .input-std { width: 100%; padding: 0.75rem; border-radius: 0.5rem; border: 1px solid #e5e7eb; background-color: #f9fafb; outline: none; transition: all 0.2s; font-size: 0.875rem; }
         .dark .input-std { background-color: #1f2937; border-color: #374151; color: white; }
-        .input-std:focus { border-color: #3b82f6; background-color: white; box-shadow: 0 0 0 3px rgba(99, 102, 241, 0.1); }
+        .input-std:focus { border-color: #7C3AED; background-color: white; box-shadow: 0 0 0 3px rgba(124, 58, 237, 0.1); }
         .dark .input-std:focus { background-color: #0f172a; }
         .custom-scrollbar::-webkit-scrollbar { width: 5px; height: 5px; }
         .custom-scrollbar::-webkit-scrollbar-thumb { background: #cbd5e1; border-radius: 4px; }

@@ -60,7 +60,7 @@ const Logs = () => {
             <div className="flex flex-col md:flex-row justify-between items-start md:items-center mb-10 gap-4">
                 <div>
                     <h1 className="text-3xl font-extrabold text-gray-800 dark:text-white tracking-tight flex items-center gap-3">
-                        <Activity className="text-indigo-500" size={32} />
+                        <Activity className="text-violet-500" size={32} />
                         Your Activity
                     </h1>
                     <p className="text-gray-500 dark:text-gray-400 mt-1">
@@ -70,7 +70,7 @@ const Logs = () => {
                 {isAdmin && (
                     <button 
                         onClick={() => navigate('/admin/log-reports')}
-                        className="bg-gradient-to-r from-indigo-600 to-purple-600 hover:from-indigo-700 hover:to-purple-700 text-white px-6 py-3 rounded-xl shadow-lg shadow-indigo-500/30 flex items-center gap-2 transition-all transform hover:scale-105 active:scale-95 font-bold"
+                        className="bg-gradient-to-r from-violet-600 to-purple-600 hover:from-violet-700 hover:to-purple-700 text-white px-6 py-3 rounded-xl shadow-lg shadow-violet-500/30 flex items-center gap-2 transition-all transform hover:scale-105 active:scale-95 font-bold"
                     >
                         View All Employees <ArrowRight size={18} />
                     </button>
@@ -85,10 +85,10 @@ const Logs = () => {
                     initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }}
                     className="bg-white dark:bg-gray-800 rounded-3xl p-8 shadow-xl border border-gray-100 dark:border-gray-700 relative overflow-hidden"
                 >
-                    <div className="absolute top-0 right-0 w-32 h-32 bg-indigo-500/10 rounded-full blur-3xl -mr-10 -mt-10"></div>
+                    <div className="absolute top-0 right-0 w-32 h-32 bg-violet-500/10 rounded-full blur-3xl -mr-10 -mt-10"></div>
                     
                     <div className="flex items-center gap-4 mb-8">
-                        <div className="p-4 bg-indigo-50 dark:bg-indigo-900/30 rounded-2xl text-indigo-600 dark:text-indigo-400">
+                        <div className="p-4 bg-violet-50 dark:bg-violet-900/30 rounded-2xl text-violet-600 dark:text-violet-400">
                             <Clock size={32} />
                         </div>
                         <div>
@@ -151,9 +151,9 @@ const Logs = () => {
                                             animate={{ width: `${item.percent}%` }}
                                             transition={{ duration: 1, ease: "easeOut" }}
                                             className={`h-full rounded-full ${
-                                                index === 0 ? 'bg-gradient-to-r from-blue-500 to-indigo-600' :
+                                                index === 0 ? 'bg-gradient-to-r from-purple-500 to-violet-600' :
                                                 index === 1 ? 'bg-gradient-to-r from-purple-500 to-pink-600' :
-                                                'bg-gradient-to-r from-emerald-400 to-teal-500'
+                                                'bg-gradient-to-r from-emerald-400 to-emerald-500'
                                             }`}
                                         />
                                     </div>

@@ -248,7 +248,7 @@ function MyTasks() {
                 <div className="flex flex-col md:flex-row justify-between items-start md:items-center gap-4">
                     <div>
                         <h2 className="text-3xl font-extrabold text-gray-800 dark:text-white tracking-tight flex items-center gap-3">
-                            <span className="bg-gradient-to-r from-blue-600 to-indigo-600 dark:from-blue-400 dark:to-indigo-400 text-transparent bg-clip-text flex items-center gap-2">
+                            <span className="bg-gradient-to-r from-purple-600 to-violet-600 dark:from-purple-400 dark:to-violet-400 text-transparent bg-clip-text flex items-center gap-2">
                                 {userRole === 'super_admin' && <Crown size={24} className="text-amber-500" />}
                                 {canViewAll ? "Task Management" : "My Tasks"}
                             </span>
@@ -259,18 +259,18 @@ function MyTasks() {
                     <div className="flex flex-wrap gap-3 w-full md:w-auto">
                          {/* Toggle View */}
                         <div className="bg-white dark:bg-gray-800 p-1 rounded-xl shadow-sm border border-gray-200 dark:border-gray-700 flex overflow-x-auto">
-                            <button onClick={() => setViewMode('board')} className={`px-4 py-2 rounded-lg text-sm font-bold flex items-center gap-2 transition-all whitespace-nowrap ${viewMode === 'board' ? 'bg-indigo-50 dark:bg-indigo-900/30 text-indigo-600 dark:text-indigo-400' : 'text-gray-400 dark:text-gray-500 hover:bg-gray-50 dark:hover:bg-gray-700'}`}>
+                            <button onClick={() => setViewMode('board')} className={`px-4 py-2 rounded-lg text-sm font-bold flex items-center gap-2 transition-all whitespace-nowrap ${viewMode === 'board' ? 'bg-violet-50 dark:bg-violet-900/30 text-violet-600 dark:text-violet-400' : 'text-gray-400 dark:text-gray-500 hover:bg-gray-50 dark:hover:bg-gray-700'}`}>
                                 <Kanban size={16} /> Board
                             </button>
-                            <button onClick={() => setViewMode('list')} className={`px-4 py-2 rounded-lg text-sm font-bold flex items-center gap-2 transition-all whitespace-nowrap ${viewMode === 'list' ? 'bg-indigo-50 dark:bg-indigo-900/30 text-indigo-600 dark:text-indigo-400' : 'text-gray-400 dark:text-gray-500 hover:bg-gray-50 dark:hover:bg-gray-700'}`}>
+                            <button onClick={() => setViewMode('list')} className={`px-4 py-2 rounded-lg text-sm font-bold flex items-center gap-2 transition-all whitespace-nowrap ${viewMode === 'list' ? 'bg-violet-50 dark:bg-violet-900/30 text-violet-600 dark:text-violet-400' : 'text-gray-400 dark:text-gray-500 hover:bg-gray-50 dark:hover:bg-gray-700'}`}>
                                 <List size={16} /> List
                             </button>
-                            <button onClick={() => setViewMode('progress')} className={`px-4 py-2 rounded-lg text-sm font-bold flex items-center gap-2 transition-all whitespace-nowrap ${viewMode === 'progress' ? 'bg-indigo-50 dark:bg-indigo-900/30 text-indigo-600 dark:text-indigo-400' : 'text-gray-400 dark:text-gray-500 hover:bg-gray-50 dark:hover:bg-gray-700'}`}>
+                            <button onClick={() => setViewMode('progress')} className={`px-4 py-2 rounded-lg text-sm font-bold flex items-center gap-2 transition-all whitespace-nowrap ${viewMode === 'progress' ? 'bg-violet-50 dark:bg-violet-900/30 text-violet-600 dark:text-violet-400' : 'text-gray-400 dark:text-gray-500 hover:bg-gray-50 dark:hover:bg-gray-700'}`}>
                                 <TrendingUp size={16} /> Reports
                             </button>
 
                             {canViewAll && (
-                                <button onClick={() => setViewMode('report')} className={`px-4 py-2 rounded-lg text-sm font-bold flex items-center gap-2 transition-all whitespace-nowrap ${viewMode === 'report' ? 'bg-indigo-50 dark:bg-indigo-900/30 text-indigo-600 dark:text-indigo-400' : 'text-gray-400 dark:text-gray-500 hover:bg-gray-50 dark:hover:bg-gray-700'}`}>
+                                <button onClick={() => setViewMode('report')} className={`px-4 py-2 rounded-lg text-sm font-bold flex items-center gap-2 transition-all whitespace-nowrap ${viewMode === 'report' ? 'bg-violet-50 dark:bg-violet-900/30 text-violet-600 dark:text-violet-400' : 'text-gray-400 dark:text-gray-500 hover:bg-gray-50 dark:hover:bg-gray-700'}`}>
                                     <FileSpreadsheet size={16} /> Export
                                 </button>
                             )}
@@ -280,7 +280,7 @@ function MyTasks() {
                         {(viewMode === 'board' || viewMode === 'list') && (
                             <button 
                                 onClick={() => setShowForm(true)} 
-                                className="flex-1 md:flex-none bg-gray-900 dark:bg-indigo-600 hover:bg-black dark:hover:bg-indigo-700 text-white px-6 py-2.5 rounded-xl font-bold shadow-lg hover:shadow-xl transition-all flex items-center justify-center gap-2 active:scale-95"
+                                className="flex-1 md:flex-none bg-gray-900 dark:bg-violet-600 hover:bg-black dark:hover:bg-violet-700 text-white px-6 py-2.5 rounded-xl font-bold shadow-lg hover:shadow-xl transition-all flex items-center justify-center gap-2 active:scale-95"
                             >
                                 <Plus size={18} /> New Task
                             </button>
@@ -293,7 +293,7 @@ function MyTasks() {
                     <div className="mt-6 flex flex-wrap items-center gap-3">
                         <button 
                             onClick={() => handleSort('dueDate')}
-                            className="flex items-center gap-2 bg-white dark:bg-gray-800 px-4 py-2 rounded-xl border border-gray-200 dark:border-gray-700 shadow-sm hover:border-indigo-300 dark:hover:border-indigo-500 transition-all text-sm font-bold text-gray-600 dark:text-gray-300"
+                            className="flex items-center gap-2 bg-white dark:bg-gray-800 px-4 py-2 rounded-xl border border-gray-200 dark:border-gray-700 shadow-sm hover:border-violet-300 dark:hover:border-violet-500 transition-all text-sm font-bold text-gray-600 dark:text-gray-300"
                         >
                             <Calendar size={16} /> 
                             Sort by Date
@@ -302,7 +302,7 @@ function MyTasks() {
 
                         <button 
                             onClick={() => handleSort('priority')}
-                            className="flex items-center gap-2 bg-white dark:bg-gray-800 px-4 py-2 rounded-xl border border-gray-200 dark:border-gray-700 shadow-sm hover:border-indigo-300 dark:hover:border-indigo-500 transition-all text-sm font-bold text-gray-600 dark:text-gray-300"
+                            className="flex items-center gap-2 bg-white dark:bg-gray-800 px-4 py-2 rounded-xl border border-gray-200 dark:border-gray-700 shadow-sm hover:border-violet-300 dark:hover:border-violet-500 transition-all text-sm font-bold text-gray-600 dark:text-gray-300"
                         >
                             <AlertCircle size={16} /> 
                             Sort by Priority
@@ -310,10 +310,10 @@ function MyTasks() {
                         </button>
 
                         {canViewAll && (
-                             <label className="cursor-pointer flex items-center gap-3 bg-white dark:bg-gray-800 px-4 py-2 rounded-xl border border-gray-200 dark:border-gray-700 shadow-sm hover:border-indigo-300 dark:hover:border-indigo-500 transition-all select-none">
+                             <label className="cursor-pointer flex items-center gap-3 bg-white dark:bg-gray-800 px-4 py-2 rounded-xl border border-gray-200 dark:border-gray-700 shadow-sm hover:border-violet-300 dark:hover:border-violet-500 transition-all select-none">
                                 <div className="relative">
                                     <input type="checkbox" className="sr-only" checked={showMyTasksOnly} onChange={() => setShowMyTasksOnly(!showMyTasksOnly)} />
-                                    <div className={`w-10 h-6 rounded-full shadow-inner transition-colors ${showMyTasksOnly ? 'bg-indigo-600' : 'bg-gray-200 dark:bg-gray-600'}`}></div>
+                                    <div className={`w-10 h-6 rounded-full shadow-inner transition-colors ${showMyTasksOnly ? 'bg-violet-600' : 'bg-gray-200 dark:bg-gray-600'}`}></div>
                                     <div className={`absolute top-1 left-1 w-4 h-4 bg-white rounded-full shadow transition-transform ${showMyTasksOnly ? 'translate-x-4' : ''}`}></div>
                                 </div>
                                 <span className="text-sm font-bold text-gray-600 dark:text-gray-300">My Tasks Only</span>
@@ -360,11 +360,11 @@ function MyTasks() {
 
                             return (
                                 <div key={date}>
-                                    <div className={`flex items-center gap-3 mb-4 ${isToday ? 'text-indigo-600 dark:text-indigo-400' : isPast ? 'text-red-500 dark:text-red-400' : 'text-gray-500 dark:text-gray-400'}`}>
+                                    <div className={`flex items-center gap-3 mb-4 ${isToday ? 'text-violet-600 dark:text-violet-400' : isPast ? 'text-red-500 dark:text-red-400' : 'text-gray-500 dark:text-gray-400'}`}>
                                         <Calendar size={20} />
                                         <h3 className="text-lg font-bold">
                                             {date === 'No Due Date' ? 'No Due Date' : new Date(date).toLocaleDateString(undefined, { weekday: 'long', month: 'long', day: 'numeric' })}
-                                            {isToday && <span className="ml-2 text-xs bg-indigo-100 dark:bg-indigo-900/30 px-2 py-0.5 rounded-full text-indigo-700 dark:text-indigo-300 uppercase tracking-wide">Today</span>}
+                                            {isToday && <span className="ml-2 text-xs bg-violet-100 dark:bg-violet-900/30 px-2 py-0.5 rounded-full text-violet-700 dark:text-violet-300 uppercase tracking-wide">Today</span>}
                                             {isPast && <span className="ml-2 text-xs bg-red-100 dark:bg-red-900/30 px-2 py-0.5 rounded-full text-red-700 dark:text-red-400 uppercase tracking-wide">Overdue</span>}
                                         </h3>
                                     </div>
@@ -378,7 +378,7 @@ function MyTasks() {
                                                             handleStatusChange(task, nextStatus);
                                                         }}
                                                         className={`w-6 h-6 rounded-full border-2 flex items-center justify-center transition-colors 
-                                                            ${task.status === 'Completed' ? 'bg-green-500 border-green-500 text-white' : 'border-gray-300 dark:border-gray-600 hover:border-indigo-500 text-transparent'}`}
+                                                            ${task.status === 'Completed' ? 'bg-green-500 border-green-500 text-white' : 'border-gray-300 dark:border-gray-600 hover:border-violet-500 text-transparent'}`}
                                                     >
                                                         <CheckCircle size={14} />
                                                     </button>
@@ -391,7 +391,7 @@ function MyTasks() {
                                                     </div>
                                                 </div>
                                                 <div className="flex items-center gap-2 opacity-0 group-hover:opacity-100 transition-opacity">
-                                                    <button onClick={() => handleEdit(task)} className="p-2 bg-gray-50 dark:bg-gray-700 hover:bg-blue-50 dark:hover:bg-blue-900/30 text-blue-600 dark:text-blue-400 rounded-lg"><Edit3 size={16} /></button>
+                                                    <button onClick={() => handleEdit(task)} className="p-2 bg-gray-50 dark:bg-gray-700 hover:bg-purple-50 dark:hover:bg-purple-900/30 text-purple-600 dark:text-purple-400 rounded-lg"><Edit3 size={16} /></button>
                                                     <button onClick={() => handleDelete(task.id)} className="p-2 bg-gray-50 dark:bg-gray-700 hover:bg-red-50 dark:hover:bg-red-900/30 text-red-600 dark:text-red-400 rounded-lg"><Trash2 size={16} /></button>
                                                 </div>
                                             </div>
@@ -420,7 +420,7 @@ function MyTasks() {
                             <div className="relative">
                                 <User className="absolute left-3 top-2.5 text-gray-400 dark:text-gray-500" size={16} />
                                 <select 
-                                    className="w-full sm:w-64 pl-9 pr-4 py-2.5 border border-gray-300 dark:border-gray-600 rounded-xl focus:ring-2 focus:ring-indigo-500 outline-none bg-white dark:bg-gray-800 text-gray-900 dark:text-white font-medium text-sm"
+                                    className="w-full sm:w-64 pl-9 pr-4 py-2.5 border border-gray-300 dark:border-gray-600 rounded-xl focus:ring-2 focus:ring-violet-500 outline-none bg-white dark:bg-gray-800 text-gray-900 dark:text-white font-medium text-sm"
                                     value={selectedEmployeeForReport} 
                                     onChange={(e) => setSelectedEmployeeForReport(e.target.value)}
                                 >
@@ -483,13 +483,13 @@ function MyTasks() {
                             <form onSubmit={handleSave} className="p-6 grid grid-cols-1 md:grid-cols-2 gap-5">
                                 <div className="md:col-span-2">
                                     <label className="text-xs font-bold text-gray-500 dark:text-gray-400 uppercase mb-1 block">Title</label>
-                                    <input type="text" required className="w-full px-4 py-2 border border-gray-300 dark:border-gray-600 rounded-lg focus:ring-2 focus:ring-indigo-500 outline-none bg-white dark:bg-gray-700 text-gray-900 dark:text-white" placeholder="Task Name" value={currentTask.title} onChange={(e) => setCurrentTask({ ...currentTask, title: e.target.value })} />
+                                    <input type="text" required className="w-full px-4 py-2 border border-gray-300 dark:border-gray-600 rounded-lg focus:ring-2 focus:ring-violet-500 outline-none bg-white dark:bg-gray-700 text-gray-900 dark:text-white" placeholder="Task Name" value={currentTask.title} onChange={(e) => setCurrentTask({ ...currentTask, title: e.target.value })} />
                                 </div>
 
                                 {canViewAll && (
                                     <div>
                                         <label className="text-xs font-bold text-gray-500 dark:text-gray-400 uppercase mb-1 block">Assign To</label>
-                                        <select className="w-full px-4 py-2 border border-gray-300 dark:border-gray-600 rounded-lg focus:ring-2 focus:ring-indigo-500 outline-none bg-white dark:bg-gray-700 text-gray-900 dark:text-white" value={currentTask.assignedToId} onChange={(e) => setCurrentTask({ ...currentTask, assignedToId: e.target.value })}>
+                                        <select className="w-full px-4 py-2 border border-gray-300 dark:border-gray-600 rounded-lg focus:ring-2 focus:ring-violet-500 outline-none bg-white dark:bg-gray-700 text-gray-900 dark:text-white" value={currentTask.assignedToId} onChange={(e) => setCurrentTask({ ...currentTask, assignedToId: e.target.value })}>
                                             <option value={userId}>Myself</option>
                                             {employees.map(e => (<option key={e.id} value={e.id}>{e.name || e.email}</option>))}
                                         </select>
@@ -498,7 +498,7 @@ function MyTasks() {
 
                                 <div>
                                     <label className="text-xs font-bold text-gray-500 dark:text-gray-400 uppercase mb-1 block">Priority</label>
-                                    <select className="w-full px-4 py-2 border border-gray-300 dark:border-gray-600 rounded-lg focus:ring-2 focus:ring-indigo-500 outline-none bg-white dark:bg-gray-700 text-gray-900 dark:text-white" value={currentTask.priority} onChange={(e) => setCurrentTask({ ...currentTask, priority: e.target.value })}>
+                                    <select className="w-full px-4 py-2 border border-gray-300 dark:border-gray-600 rounded-lg focus:ring-2 focus:ring-violet-500 outline-none bg-white dark:bg-gray-700 text-gray-900 dark:text-white" value={currentTask.priority} onChange={(e) => setCurrentTask({ ...currentTask, priority: e.target.value })}>
                                         <option>Low</option>
                                         <option>Medium</option>
                                         <option>High</option>
@@ -507,17 +507,17 @@ function MyTasks() {
 
                                 <div className="md:col-span-2">
                                     <label className="text-xs font-bold text-gray-500 dark:text-gray-400 uppercase mb-1 block">Description</label>
-                                    <textarea rows="3" className="w-full px-4 py-2 border border-gray-300 dark:border-gray-600 rounded-lg focus:ring-2 focus:ring-indigo-500 outline-none resize-none bg-white dark:bg-gray-700 text-gray-900 dark:text-white" placeholder="Details..." value={currentTask.description} onChange={(e) => setCurrentTask({ ...currentTask, description: e.target.value })}></textarea>
+                                    <textarea rows="3" className="w-full px-4 py-2 border border-gray-300 dark:border-gray-600 rounded-lg focus:ring-2 focus:ring-violet-500 outline-none resize-none bg-white dark:bg-gray-700 text-gray-900 dark:text-white" placeholder="Details..." value={currentTask.description} onChange={(e) => setCurrentTask({ ...currentTask, description: e.target.value })}></textarea>
                                 </div>
 
                                 <div>
                                     <label className="text-xs font-bold text-gray-500 dark:text-gray-400 uppercase mb-1 block">Due Date</label>
-                                    <input type="date" className="w-full px-4 py-2 border border-gray-300 dark:border-gray-600 rounded-lg focus:ring-2 focus:ring-indigo-500 outline-none bg-white dark:bg-gray-700 text-gray-900 dark:text-white dark:[color-scheme:dark]" value={currentTask.dueDate} onChange={(e) => setCurrentTask({ ...currentTask, dueDate: e.target.value })} />
+                                    <input type="date" className="w-full px-4 py-2 border border-gray-300 dark:border-gray-600 rounded-lg focus:ring-2 focus:ring-violet-500 outline-none bg-white dark:bg-gray-700 text-gray-900 dark:text-white dark:[color-scheme:dark]" value={currentTask.dueDate} onChange={(e) => setCurrentTask({ ...currentTask, dueDate: e.target.value })} />
                                 </div>
 
                                 <div className="md:col-span-2 pt-4 flex justify-end gap-3">
                                     <button type="button" onClick={closeForm} className="px-5 py-2.5 text-gray-600 dark:text-gray-300 font-bold hover:bg-gray-100 dark:hover:bg-gray-700 rounded-xl transition-colors">Cancel</button>
-                                    <button type="submit" className="px-6 py-2.5 bg-indigo-600 hover:bg-indigo-700 dark:bg-indigo-500 dark:hover:bg-indigo-600 text-white font-bold rounded-xl shadow-lg hover:shadow-indigo-500/30 transition-all active:scale-95 flex items-center gap-2">
+                                    <button type="submit" className="px-6 py-2.5 bg-violet-600 hover:bg-violet-700 dark:bg-violet-500 dark:hover:bg-violet-600 text-white font-bold rounded-xl shadow-lg hover:shadow-violet-500/30 transition-all active:scale-95 flex items-center gap-2">
                                         <Save size={18} /> {isEditing ? 'Save Changes' : 'Create Task'}
                                     </button>
                                 </div>
@@ -570,7 +570,7 @@ const TaskColumn = ({ title, tasks, headerColor, onStatusChange, onEdit, onDelet
                                     <PriorityBadge priority={task.priority} />
                                     {showActions && (
                                         <div className="flex gap-1 opacity-0 group-hover:opacity-100 transition-opacity">
-                                            <button onClick={() => onEdit(task)} className="p-1 hover:bg-blue-50 dark:hover:bg-blue-900/30 text-blue-500 dark:text-blue-400 rounded"><Edit3 size={14} /></button>
+                                            <button onClick={() => onEdit(task)} className="p-1 hover:bg-purple-50 dark:hover:bg-purple-900/30 text-purple-500 dark:text-purple-400 rounded"><Edit3 size={14} /></button>
                                             <button onClick={() => onDelete(task.id)} className="p-1 hover:bg-red-50 dark:hover:bg-red-900/30 text-red-500 dark:text-red-400 rounded"><Trash2 size={14} /></button>
                                         </div>
                                     )}
@@ -581,7 +581,7 @@ const TaskColumn = ({ title, tasks, headerColor, onStatusChange, onEdit, onDelet
                                 
                                 <div className="flex items-center justify-between pt-3 border-t border-gray-50 dark:border-gray-700">
                                     <div className="flex items-center gap-2 text-xs font-medium text-gray-500 dark:text-gray-400">
-                                        <div className="w-6 h-6 rounded-full bg-gradient-to-br from-indigo-500 to-purple-600 text-white flex items-center justify-center text-[10px] font-bold">
+                                        <div className="w-6 h-6 rounded-full bg-gradient-to-br from-violet-500 to-purple-600 text-white flex items-center justify-center text-[10px] font-bold">
                                             {task.assignedToName?.charAt(0).toUpperCase()}
                                         </div>
                                         {isOverdue && <span className="text-red-500 dark:text-red-400 flex items-center gap-1 bg-red-50 dark:bg-red-900/20 px-1.5 py-0.5 rounded font-bold">Overdue</span>}

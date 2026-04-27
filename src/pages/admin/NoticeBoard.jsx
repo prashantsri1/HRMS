@@ -59,23 +59,23 @@ const NoticeFormModal = ({ isOpen, onClose, onSave, userProfile }) => {
     return (
         <div className="fixed inset-0 bg-black/60 backdrop-blur-sm flex items-center justify-center z-[70] p-4">
             <motion.div variants={fadeIn} initial="hidden" animate="visible" exit="exit" className="bg-white dark:bg-gray-800 w-full max-w-2xl rounded-3xl shadow-2xl border border-gray-200 dark:border-gray-700 overflow-hidden flex flex-col">
-                <div className="px-6 py-4 border-b border-gray-100 dark:border-gray-700 flex justify-between items-center bg-indigo-50 dark:bg-gray-700/50">
-                    <h2 className="text-xl font-black text-indigo-700 dark:text-indigo-400 flex items-center gap-2">
+                <div className="px-6 py-4 border-b border-gray-100 dark:border-gray-700 flex justify-between items-center bg-violet-50 dark:bg-gray-700/50">
+                    <h2 className="text-xl font-black text-violet-700 dark:text-violet-400 flex items-center gap-2">
                         <Megaphone size={24}/> Add New Notice
                     </h2>
-                    <button onClick={onClose} className="p-2 hover:bg-indigo-100 dark:hover:bg-gray-600 rounded-full transition-colors"><X size={20}/></button>
+                    <button onClick={onClose} className="p-2 hover:bg-violet-100 dark:hover:bg-gray-600 rounded-full transition-colors"><X size={20}/></button>
                 </div>
                 
                 <div className="p-6 space-y-5 overflow-y-auto custom-scrollbar max-h-[70vh]">
                     <div>
                         <label className="block text-xs font-bold text-gray-500 uppercase tracking-wide mb-2">Notice Title *</label>
-                        <input type="text" className="w-full bg-gray-50 dark:bg-gray-900 border border-gray-200 dark:border-gray-700 rounded-xl px-4 py-3 outline-none focus:ring-2 focus:ring-indigo-500 font-medium" placeholder="E.g., Holiday on Friday" value={formData.title} onChange={e=>setFormData({...formData, title: e.target.value})} />
+                        <input type="text" className="w-full bg-gray-50 dark:bg-gray-900 border border-gray-200 dark:border-gray-700 rounded-xl px-4 py-3 outline-none focus:ring-2 focus:ring-violet-500 font-medium" placeholder="E.g., Holiday on Friday" value={formData.title} onChange={e=>setFormData({...formData, title: e.target.value})} />
                     </div>
                     
                     <div className="grid grid-cols-2 gap-4">
                         <div>
                             <label className="block text-xs font-bold text-gray-500 uppercase tracking-wide mb-2">Category</label>
-                            <select className="w-full bg-gray-50 dark:bg-gray-900 border border-gray-200 dark:border-gray-700 rounded-xl px-4 py-3 outline-none focus:ring-2 focus:ring-indigo-500 cursor-pointer font-medium" value={formData.category} onChange={e=>setFormData({...formData, category: e.target.value})}>
+                            <select className="w-full bg-gray-50 dark:bg-gray-900 border border-gray-200 dark:border-gray-700 rounded-xl px-4 py-3 outline-none focus:ring-2 focus:ring-violet-500 cursor-pointer font-medium" value={formData.category} onChange={e=>setFormData({...formData, category: e.target.value})}>
                                 <option value="General">General Info</option>
                                 <option value="Urgent">Urgent / Alert</option>
                                 <option value="Policy">Company Policy</option>
@@ -84,19 +84,19 @@ const NoticeFormModal = ({ isOpen, onClose, onSave, userProfile }) => {
                         </div>
                         <div>
                             <label className="block text-xs font-bold text-gray-500 uppercase tracking-wide mb-2">Effective Date</label>
-                            <input type="date" className="w-full bg-gray-50 dark:bg-gray-900 border border-gray-200 dark:border-gray-700 rounded-xl px-4 py-3 outline-none focus:ring-2 focus:ring-indigo-500 font-medium" value={formData.displayDate} onChange={e=>setFormData({...formData, displayDate: e.target.value})} />
+                            <input type="date" className="w-full bg-gray-50 dark:bg-gray-900 border border-gray-200 dark:border-gray-700 rounded-xl px-4 py-3 outline-none focus:ring-2 focus:ring-violet-500 font-medium" value={formData.displayDate} onChange={e=>setFormData({...formData, displayDate: e.target.value})} />
                         </div>
                     </div>
 
                     <div>
                         <label className="block text-xs font-bold text-gray-500 uppercase tracking-wide mb-2">Detailed Description *</label>
-                        <textarea rows={5} className="w-full bg-gray-50 dark:bg-gray-900 border border-gray-200 dark:border-gray-700 rounded-xl px-4 py-3 outline-none focus:ring-2 focus:ring-indigo-500 resize-none font-medium" placeholder="Write the details here..." value={formData.content} onChange={e=>setFormData({...formData, content: e.target.value})}></textarea>
+                        <textarea rows={5} className="w-full bg-gray-50 dark:bg-gray-900 border border-gray-200 dark:border-gray-700 rounded-xl px-4 py-3 outline-none focus:ring-2 focus:ring-violet-500 resize-none font-medium" placeholder="Write the details here..." value={formData.content} onChange={e=>setFormData({...formData, content: e.target.value})}></textarea>
                     </div>
                 </div>
 
                 <div className="p-5 border-t border-gray-100 dark:border-gray-700 bg-gray-50/50 dark:bg-gray-800 flex justify-end gap-3 shrink-0">
                     <button onClick={onClose} className="px-6 py-2.5 rounded-xl text-gray-500 hover:bg-gray-100 font-bold transition-colors">Cancel</button>
-                    <button onClick={handleSubmit} disabled={isSaving} className="bg-indigo-600 hover:bg-indigo-700 text-white px-8 py-2.5 rounded-xl font-bold shadow-lg shadow-indigo-200 dark:shadow-none transition-transform active:scale-95 disabled:opacity-70 flex items-center gap-2">
+                    <button onClick={handleSubmit} disabled={isSaving} className="bg-violet-600 hover:bg-violet-700 text-white px-8 py-2.5 rounded-xl font-bold shadow-lg shadow-violet-200 dark:shadow-none transition-transform active:scale-95 disabled:opacity-70 flex items-center gap-2">
                         {isSaving ? <div className="h-5 w-5 border-2 border-white border-t-transparent rounded-full animate-spin"></div> : <><Megaphone size={18}/> Publish Notice</>}
                     </button>
                 </div>
@@ -194,7 +194,7 @@ const NoticeBoardSystem = () => {
     const getCategoryStyles = (cat) => {
         switch(cat) {
             case 'Urgent': return 'bg-rose-100 text-rose-700 border-rose-200';
-            case 'Policy': return 'bg-blue-100 text-blue-700 border-blue-200';
+            case 'Policy': return 'bg-purple-100 text-purple-700 border-purple-200';
             case 'Event': return 'bg-emerald-100 text-emerald-700 border-emerald-200';
             default: return 'bg-gray-100 text-gray-700 border-gray-200 dark:bg-gray-700 dark:text-gray-300';
         }
@@ -316,7 +316,7 @@ const NoticeBoardSystem = () => {
                                             
                                             <button 
                                                 onClick={() => handleDownloadPDF(notice)} 
-                                                className="flex items-center gap-2 px-4 py-2 bg-indigo-50 text-indigo-600 hover:bg-indigo-100 rounded-xl text-xs font-black transition-colors border border-indigo-100"
+                                                className="flex items-center gap-2 px-4 py-2 bg-violet-50 text-violet-600 hover:bg-violet-100 rounded-xl text-xs font-black transition-colors border border-violet-100"
                                             >
                                                 <Download size={14}/> Download PDF
                                             </button>

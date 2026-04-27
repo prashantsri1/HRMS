@@ -9,46 +9,48 @@ const MaintenancePage = () => {
     const navigate = useNavigate();
 
     return (
-        <div className="min-h-screen flex items-center justify-center bg-gray-50 dark:bg-gray-900 relative overflow-hidden p-6 transition-colors duration-300">
+        <div className="min-h-screen flex items-center justify-center bg-gray-950 relative overflow-hidden p-6 transition-colors duration-300">
             
-            {/* Animated Background Elements */}
-            <div className="absolute top-0 left-0 w-full h-full overflow-hidden z-0">
-                <div className="absolute top-10 left-10 w-72 h-72 bg-purple-400 dark:bg-purple-600 rounded-full mix-blend-multiply filter blur-3xl opacity-30 dark:opacity-20 animate-blob"></div>
-                <div className="absolute bottom-10 right-10 w-72 h-72 bg-blue-400 dark:bg-blue-600 rounded-full mix-blend-multiply filter blur-3xl opacity-30 dark:opacity-20 animate-blob animation-delay-2000"></div>
+            {/* Cinematic Mesh Gradient Background */}
+            <div className="absolute inset-0 w-full h-full overflow-hidden pointer-events-none">
+                <div className="absolute top-[-10%] left-[-10%] w-[50%] h-[50%] bg-orange-600/20 rounded-full blur-[120px] mix-blend-screen animate-pulse"></div>
+                <div className="absolute bottom-[-10%] right-[-10%] w-[50%] h-[50%] bg-rose-600/20 rounded-full blur-[120px] mix-blend-screen animate-pulse delay-700"></div>
+                <div className="absolute top-[30%] left-[30%] w-[40%] h-[40%] bg-yellow-600/10 rounded-full blur-[100px] mix-blend-screen animate-pulse delay-1000"></div>
             </div>
 
             <motion.div 
-                initial={{ opacity: 0, scale: 0.9 }}
-                animate={{ opacity: 1, scale: 1 }}
-                className="relative z-10 bg-white/80 dark:bg-gray-800/50 backdrop-blur-xl border border-gray-200 dark:border-gray-700 p-10 rounded-3xl shadow-2xl max-w-lg text-center transition-colors duration-300"
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.6, ease: "easeOut" }}
+                className="relative z-10 glass rounded-[3rem] p-10 md:p-14 shadow-[0_8px_32px_0_rgba(0,0,0,0.5)] border border-white/10 max-w-lg text-center"
             >
                 <motion.div 
                     animate={{ rotate: 360 }}
-                    transition={{ repeat: Infinity, duration: 10, ease: "linear" }}
-                    className="w-20 h-20 bg-gradient-to-br from-yellow-400 to-orange-500 rounded-2xl mx-auto flex items-center justify-center shadow-lg mb-6"
+                    transition={{ repeat: Infinity, duration: 15, ease: "linear" }}
+                    className="w-24 h-24 bg-gradient-to-br from-orange-400 to-rose-600 rounded-3xl mx-auto flex items-center justify-center shadow-[0_0_30px_rgba(249,115,22,0.5)] mb-8 border border-white/20"
                 >
-                    <Settings className="text-white w-10 h-10" />
+                    <Settings className="text-white w-12 h-12" />
                 </motion.div>
 
-                <h1 className="text-4xl font-extrabold text-gray-900 dark:text-white mb-4 tracking-tight">
-                    Under Maintenance
+                <h1 className="text-4xl font-black text-white mb-4 tracking-tight">
+                    System Upgrade
                 </h1>
                 
-                <p className="text-gray-600 dark:text-gray-300 text-lg mb-8 leading-relaxed">
-                    We are currently upgrading the system to make it even better. Access is restricted for employees at the moment.
+                <p className="text-gray-300 text-base mb-8 leading-relaxed font-medium">
+                    We are currently upgrading the HRMS infrastructure to deliver a better experience. Access is temporarily restricted.
                 </p>
 
-                <div className="bg-gray-50 dark:bg-gray-700/50 rounded-xl p-4 mb-8 border border-gray-200 dark:border-gray-600 transition-colors">
-                    <p className="text-sm text-gray-500 dark:text-gray-400 font-mono">
-                        Status: <span className="text-orange-500 dark:text-yellow-400 font-bold">DEVELOPMENT MODE ON</span>
+                <div className="bg-black/20 rounded-2xl p-4 mb-10 border border-white/5 backdrop-blur-md">
+                    <p className="text-xs text-gray-400 font-bold uppercase tracking-widest flex items-center justify-center gap-2">
+                        Status: <span className="text-orange-400 flex items-center gap-1.5"><span className="w-2 h-2 rounded-full bg-orange-400 animate-pulse"></span> DEVELOPMENT MODE</span>
                     </p>
                 </div>
 
                 <button 
                     onClick={() => navigate('/login')}
-                    className="flex items-center justify-center gap-2 w-full py-3.5 bg-gray-900 dark:bg-white hover:bg-black dark:hover:bg-gray-200 text-white dark:text-gray-900 font-bold rounded-xl transition-all active:scale-95 shadow-lg"
+                    className="flex items-center justify-center gap-3 w-full py-4 bg-white/10 hover:bg-white/20 text-white font-bold rounded-2xl transition-all active:scale-[0.98] border border-white/10 hover:border-white/20 shadow-lg"
                 >
-                    <ArrowLeft size={18} /> Back to Login
+                    <ArrowLeft size={20} /> Back to Safety
                 </button>
 
             </motion.div>

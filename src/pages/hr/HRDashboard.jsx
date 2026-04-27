@@ -72,20 +72,20 @@ function HRDashboard() {
             {/* --- HEADER --- */}
             <div className="mb-10 flex flex-col md:flex-row justify-between items-start md:items-end gap-4">
                 <div>
-                    <h1 className="text-3xl font-extrabold text-gray-900 dark:text-white tracking-tight">HR Command Center</h1>
+                    <h1 className="text-3xl font-black text-gray-900 dark:text-white tracking-tight">HR Command Center</h1>
                     <p className="text-gray-500 dark:text-gray-400 mt-2 font-medium flex items-center gap-2">
-                        Welcome back, <span className="text-indigo-600 dark:text-indigo-400 bg-indigo-50 dark:bg-indigo-900/30 px-2 py-0.5 rounded-lg border border-indigo-100 dark:border-indigo-800">{currentUser?.email?.split('@')[0]}</span>
+                        Welcome back, <span className="text-[10px] font-bold bg-violet-100 text-violet-700 border border-violet-200 dark:bg-violet-900/30 dark:text-violet-400 dark:border-violet-800 px-3 py-1 rounded-full uppercase tracking-widest shadow-sm">{currentUser?.email?.split('@')[0]}</span>
                     </p>
                 </div>
-                <div className="hidden md:flex items-center gap-2 px-4 py-2 bg-white dark:bg-gray-800 border border-gray-200 dark:border-gray-700 rounded-xl shadow-sm text-sm font-semibold text-gray-600 dark:text-gray-300">
-                    <Calendar size={16} className="text-indigo-500 dark:text-indigo-400" />
+                <div className="hidden md:flex items-center gap-2 px-5 py-2.5 glass rounded-full shadow-sm text-xs font-bold text-gray-600 dark:text-gray-300 uppercase tracking-widest">
+                    <Calendar size={16} className="text-violet-500" />
                     {new Date().toLocaleDateString('en-US', { weekday: 'long', day: 'numeric', month: 'long' })}
                 </div>
             </div>
 
             {/* --- LOADING STATE --- */}
             {overallLoading ? (
-                <div className="flex justify-center items-center h-64 bg-white dark:bg-gray-800 rounded-3xl shadow-sm border border-gray-100 dark:border-gray-700">
+                <div className="flex justify-center items-center h-64 glass rounded-[2rem]">
                     <LoadingSpinner message="Analysing workforce data..." size="40px" />
                 </div>
             ) : (
@@ -93,64 +93,64 @@ function HRDashboard() {
                     variants={containerVariants}
                     initial="hidden"
                     animate="visible"
-                    className="space-y-8"
+                    className="space-y-10"
                 >
                     {/* --- STATS GRID --- */}
                     <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
                         
                         {/* 1. Pending Leaves */}
-                        <motion.div variants={itemVariants} className="relative group bg-white dark:bg-gray-800 p-6 rounded-2xl shadow-sm border border-gray-100 dark:border-gray-700 hover:shadow-lg transition-all hover:-translate-y-1">
-                            <div className="flex justify-between items-start">
+                        <motion.div variants={itemVariants} className="relative group glass rounded-[2rem] p-6 transition-all border-t border-white/40 dark:border-white/10 hover:-translate-y-1">
+                            <div className="flex justify-between items-start z-10 relative">
                                 <div>
-                                    <p className="text-xs font-bold text-gray-400 dark:text-gray-500 uppercase tracking-wider">Leave Requests</p>
-                                    <h3 className="text-3xl font-extrabold text-gray-800 dark:text-white mt-2">{hrStats.pendingLeaves}</h3>
-                                    <p className="text-xs text-orange-500 dark:text-orange-400 font-bold mt-1 bg-orange-50 dark:bg-orange-900/30 px-2 py-0.5 rounded-md inline-block">Action Required</p>
+                                    <p className="text-[10px] font-bold text-gray-400 dark:text-gray-500 uppercase tracking-widest">Leave Requests</p>
+                                    <h3 className="text-4xl font-black text-gray-900 dark:text-white mt-2 tracking-tighter">{hrStats.pendingLeaves}</h3>
+                                    <p className="text-[9px] text-orange-600 dark:text-orange-400 font-bold mt-2 bg-orange-100 dark:bg-orange-900/30 border border-orange-200 dark:border-orange-800/50 px-2 py-0.5 rounded-full uppercase tracking-wider inline-block">Action Required</p>
                                 </div>
-                                <div className="p-3 bg-orange-50 dark:bg-orange-900/20 text-orange-600 dark:text-orange-400 rounded-xl shadow-inner group-hover:scale-110 transition-transform">
+                                <div className="p-3 bg-gradient-to-br from-orange-400 to-orange-600 text-white rounded-2xl shadow-lg shadow-orange-500/30 group-hover:scale-110 transition-transform">
                                     <Clock size={24} />
                                 </div>
                             </div>
                         </motion.div>
 
                         {/* 2. Active Employees */}
-                        <motion.div variants={itemVariants} className="relative group bg-white dark:bg-gray-800 p-6 rounded-2xl shadow-sm border border-gray-100 dark:border-gray-700 hover:shadow-lg transition-all hover:-translate-y-1">
-                            <div className="flex justify-between items-start">
+                        <motion.div variants={itemVariants} className="relative group glass rounded-[2rem] p-6 transition-all border-t border-white/40 dark:border-white/10 hover:-translate-y-1">
+                            <div className="flex justify-between items-start z-10 relative">
                                 <div>
-                                    <p className="text-xs font-bold text-gray-400 dark:text-gray-500 uppercase tracking-wider">Total Workforce</p>
-                                    <h3 className="text-3xl font-extrabold text-gray-800 dark:text-white mt-2">{hrStats.activeEmployees}</h3>
-                                    <p className="text-xs text-blue-500 dark:text-blue-400 font-bold mt-1 bg-blue-50 dark:bg-blue-900/30 px-2 py-0.5 rounded-md inline-block">Active Status</p>
+                                    <p className="text-[10px] font-bold text-gray-400 dark:text-gray-500 uppercase tracking-widest">Total Workforce</p>
+                                    <h3 className="text-4xl font-black text-gray-900 dark:text-white mt-2 tracking-tighter">{hrStats.activeEmployees}</h3>
+                                    <p className="text-[9px] text-purple-600 dark:text-purple-400 font-bold mt-2 bg-purple-100 dark:bg-purple-900/30 border border-purple-200 dark:border-purple-800/50 px-2 py-0.5 rounded-full uppercase tracking-wider inline-block">Active Status</p>
                                 </div>
-                                <div className="p-3 bg-blue-50 dark:bg-blue-900/20 text-blue-600 dark:text-blue-400 rounded-xl shadow-inner group-hover:scale-110 transition-transform">
+                                <div className="p-3 bg-gradient-to-br from-purple-400 to-purple-600 text-white rounded-2xl shadow-lg shadow-purple-500/30 group-hover:scale-110 transition-transform">
                                     <Users size={24} />
                                 </div>
                             </div>
                         </motion.div>
 
                         {/* 3. Attendance Gauge */}
-                        <motion.div variants={itemVariants} className="relative group bg-white dark:bg-gray-800 p-6 rounded-2xl shadow-sm border border-gray-100 dark:border-gray-700 hover:shadow-lg transition-all hover:-translate-y-1">
-                            <div className="flex justify-between items-start">
-                                <div>
-                                    <p className="text-xs font-bold text-gray-400 dark:text-gray-500 uppercase tracking-wider">Today's Presence</p>
-                                    <h3 className="text-3xl font-extrabold text-gray-800 dark:text-white mt-2">{hrStats.attendanceLabel}</h3>
-                                    <div className="w-full bg-gray-100 dark:bg-gray-700 rounded-full h-1.5 mt-3 overflow-hidden">
-                                        <div className="bg-emerald-500 h-1.5 rounded-full transition-all duration-1000" style={{ width: hrStats.attendanceLabel }}></div>
+                        <motion.div variants={itemVariants} className="relative group glass rounded-[2rem] p-6 transition-all border-t border-white/40 dark:border-white/10 hover:-translate-y-1">
+                            <div className="flex justify-between items-start z-10 relative w-full">
+                                <div className="w-full">
+                                    <p className="text-[10px] font-bold text-gray-400 dark:text-gray-500 uppercase tracking-widest">Today's Presence</p>
+                                    <h3 className="text-4xl font-black text-gray-900 dark:text-white mt-2 tracking-tighter">{hrStats.attendanceLabel}</h3>
+                                    <div className="w-full bg-gray-200/50 dark:bg-gray-700/50 rounded-full h-2 mt-4 overflow-hidden border border-gray-300/50 dark:border-gray-600/50">
+                                        <div className="bg-gradient-to-r from-emerald-400 to-emerald-600 h-full rounded-full transition-all duration-1000 shadow-[0_0_10px_rgba(16,185,129,0.5)]" style={{ width: hrStats.attendanceLabel }}></div>
                                     </div>
                                 </div>
-                                <div className="p-3 bg-emerald-50 dark:bg-emerald-900/20 text-emerald-600 dark:text-emerald-400 rounded-xl shadow-inner group-hover:scale-110 transition-transform">
+                                <div className="p-3 bg-gradient-to-br from-emerald-400 to-emerald-600 text-white rounded-2xl shadow-lg shadow-emerald-500/30 group-hover:scale-110 transition-transform ml-4 shrink-0">
                                     <CheckCircle size={24} />
                                 </div>
                             </div>
                         </motion.div>
 
                         {/* 4. Payroll */}
-                        <motion.div variants={itemVariants} className="relative group bg-white dark:bg-gray-800 p-6 rounded-2xl shadow-sm border border-gray-100 dark:border-gray-700 hover:shadow-lg transition-all hover:-translate-y-1">
-                            <div className="flex justify-between items-start">
+                        <motion.div variants={itemVariants} className="relative group glass rounded-[2rem] p-6 transition-all border-t border-white/40 dark:border-white/10 hover:-translate-y-1">
+                            <div className="flex justify-between items-start z-10 relative">
                                 <div>
-                                    <p className="text-xs font-bold text-gray-400 dark:text-gray-500 uppercase tracking-wider">Next Payroll</p>
-                                    <h3 className="text-3xl font-extrabold text-gray-800 dark:text-white mt-2">{hrStats.nextPayroll}</h3>
-                                    <p className="text-xs text-pink-500 dark:text-pink-400 font-bold mt-1 bg-pink-50 dark:bg-pink-900/30 px-2 py-0.5 rounded-md inline-block">Upcoming</p>
+                                    <p className="text-[10px] font-bold text-gray-400 dark:text-gray-500 uppercase tracking-widest">Next Payroll</p>
+                                    <h3 className="text-4xl font-black text-gray-900 dark:text-white mt-2 tracking-tighter">{hrStats.nextPayroll}</h3>
+                                    <p className="text-[9px] text-pink-600 dark:text-pink-400 font-bold mt-2 bg-pink-100 dark:bg-pink-900/30 border border-pink-200 dark:border-pink-800/50 px-2 py-0.5 rounded-full uppercase tracking-wider inline-block">Upcoming</p>
                                 </div>
-                                <div className="p-3 bg-pink-50 dark:bg-pink-900/20 text-pink-600 dark:text-pink-400 rounded-xl shadow-inner group-hover:scale-110 transition-transform">
+                                <div className="p-3 bg-gradient-to-br from-pink-400 to-pink-600 text-white rounded-2xl shadow-lg shadow-pink-500/30 group-hover:scale-110 transition-transform">
                                     <Wallet size={24} />
                                 </div>
                             </div>
@@ -159,7 +159,7 @@ function HRDashboard() {
 
                     {/* --- QUICK ACTIONS SECTION --- */}
                     <motion.div variants={itemVariants}>
-                        <h3 className="text-xl font-bold text-gray-800 dark:text-white mb-6 flex items-center gap-2">
+                        <h3 className="text-xl font-black text-gray-900 dark:text-white mb-6 flex items-center gap-2">
                             ⚡ Quick Actions
                         </h3>
                         <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
@@ -167,19 +167,19 @@ function HRDashboard() {
                             {/* Action 1: Leave Requests */}
                             <button 
                                 onClick={() => navigate('/hr/leave-requests')}
-                                className="group relative overflow-hidden p-6 bg-gradient-to-br from-indigo-500 to-purple-600 dark:from-indigo-600 dark:to-purple-700 rounded-2xl shadow-lg text-white text-left transition-transform hover:scale-[1.02]"
+                                className="group relative overflow-hidden p-8 bg-gradient-to-br from-violet-600 to-purple-800 rounded-[2rem] shadow-xl shadow-purple-500/20 text-white text-left transition-transform hover:-translate-y-1"
                             >
-                                <div className="absolute top-0 right-0 p-4 opacity-20 group-hover:opacity-40 transition-opacity">
-                                    <FileText size={100} />
+                                <div className="absolute top-0 right-0 p-6 opacity-10 group-hover:opacity-20 group-hover:scale-110 transition-all">
+                                    <FileText size={120} />
                                 </div>
                                 <div className="relative z-10">
-                                    <div className="w-12 h-12 bg-white/20 backdrop-blur-md rounded-full flex items-center justify-center mb-4">
-                                        <FileText size={24} className="text-white" />
+                                    <div className="w-14 h-14 bg-white/20 backdrop-blur-md rounded-2xl flex items-center justify-center mb-6 shadow-inner border border-white/20">
+                                        <FileText size={28} className="text-white" />
                                     </div>
-                                    <h4 className="text-xl font-bold mb-1">Review Leaves</h4>
-                                    <p className="text-indigo-100 text-sm mb-6">Manage pending applications</p>
-                                    <div className="flex items-center gap-2 text-sm font-bold bg-white/10 w-fit px-3 py-1.5 rounded-lg group-hover:bg-white/20 transition-colors">
-                                        Proceed <ArrowRight size={16} />
+                                    <h4 className="text-2xl font-black mb-2 tracking-tight">Review Leaves</h4>
+                                    <p className="text-violet-200 text-sm mb-8 font-medium">Manage pending applications</p>
+                                    <div className="flex items-center gap-2 text-xs font-bold uppercase tracking-widest bg-white/10 border border-white/20 w-fit px-4 py-2 rounded-full group-hover:bg-white/20 transition-colors backdrop-blur-md">
+                                        Proceed <ArrowRight size={14} />
                                     </div>
                                 </div>
                             </button>
@@ -187,30 +187,30 @@ function HRDashboard() {
                             {/* Action 2: Attendance */}
                             <button 
                                 onClick={() => navigate('/hr/attendance-records')}
-                                className="group relative bg-white dark:bg-gray-800 p-6 rounded-2xl shadow-sm border border-gray-200 dark:border-gray-700 hover:border-indigo-500 dark:hover:border-indigo-500 hover:shadow-md transition-all text-left"
+                                className="group relative glass rounded-[2rem] p-8 hover:border-purple-500/50 hover:shadow-[0_8px_30px_rgba(124,58,237,0.1)] transition-all text-left overflow-hidden"
                             >
-                                <div className="w-12 h-12 bg-purple-50 dark:bg-purple-900/20 text-purple-600 dark:text-purple-400 rounded-full flex items-center justify-center mb-4 group-hover:scale-110 transition-transform">
-                                    <UserCheck size={24} />
+                                <div className="w-14 h-14 bg-purple-50 dark:bg-purple-500/10 text-purple-600 dark:text-purple-400 rounded-2xl flex items-center justify-center mb-6 group-hover:scale-110 group-hover:-rotate-3 transition-transform shadow-inner">
+                                    <UserCheck size={28} />
                                 </div>
-                                <h4 className="text-lg font-bold text-gray-800 dark:text-white mb-1">Attendance Tracker</h4>
-                                <p className="text-sm text-gray-500 dark:text-gray-400 mb-4">Update daily records & checks</p>
-                                <span className="text-sm font-semibold text-purple-600 dark:text-purple-400 flex items-center gap-1 group-hover:gap-2 transition-all">
-                                    Open Tracker <ArrowRight size={16} />
+                                <h4 className="text-xl font-black text-gray-900 dark:text-white mb-2 tracking-tight">Attendance Tracker</h4>
+                                <p className="text-sm text-gray-500 dark:text-gray-400 mb-6 font-medium">Update daily records & checks</p>
+                                <span className="text-xs font-bold text-purple-600 dark:text-purple-400 uppercase tracking-widest flex items-center gap-2 group-hover:gap-3 transition-all">
+                                    Open Tracker <ArrowRight size={14} />
                                 </span>
                             </button>
 
                             {/* Action 3: Payroll */}
                             <button 
                                 onClick={() => navigate('/hr/payroll-management')}
-                                className="group relative bg-white dark:bg-gray-800 p-6 rounded-2xl shadow-sm border border-gray-200 dark:border-gray-700 hover:border-emerald-500 dark:hover:border-emerald-500 hover:shadow-md transition-all text-left"
+                                className="group relative glass rounded-[2rem] p-8 hover:border-emerald-500/50 hover:shadow-[0_8px_30px_rgba(16,185,129,0.1)] transition-all text-left overflow-hidden"
                             >
-                                <div className="w-12 h-12 bg-emerald-50 dark:bg-emerald-900/20 text-emerald-600 dark:text-emerald-400 rounded-full flex items-center justify-center mb-4 group-hover:scale-110 transition-transform">
-                                    <Banknote size={24} />
+                                <div className="w-14 h-14 bg-emerald-50 dark:bg-emerald-500/10 text-emerald-600 dark:text-emerald-400 rounded-2xl flex items-center justify-center mb-6 group-hover:scale-110 group-hover:rotate-3 transition-transform shadow-inner">
+                                    <Banknote size={28} />
                                 </div>
-                                <h4 className="text-lg font-bold text-gray-800 dark:text-white mb-1">Payroll System</h4>
-                                <p className="text-sm text-gray-500 dark:text-gray-400 mb-4">Generate slips & salary sheets</p>
-                                <span className="text-sm font-semibold text-emerald-600 dark:text-emerald-400 flex items-center gap-1 group-hover:gap-2 transition-all">
-                                    Manage Payroll <ArrowRight size={16} />
+                                <h4 className="text-xl font-black text-gray-900 dark:text-white mb-2 tracking-tight">Payroll System</h4>
+                                <p className="text-sm text-gray-500 dark:text-gray-400 mb-6 font-medium">Generate slips & salary sheets</p>
+                                <span className="text-xs font-bold text-emerald-600 dark:text-emerald-400 uppercase tracking-widest flex items-center gap-2 group-hover:gap-3 transition-all">
+                                    Manage Payroll <ArrowRight size={14} />
                                 </span>
                             </button>
 

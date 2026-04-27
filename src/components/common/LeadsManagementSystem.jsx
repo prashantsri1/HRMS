@@ -172,7 +172,7 @@ const AccessManagementModal = ({ isOpen, onClose, allUsers, allowedUserIds, onTo
                             return (
                                 <div key={user.id} className="flex justify-between items-center p-3 rounded-xl border border-gray-100 dark:border-gray-700 hover:bg-gray-50 dark:hover:bg-gray-700/50 transition-colors">
                                     <div className="flex items-center gap-3">
-                                        <div className="h-8 w-8 rounded-full bg-indigo-100 dark:bg-indigo-900/50 flex items-center justify-center text-indigo-700 dark:text-indigo-300 font-bold text-xs">
+                                        <div className="h-8 w-8 rounded-full bg-violet-100 dark:bg-violet-900/50 flex items-center justify-center text-violet-700 dark:text-violet-300 font-bold text-xs">
                                             {user.name?.charAt(0).toUpperCase()}
                                         </div>
                                         <div>
@@ -369,7 +369,7 @@ const LeadDetailView = ({ lead, onClose, onEdit, onExportSingle, onDelete, canMa
                     <div className="text-xs text-gray-500 dark:text-gray-400 flex flex-wrap gap-x-4 gap-y-2 mt-1 font-medium items-center">
                         <span className="flex items-center gap-1 bg-gray-50 dark:bg-gray-700/50 px-2 py-1 rounded-md"><Phone size={12}/> {lead.phoneNumbers ? lead.phoneNumbers.join(', ') : lead.phone}</span>
                         <span className="flex items-center gap-1 bg-gray-50 dark:bg-gray-700/50 px-2 py-1 rounded-md"><MapPin size={12}/> {lead.location}</span>
-                        <span className="flex items-center gap-1 text-indigo-600 bg-indigo-50 dark:bg-indigo-900/30 px-2 py-1 rounded-md border border-indigo-100 dark:border-indigo-800"><UserPlus size={12}/> {assigneeName}</span>
+                        <span className="flex items-center gap-1 text-violet-600 bg-violet-50 dark:bg-violet-900/30 px-2 py-1 rounded-md border border-violet-100 dark:border-violet-800"><UserPlus size={12}/> {assigneeName}</span>
                     </div>
                  </div>
               </div>
@@ -380,7 +380,7 @@ const LeadDetailView = ({ lead, onClose, onEdit, onExportSingle, onDelete, canMa
                     </button>
                  )}
                  <button onClick={() => onExportSingle(lead)} className="flex-1 md:flex-none justify-center px-4 py-2 bg-white dark:bg-gray-700 border border-gray-200 dark:border-gray-600 rounded-xl text-sm font-bold flex items-center gap-2 hover:bg-gray-50 dark:hover:bg-gray-600 transition-colors whitespace-nowrap"><Download size={16}/> Export</button>
-                 <button onClick={() => onEdit(lead)} className="flex-1 md:flex-none justify-center px-5 py-2 bg-indigo-600 text-white rounded-xl text-sm font-bold shadow-lg shadow-indigo-200 dark:shadow-none flex items-center gap-2 hover:bg-indigo-700 active:scale-95 transition-all whitespace-nowrap"><Edit2 size={16}/> Edit</button>
+                 <button onClick={() => onEdit(lead)} className="flex-1 md:flex-none justify-center px-5 py-2 bg-violet-600 text-white rounded-xl text-sm font-bold shadow-lg shadow-violet-200 dark:shadow-none flex items-center gap-2 hover:bg-violet-700 active:scale-95 transition-all whitespace-nowrap"><Edit2 size={16}/> Edit</button>
               </div>
            </div>
 
@@ -392,21 +392,21 @@ const LeadDetailView = ({ lead, onClose, onEdit, onExportSingle, onDelete, canMa
                     <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
                        <StatCard label="Lead Date" value={formatDate(lead.leadGenDate)} icon={Calendar} />
                        <StatCard label="Confirmation" value={formatDate(lead.confirmationDate)} icon={Check} color="text-emerald-600 bg-emerald-50 dark:bg-emerald-900/20 border-emerald-100"/>
-                       <StatCard label="Delivery" value={formatDate(lead.deliveryDate)} icon={Truck} color="text-blue-600 bg-blue-50 dark:bg-blue-900/20 border-blue-100"/>
+                       <StatCard label="Delivery" value={formatDate(lead.deliveryDate)} icon={Truck} color="text-purple-600 bg-purple-50 dark:bg-purple-900/20 border-purple-100"/>
                        <StatCard label="Conv. Prob." value={`${lead.conversionProbability}%`} icon={Activity} color="text-purple-600 bg-purple-50 dark:bg-purple-900/20 border-purple-100"/>
                     </div>
                     
                     {/* Products Card */}
                     <div className="bg-white dark:bg-gray-800 rounded-3xl shadow-sm border border-gray-200 dark:border-gray-700 p-6 md:p-8 relative overflow-hidden">
-                       <div className="absolute top-0 right-0 p-12 opacity-5 bg-gradient-to-bl from-indigo-600 to-purple-600 rounded-bl-full w-40 h-40 blur-3xl pointer-events-none"></div>
+                       <div className="absolute top-0 right-0 p-12 opacity-5 bg-gradient-to-bl from-violet-600 to-purple-600 rounded-bl-full w-40 h-40 blur-3xl pointer-events-none"></div>
                        <h3 className="text-xs font-bold text-gray-400 uppercase tracking-widest mb-6 flex items-center gap-2"><Package size={14}/> Product Specification</h3>
                        
                        {lead.products && lead.products.length > 0 ? (
                            <div className="space-y-4 relative z-10">
                                {lead.products.map((prod, idx) => (
-                                   <div key={idx} className="p-5 bg-gray-50 dark:bg-gray-700/30 rounded-2xl border border-gray-100 dark:border-gray-700/50 hover:border-indigo-100 transition-colors">
+                                   <div key={idx} className="p-5 bg-gray-50 dark:bg-gray-700/30 rounded-2xl border border-gray-100 dark:border-gray-700/50 hover:border-violet-100 transition-colors">
                                        <div className="flex justify-between items-start mb-4 border-b border-gray-200 dark:border-gray-600 pb-2">
-                                            <h4 className="font-bold text-indigo-700 dark:text-indigo-300 text-base">{prod.type}</h4>
+                                            <h4 className="font-bold text-violet-700 dark:text-violet-300 text-base">{prod.type}</h4>
                                             <span className={`text-[10px] font-bold px-2 py-1 rounded-full ${prod.ornamentReady ? 'bg-emerald-100 text-emerald-700' : 'bg-amber-100 text-amber-700'}`}>
                                                  {prod.ornamentReady ? 'Ready' : 'In Process'}
                                             </span>
@@ -448,7 +448,7 @@ const LeadDetailView = ({ lead, onClose, onEdit, onExportSingle, onDelete, canMa
                         <div className="bg-white dark:bg-gray-800 rounded-3xl shadow-sm border border-gray-200 dark:border-gray-700 p-6 flex flex-col">
                             <div className="flex justify-between items-center mb-6">
                                 <h3 className="text-xs font-bold text-gray-400 uppercase tracking-widest flex items-center gap-2"><ImageIcon size={14}/> Photos</h3>
-                                <label className="cursor-pointer flex items-center gap-1 text-xs font-bold text-indigo-600 bg-indigo-50 px-3 py-1.5 rounded-lg hover:bg-indigo-100 transition-colors">
+                                <label className="cursor-pointer flex items-center gap-1 text-xs font-bold text-violet-600 bg-violet-50 px-3 py-1.5 rounded-lg hover:bg-violet-100 transition-colors">
                                     <Upload size={14}/> Upload
                                     <input type="file" hidden accept="image/*" onChange={handlePhotoUpload} />
                                 </label>
@@ -476,7 +476,7 @@ const LeadDetailView = ({ lead, onClose, onEdit, onExportSingle, onDelete, canMa
                                  <div className="flex justify-between text-sm p-3 rounded-xl bg-gray-50 dark:bg-gray-700/30"><span>Product Amount</span> <span className="font-bold">{formatCurrency(lead.productAmount)}</span></div>
                                  <div className="flex justify-between text-sm p-3 rounded-xl bg-gray-50 dark:bg-gray-700/30"><span>Making Charges</span> <span className="font-bold">{formatCurrency(lead.makingCharges)}</span></div>
                                  <div className="flex justify-between text-sm p-3 rounded-xl bg-rose-50 text-rose-600 border border-rose-100"><span>Discount</span> <span>- {formatCurrency(lead.discount)}</span></div>
-                                 <div className="flex justify-between text-lg font-black border-t-2 border-dashed border-gray-100 pt-4 mt-2"><span>Net Payable</span> <span className="text-indigo-600">{formatCurrency(netAmount)}</span></div>
+                                 <div className="flex justify-between text-lg font-black border-t-2 border-dashed border-gray-100 pt-4 mt-2"><span>Net Payable</span> <span className="text-violet-600">{formatCurrency(netAmount)}</span></div>
                            </div>
                         </div>
                     </div>
@@ -538,10 +538,10 @@ const LeadDetailView = ({ lead, onClose, onEdit, onExportSingle, onDelete, canMa
                        <div className="flex-1 overflow-y-auto custom-scrollbar space-y-3 pr-2 mb-3">
                           {lead.followUps?.length > 0 ? (
                               lead.followUps.slice().reverse().map((note, i) => (
-                                 <div key={i} className={`p-3 rounded-xl border shadow-sm ${note.isTag ? 'bg-white border-indigo-200 shadow-indigo-100' : 'bg-white border-amber-100/50'}`}>
+                                 <div key={i} className={`p-3 rounded-xl border shadow-sm ${note.isTag ? 'bg-white border-violet-200 shadow-violet-100' : 'bg-white border-amber-100/50'}`}>
                                     <p className="text-sm text-gray-700 dark:text-gray-200 whitespace-pre-wrap break-words leading-relaxed">
                                         {note.message.split(' ').map((word, idx) => 
-                                            word.startsWith('@') ? <span key={idx} className="text-indigo-600 font-bold bg-indigo-50 px-1.5 py-0.5 rounded text-xs">{word} </span> : word + ' '
+                                            word.startsWith('@') ? <span key={idx} className="text-violet-600 font-bold bg-violet-50 px-1.5 py-0.5 rounded text-xs">{word} </span> : word + ' '
                                         )}
                                     </p>
                                     <div className="flex justify-between items-center mt-3 pt-2 border-t border-gray-50">
@@ -583,12 +583,12 @@ const LeadDetailView = ({ lead, onClose, onEdit, onExportSingle, onDelete, canMa
                           {lead.history?.slice().reverse().map((item, i) => (
                              <div key={i} className="flex gap-4 mb-6 last:mb-0 group">
                                 <div className="flex flex-col items-center">
-                                    <div className="w-2.5 h-2.5 rounded-full bg-indigo-400 ring-4 ring-indigo-50 dark:ring-gray-700"></div>
+                                    <div className="w-2.5 h-2.5 rounded-full bg-violet-400 ring-4 ring-violet-50 dark:ring-gray-700"></div>
                                     <div className="w-0.5 flex-1 bg-gray-100 dark:bg-gray-700 my-1"></div>
                                 </div>
                                 <div className="flex-1 min-w-0 pb-1">
                                    <div className="text-xs text-gray-600 dark:text-gray-300 font-medium whitespace-pre-line break-words bg-gray-50 dark:bg-gray-900 p-3 rounded-xl border border-gray-100 dark:border-gray-800">{item.message}</div>
-                                   <div className="flex justify-between items-center mt-1.5 px-1"><span className="text-[10px] font-bold text-indigo-500">{item.by?.split(' ')[0]}</span><span className="text-[10px] text-gray-400">{item.timestamp?.toDate ? new Date(item.timestamp.toDate()).toLocaleString('en-IN', { dateStyle: 'short', timeStyle: 'short' }) : 'Just now'}</span></div>
+                                   <div className="flex justify-between items-center mt-1.5 px-1"><span className="text-[10px] font-bold text-violet-500">{item.by?.split(' ')[0]}</span><span className="text-[10px] text-gray-400">{item.timestamp?.toDate ? new Date(item.timestamp.toDate()).toLocaleString('en-IN', { dateStyle: 'short', timeStyle: 'short' }) : 'Just now'}</span></div>
                                 </div>
                              </div>
                           ))}
@@ -729,15 +729,15 @@ const LeadFormModal = ({ isOpen, onClose, onSave, initialData, title, allUsers, 
         <div className="fixed inset-0 bg-black/60 backdrop-blur-md flex items-center justify-center z-[60] p-0 md:p-4">
            <motion.div initial={{ scale: 0.9, opacity: 0 }} animate={{ scale: 1, opacity: 1 }} exit={{ scale: 0.9, opacity: 0 }} className="bg-white dark:bg-gray-800 w-full md:w-[95%] max-w-5xl h-full md:h-auto md:max-h-[95vh] md:rounded-3xl rounded-none shadow-2xl border-0 md:border border-gray-200 dark:border-gray-700 flex flex-col overflow-hidden">
               <div className="px-6 py-4 border-b border-gray-100 dark:border-gray-700 flex justify-between items-center bg-gray-50/50 dark:bg-gray-800/50 shrink-0">
-                 <h2 className="text-xl font-black text-gray-800 dark:text-white flex items-center gap-3"><Edit2 size={24} className="text-indigo-600 bg-indigo-50 p-1 rounded-lg"/> {title}</h2>
+                 <h2 className="text-xl font-black text-gray-800 dark:text-white flex items-center gap-3"><Edit2 size={24} className="text-violet-600 bg-violet-50 p-1 rounded-lg"/> {title}</h2>
                  <button onClick={onClose} className="p-2 hover:bg-gray-200 dark:hover:bg-gray-700 rounded-full transition-colors"><X className="text-gray-500"/></button>
               </div>
               
               <div className="flex border-b border-gray-100 dark:border-gray-700 bg-white px-6 gap-6 overflow-x-auto hide-scrollbar shrink-0">
                  {['basic', 'products', 'financial', 'logistics'].map(tab => (
-                    <button key={tab} onClick={() => setActiveTab(tab)} className={`py-4 text-sm font-bold uppercase tracking-wider transition-all relative whitespace-nowrap ${activeTab === tab ? 'text-indigo-600' : 'text-gray-400 hover:text-gray-600'}`}>
+                    <button key={tab} onClick={() => setActiveTab(tab)} className={`py-4 text-sm font-bold uppercase tracking-wider transition-all relative whitespace-nowrap ${activeTab === tab ? 'text-violet-600' : 'text-gray-400 hover:text-gray-600'}`}>
                        {tab}
-                       {activeTab === tab && <motion.div layoutId="underline" className="absolute -bottom-[1px] left-0 right-0 h-[2px] bg-indigo-600 rounded-t-full z-10" />}
+                       {activeTab === tab && <motion.div layoutId="underline" className="absolute -bottom-[1px] left-0 right-0 h-[2px] bg-violet-600 rounded-t-full z-10" />}
                     </button>
                  ))}
               </div>
@@ -775,7 +775,7 @@ const LeadFormModal = ({ isOpen, onClose, onSave, initialData, title, allUsers, 
                                    );
                                })}
                            </div>
-                           <button onClick={()=>setPhoneList([...phoneList, { code: '+91', number: '' }])} className="text-xs text-indigo-600 font-bold hover:underline flex items-center gap-1 mt-2">+ Add Another Number</button>
+                           <button onClick={()=>setPhoneList([...phoneList, { code: '+91', number: '' }])} className="text-xs text-violet-600 font-bold hover:underline flex items-center gap-1 mt-2">+ Add Another Number</button>
                        </div>
 
                        <Select name="gender" label="Gender" val={formData.gender} onChange={handleChange} options={['Male', 'Female', 'Other']} />
@@ -817,7 +817,7 @@ const LeadFormModal = ({ isOpen, onClose, onSave, initialData, title, allUsers, 
                            <label className="label-text">Priority</label>
                            <div className="flex gap-2">
                                {['Low', 'Medium', 'High'].map(p => (
-                                   <button key={p} onClick={()=>setFormData({...formData, priority: p})} className={`flex-1 py-2.5 rounded-xl text-xs font-bold border transition-all h-[46px] ${formData.priority === p ? 'bg-indigo-600 text-white border-indigo-600 shadow-md' : 'bg-white text-gray-500 border-gray-200 hover:bg-gray-50'}`}>{p}</button>
+                                   <button key={p} onClick={()=>setFormData({...formData, priority: p})} className={`flex-1 py-2.5 rounded-xl text-xs font-bold border transition-all h-[46px] ${formData.priority === p ? 'bg-violet-600 text-white border-violet-600 shadow-md' : 'bg-white text-gray-500 border-gray-200 hover:bg-gray-50'}`}>{p}</button>
                                ))}
                            </div>
                        </div>
@@ -842,8 +842,8 @@ const LeadFormModal = ({ isOpen, onClose, onSave, initialData, title, allUsers, 
 
                  {activeTab === 'products' && (
                     <div className="space-y-6">
-                        <div className="bg-indigo-50/50 dark:bg-gray-900 p-6 rounded-2xl border border-indigo-100 dark:border-gray-700">
-                            <h4 className="text-xs font-bold uppercase mb-4 text-indigo-600 flex items-center gap-2"><Layers size={14}/> Add New Item</h4>
+                        <div className="bg-violet-50/50 dark:bg-gray-900 p-6 rounded-2xl border border-violet-100 dark:border-gray-700">
+                            <h4 className="text-xs font-bold uppercase mb-4 text-violet-600 flex items-center gap-2"><Layers size={14}/> Add New Item</h4>
                             
                             <div className="grid grid-cols-2 md:grid-cols-4 gap-4 mb-4">
                                 <Input label="Type *" className="col-span-2 md:col-span-1" val={tempProd.type} onChange={e=>setTempProd({...tempProd, type:e.target.value})} placeholder="Ring/Consult" />
@@ -874,13 +874,13 @@ const LeadFormModal = ({ isOpen, onClose, onSave, initialData, title, allUsers, 
 
                                 <div className="flex items-end h-full">
                                     <label className="flex items-center justify-center gap-3 cursor-pointer bg-white px-4 h-[46px] rounded-xl border border-gray-200 w-full hover:bg-gray-50 transition-colors">
-                                        <input type="checkbox" checked={tempProd.ornamentReady} onChange={e=>setTempProd({...tempProd, ornamentReady:e.target.checked})} className="w-5 h-5 text-indigo-600 rounded focus:ring-indigo-500"/>
+                                        <input type="checkbox" checked={tempProd.ornamentReady} onChange={e=>setTempProd({...tempProd, ornamentReady:e.target.checked})} className="w-5 h-5 text-violet-600 rounded focus:ring-violet-500"/>
                                         <span className="text-sm font-bold text-gray-700">Is Ready?</span>
                                     </label>
                                 </div>
                             </div>
                             
-                            <button onClick={addProductItem} className="w-full bg-indigo-600 text-white py-3 rounded-xl font-bold shadow-lg shadow-indigo-200 hover:bg-indigo-700 hover:shadow-indigo-300 transition-all flex justify-center items-center gap-2 active:scale-95 whitespace-nowrap h-[46px]">
+                            <button onClick={addProductItem} className="w-full bg-violet-600 text-white py-3 rounded-xl font-bold shadow-lg shadow-violet-200 hover:bg-violet-700 hover:shadow-violet-300 transition-all flex justify-center items-center gap-2 active:scale-95 whitespace-nowrap h-[46px]">
                                 <Plus size={18}/> Add Product to List
                             </button>
                         </div>
@@ -896,7 +896,7 @@ const LeadFormModal = ({ isOpen, onClose, onSave, initialData, title, allUsers, 
                                         </div>
                                     </div>
                                     <div className="flex items-center gap-2">
-                                        <button onClick={()=>editProductItem(i)} className="p-2 text-indigo-600 bg-indigo-50 rounded-lg hover:bg-indigo-100 transition-colors flex items-center justify-center" title="Edit this item">
+                                        <button onClick={()=>editProductItem(i)} className="p-2 text-violet-600 bg-violet-50 rounded-lg hover:bg-violet-100 transition-colors flex items-center justify-center" title="Edit this item">
                                             <Edit2 size={16}/>
                                         </button>
                                         <button onClick={()=>{const l=[...productList]; l.splice(i,1); setProductList(l)}} className="p-2 text-rose-500 bg-rose-50 rounded-lg hover:bg-rose-100 transition-colors flex items-center justify-center">
@@ -974,7 +974,7 @@ const LeadFormModal = ({ isOpen, onClose, onSave, initialData, title, allUsers, 
 
               <div className="px-6 py-4 border-t border-gray-100 dark:border-gray-700 flex justify-end gap-3 bg-white dark:bg-gray-800 shrink-0 pb-10 md:pb-4">
                  <button onClick={onClose} className="px-6 py-2.5 rounded-xl text-gray-500 hover:bg-gray-50 font-bold transition-colors whitespace-nowrap cursor-pointer">Cancel</button>
-                 <button onClick={handleFormSave} className="bg-indigo-600 hover:bg-indigo-700 text-white px-8 py-2.5 rounded-xl font-bold shadow-lg shadow-indigo-300/50 transition-transform active:scale-95 flex items-center gap-2 whitespace-nowrap cursor-pointer"><Save size={18}/> Save Lead</button>
+                 <button onClick={handleFormSave} className="bg-violet-600 hover:bg-violet-700 text-white px-8 py-2.5 rounded-xl font-bold shadow-lg shadow-violet-300/50 transition-transform active:scale-95 flex items-center gap-2 whitespace-nowrap cursor-pointer"><Save size={18}/> Save Lead</button>
               </div>
            </motion.div>
         </div>
@@ -1074,7 +1074,7 @@ const LeadsManagementSystem = () => {
     // 🔥 FIXED: Removed '|| true' from end. Now it strictly checks permissions.
     const hasAccess = canManageAccess || allowedUserIds.includes(userProfile?.uid); 
 
-    if (isLoadingPerms) return <div className="h-screen flex items-center justify-center"><div className="animate-spin rounded-full h-12 w-12 border-b-2 border-indigo-600"></div></div>;
+    if (isLoadingPerms) return <div className="h-screen flex items-center justify-center"><div className="animate-spin rounded-full h-12 w-12 border-b-2 border-violet-600"></div></div>;
     
     // 🔥 FIXED: Access Denied Screen added here
     if (!hasAccess) {
@@ -1297,7 +1297,7 @@ const LeadsManagementSystem = () => {
                       {/* Logo Area */}
                       <div className="flex items-center gap-3 w-full xl:w-auto justify-between md:justify-start">
                          <div className="flex items-center gap-3">
-                             <div className="bg-gradient-to-tr from-indigo-600 to-violet-600 text-white p-2.5 rounded-xl shadow-lg shadow-indigo-200 dark:shadow-none"><Users size={22}/></div>
+                             <div className="bg-gradient-to-tr from-violet-600 to-violet-600 text-white p-2.5 rounded-xl shadow-lg shadow-violet-200 dark:shadow-none"><Users size={22}/></div>
                              <div>
                                  <h1 className="text-xl font-black text-gray-900 dark:text-white tracking-tight">Leads Pro</h1>
                                  <p className="text-xs text-gray-500 font-medium hidden md:block">Manage your pipeline efficiently</p>
@@ -1308,8 +1308,8 @@ const LeadsManagementSystem = () => {
                       {/* Search & Filter Bar */}
                       <div className="flex flex-col md:flex-row flex-1 w-full max-w-4xl gap-3 items-center">
                           <div className="relative flex-1 group w-full">
-                              <Search className="absolute left-4 top-3 text-gray-400 group-focus-within:text-indigo-500 transition-colors" size={18} />
-                              <input placeholder="Search clients, phones..." className="w-full bg-gray-100 dark:bg-gray-800 pl-11 pr-4 py-2.5 rounded-2xl border-transparent focus:bg-white focus:ring-2 ring-indigo-500 focus:shadow-lg transition-all outline-none h-[46px]" value={searchTerm} onChange={e=>setSearchTerm(e.target.value)} />
+                              <Search className="absolute left-4 top-3 text-gray-400 group-focus-within:text-violet-500 transition-colors" size={18} />
+                              <input placeholder="Search clients, phones..." className="w-full bg-gray-100 dark:bg-gray-800 pl-11 pr-4 py-2.5 rounded-2xl border-transparent focus:bg-white focus:ring-2 ring-violet-500 focus:shadow-lg transition-all outline-none h-[46px]" value={searchTerm} onChange={e=>setSearchTerm(e.target.value)} />
                           </div>
                           
                           {/* Filters (Responsive) */}
@@ -1327,8 +1327,8 @@ const LeadsManagementSystem = () => {
                                   <ArrowUpDown size={14} className="absolute right-2 top-3.5 pointer-events-none text-gray-500"/>
                               </div>
                               <div className="flex bg-gray-100 dark:bg-gray-800 rounded-xl p-1 gap-1 h-[46px] items-center shrink-0">
-                                  <button onClick={()=>setViewMode('list')} className={`p-2 rounded-lg transition-all ${viewMode==='list'?'bg-white shadow text-indigo-600':'text-gray-400 hover:text-gray-600'}`}><List size={18}/></button>
-                                  <button onClick={()=>setViewMode('grid')} className={`p-2 rounded-lg transition-all ${viewMode==='grid'?'bg-white shadow text-indigo-600':'text-gray-400 hover:text-gray-600'}`}><Grid size={18}/></button>
+                                  <button onClick={()=>setViewMode('list')} className={`p-2 rounded-lg transition-all ${viewMode==='list'?'bg-white shadow text-violet-600':'text-gray-400 hover:text-gray-600'}`}><List size={18}/></button>
+                                  <button onClick={()=>setViewMode('grid')} className={`p-2 rounded-lg transition-all ${viewMode==='grid'?'bg-white shadow text-violet-600':'text-gray-400 hover:text-gray-600'}`}><Grid size={18}/></button>
                               </div>
                           </div>
                       </div>
@@ -1340,14 +1340,14 @@ const LeadsManagementSystem = () => {
                              <button onClick={() => navigate('/admin/appointments')} className="flex items-center gap-2 px-4 py-2.5 bg-white border border-gray-200 rounded-xl text-sm font-bold hover:bg-gray-50 transition-colors whitespace-nowrap h-[46px]"><Calendar size={18}/> Schedule</button>
                              
                              <input type="file" accept=".xlsx, .xls" ref={fileInputRef} onChange={handleFileChange} className="hidden" />
-                             <button onClick={handleImportClick} className="flex items-center gap-2 px-4 py-2.5 bg-blue-50 text-blue-700 rounded-xl text-sm font-bold hover:bg-blue-100 transition-colors whitespace-nowrap h-[46px]"><Upload size={18}/> Import</button>
+                             <button onClick={handleImportClick} className="flex items-center gap-2 px-4 py-2.5 bg-purple-50 text-purple-700 rounded-xl text-sm font-bold hover:bg-purple-100 transition-colors whitespace-nowrap h-[46px]"><Upload size={18}/> Import</button>
                              <button onClick={handleExportAll} className="flex items-center gap-2 px-4 py-2.5 bg-emerald-50 text-emerald-700 rounded-xl text-sm font-bold hover:bg-emerald-100 transition-colors whitespace-nowrap h-[46px]"><FileText size={18}/> Export</button>
                              
                              {canManageAccess && (
                                 <button onClick={() => setIsAccessModalOpen(true)} className="flex items-center gap-2 px-4 py-2.5 bg-amber-50 text-amber-700 rounded-xl text-sm font-bold hover:bg-amber-100 transition-colors whitespace-nowrap h-[46px]"><ShieldCheck size={18}/> Access</button>
                              )}
                              <div className="w-px bg-gray-200 mx-1"></div>
-                             <button onClick={() => { setEditingLead(null); setIsLeadModalOpen(true); }} className="flex items-center gap-2 px-5 py-2.5 bg-indigo-600 text-white rounded-xl text-sm font-bold hover:bg-indigo-700 shadow-lg shadow-indigo-200 transition-all active:scale-95 whitespace-nowrap h-[46px]"><Plus size={20}/> New Lead</button>
+                             <button onClick={() => { setEditingLead(null); setIsLeadModalOpen(true); }} className="flex items-center gap-2 px-5 py-2.5 bg-violet-600 text-white rounded-xl text-sm font-bold hover:bg-violet-700 shadow-lg shadow-violet-200 transition-all active:scale-95 whitespace-nowrap h-[46px]"><Plus size={20}/> New Lead</button>
                           </div>
                       </div>
                   </div>
@@ -1361,9 +1361,9 @@ const LeadsManagementSystem = () => {
                                   layoutId={lead.id} 
                                   key={lead.id} 
                                   onClick={() => setSelectedLead(lead)} 
-                                  className={`group bg-white dark:bg-gray-800 p-5 rounded-3xl border cursor-pointer hover:shadow-xl hover:-translate-y-1 transition-all duration-300 relative overflow-hidden ${isNew(lead.createdAt) ? 'border-indigo-200 ring-4 ring-indigo-50/50' : 'border-gray-100 dark:border-gray-700'}`}
+                                  className={`group bg-white dark:bg-gray-800 p-5 rounded-3xl border cursor-pointer hover:shadow-xl hover:-translate-y-1 transition-all duration-300 relative overflow-hidden ${isNew(lead.createdAt) ? 'border-violet-200 ring-4 ring-violet-50/50' : 'border-gray-100 dark:border-gray-700'}`}
                                >
-                                   {isNew(lead.createdAt) && <div className="absolute top-0 right-0 bg-indigo-600 text-white text-[10px] px-3 py-1 rounded-bl-xl font-bold z-10">NEW</div>}
+                                   {isNew(lead.createdAt) && <div className="absolute top-0 right-0 bg-violet-600 text-white text-[10px] px-3 py-1 rounded-bl-xl font-bold z-10">NEW</div>}
                                    
                                    <div className="flex justify-between mb-3 relative z-10">
                                         <div>
@@ -1373,7 +1373,7 @@ const LeadsManagementSystem = () => {
                                                 <span className="text-xs text-gray-400 font-medium">{formatDate(lead.leadGenDate)}</span>
                                             </div>
                                         </div>
-                                        <div className="h-10 w-10 rounded-full bg-gray-50 dark:bg-gray-700 flex items-center justify-center text-gray-400 group-hover:bg-indigo-50 group-hover:text-indigo-600 transition-colors">
+                                        <div className="h-10 w-10 rounded-full bg-gray-50 dark:bg-gray-700 flex items-center justify-center text-gray-400 group-hover:bg-violet-50 group-hover:text-violet-600 transition-colors">
                                             <ChevronRight size={20}/>
                                         </div>
                                    </div>
@@ -1396,7 +1396,7 @@ const LeadsManagementSystem = () => {
                               <motion.div 
                                 key={lead.id} 
                                 onClick={() => setSelectedLead(lead)} 
-                                className={`p-4 flex flex-col md:flex-row justify-between items-start md:items-center cursor-pointer hover:bg-gray-50 dark:hover:bg-gray-700/30 transition-colors border-b last:border-0 border-gray-100 dark:border-gray-700 ${isNew(lead.createdAt) ? 'bg-indigo-50/10' : ''}`}
+                                className={`p-4 flex flex-col md:flex-row justify-between items-start md:items-center cursor-pointer hover:bg-gray-50 dark:hover:bg-gray-700/30 transition-colors border-b last:border-0 border-gray-100 dark:border-gray-700 ${isNew(lead.createdAt) ? 'bg-violet-50/10' : ''}`}
                               >
                                  <div className="flex items-center gap-4 w-full md:w-1/3 mb-2 md:mb-0">
                                     <div className={`h-10 w-10 rounded-full flex items-center justify-center font-bold text-white shadow-md shrink-0 ${lead.priority === 'High' ? 'bg-gradient-to-br from-rose-400 to-rose-600' : 'bg-gradient-to-br from-gray-400 to-gray-600'}`}>
@@ -1405,7 +1405,7 @@ const LeadsManagementSystem = () => {
                                     <div>
                                         <div className="flex items-center gap-2">
                                             <h4 className="font-bold text-sm text-gray-900 dark:text-white">{lead.name}</h4>
-                                            {isNew(lead.createdAt) && <span className="bg-indigo-100 text-indigo-700 text-[10px] px-1.5 rounded font-bold">NEW</span>}
+                                            {isNew(lead.createdAt) && <span className="bg-violet-100 text-violet-700 text-[10px] px-1.5 rounded font-bold">NEW</span>}
                                         </div>
                                         <p className="text-xs text-gray-500 mt-0.5 flex items-center gap-2"><Phone size={10}/> {lead.phoneNumbers?.[0] || lead.phone}</p>
                                     </div>
@@ -1438,7 +1438,7 @@ const LeadsManagementSystem = () => {
 
             <style>{`
               .input-std { width: 100%; background: #f9fafb; border: 1px solid #e5e7eb; border-radius: 0.75rem; padding: 0.75rem 1rem; font-size: 0.875rem; outline: none; transition: all 0.2s; color: #1f2937; height: 46px; }
-              .input-std:focus { border-color: #6366f1; background: white; box-shadow: 0 4px 12px rgba(99, 102, 241, 0.1); }
+              .input-std:focus { border-color: #7C3AED; background: white; box-shadow: 0 4px 12px rgba(124, 58, 237, 0.1); }
               .label-text { display: block; font-size: 0.75rem; font-weight: 700; color: #6b7280; text-transform: uppercase; margin-bottom: 0.4rem; letter-spacing: 0.05em; }
               .custom-scrollbar::-webkit-scrollbar { width: 6px; height: 6px; }
               .custom-scrollbar::-webkit-scrollbar-thumb { background: #cbd5e1; border-radius: 10px; }
@@ -1481,7 +1481,7 @@ const StatCard = ({ label, value, icon: Icon, color }) => (
    </div>
 );
 const DetailRow = ({ label, value, color, fontMono, highlight }) => (
-   <div className={`flex justify-between items-center p-2.5 rounded-lg transition-colors ${highlight ? 'bg-indigo-50/50 dark:bg-indigo-900/10 border border-indigo-100 dark:border-indigo-800' : 'hover:bg-gray-50 dark:hover:bg-gray-700/30'}`}>
+   <div className={`flex justify-between items-center p-2.5 rounded-lg transition-colors ${highlight ? 'bg-violet-50/50 dark:bg-violet-900/10 border border-violet-100 dark:border-violet-800' : 'hover:bg-gray-50 dark:hover:bg-gray-700/30'}`}>
       <span className="text-gray-500 text-xs font-medium uppercase tracking-wide">{label}</span>
       <span className={`text-sm font-bold ${color || 'text-gray-800 dark:text-gray-200'} ${fontMono ? 'font-mono tracking-tight' : ''}`}>{value || '-'}</span>
    </div>

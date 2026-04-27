@@ -47,53 +47,53 @@ function Header({ toggleSidebar }) {
     if (loading) return null; 
 
     return (
-        <header className="sticky top-0 z-30 w-full bg-white/90 dark:bg-gray-900/90 backdrop-blur-md border-b border-gray-200/60 dark:border-gray-700 shadow-sm transition-all duration-300">
-            <div className="px-4 sm:px-6 py-3 h-16 flex items-center justify-between">
+        <header className="sticky top-0 z-30 w-full glass border-b-0 shadow-sm transition-all duration-300">
+            <div className="px-4 sm:px-8 py-3 h-[72px] flex items-center justify-between">
                 
                 {/* --- LEFT: Toggle & Info --- */}
-                <div className="flex items-center gap-4">
+                <div className="flex items-center gap-5">
                     <button 
                         onClick={toggleSidebar}
-                        className="p-2 rounded-xl text-gray-500 dark:text-gray-400 hover:bg-gray-100 dark:hover:bg-gray-800 hover:text-indigo-600 dark:hover:text-indigo-400 transition-all active:scale-95 focus:outline-none"
+                        className="p-2.5 rounded-full bg-gray-100/50 dark:bg-gray-800/50 text-gray-500 dark:text-gray-400 hover:bg-purple-100 dark:hover:bg-purple-900/50 hover:text-purple-600 dark:hover:text-purple-400 transition-all active:scale-95 focus:outline-none border border-transparent hover:border-purple-200 dark:hover:border-purple-800"
                     >
-                        <Menu size={24} />
+                        <Menu size={20} />
                     </button>
 
                     <div className="flex flex-col">
-                        <h1 className="text-sm sm:text-lg font-bold text-gray-800 dark:text-gray-100 flex items-center">
-                            <span className="text-gray-400 dark:text-gray-500 font-normal hidden sm:inline mr-1">Hello,</span>
-                            <span className="bg-gradient-to-r from-indigo-600 to-purple-600 dark:from-indigo-400 dark:to-purple-400 bg-clip-text text-transparent truncate max-w-[120px] sm:max-w-none capitalize flex items-center gap-1">
+                        <h1 className="text-sm sm:text-lg font-black text-gray-900 dark:text-white flex items-center tracking-tight">
+                            <span className="text-gray-400 font-bold hidden sm:inline mr-1.5">Welcome,</span>
+                            <span className="bg-gradient-to-r from-violet-600 to-purple-600 dark:from-violet-400 dark:to-purple-400 bg-clip-text text-transparent truncate max-w-[120px] sm:max-w-none capitalize flex items-center gap-1 drop-shadow-sm">
                                 {fullName.split(' ')[0]}
                                 {isSuperAdmin && <Crown size={16} className="text-amber-500 fill-amber-500 ml-1 animate-pulse" />}
                             </span>
-                            <span className="text-xl animate-pulse ml-1">👋</span>
+                            <span className="text-xl animate-pulse ml-1.5 hover:rotate-12 transition-transform cursor-default">👋</span>
                         </h1>
-                        <div className="hidden sm:flex items-center gap-1.5 text-[10px] font-semibold text-gray-400 uppercase tracking-wider">
+                        <div className="hidden sm:flex items-center gap-1.5 text-[10px] font-bold text-gray-400 dark:text-gray-500 uppercase tracking-widest mt-0.5">
                             <Calendar size={10} /> {today}
                         </div>
                     </div>
                 </div>
 
                 {/* --- RIGHT: Actions --- */}
-                <div className="flex items-center gap-3 sm:gap-5">
+                <div className="flex items-center gap-3 sm:gap-6">
                     
-                    <div className="p-2 rounded-xl hover:bg-gray-100 dark:hover:bg-gray-800 transition-colors cursor-pointer text-gray-500 dark:text-gray-400 hover:text-indigo-600 dark:hover:text-indigo-400">
+                    <div className="p-2.5 rounded-full bg-gray-100/50 dark:bg-gray-800/50 hover:bg-purple-100 dark:hover:bg-purple-900/50 transition-colors cursor-pointer text-gray-500 dark:text-gray-400 hover:text-purple-600 dark:hover:text-purple-400 border border-transparent hover:border-purple-200 dark:hover:border-purple-800 relative">
                         <NotificationBell /> 
                     </div>
 
                     <div className="relative" ref={dropdownRef}>
                         <button 
                             onClick={() => setIsDropdownOpen(!isDropdownOpen)}
-                            className="flex items-center gap-3 pl-2 sm:pl-4 sm:border-l border-gray-200 dark:border-gray-700 focus:outline-none group"
+                            className="flex items-center gap-3 pl-3 sm:pl-5 sm:border-l border-gray-200 dark:border-gray-700/50 focus:outline-none group"
                         >
                             <div className="hidden md:flex flex-col items-end">
-                                <span className="text-sm font-bold text-gray-700 dark:text-gray-200 group-hover:text-indigo-600 dark:group-hover:text-indigo-400 transition-colors">
+                                <span className="text-sm font-black text-gray-800 dark:text-gray-100 group-hover:text-purple-600 dark:group-hover:text-purple-400 transition-colors tracking-tight">
                                     {fullName}
                                 </span>
-                                <span className={`text-[10px] font-bold px-1.5 py-0.5 rounded uppercase tracking-wider 
-                                    ${isSuperAdmin ? 'bg-amber-100 text-amber-700 dark:bg-amber-900/30 dark:text-amber-400' : 
-                                      rawRole === 'admin' ? 'bg-rose-100 text-rose-600 dark:bg-rose-900/30 dark:text-rose-400' : 
-                                      'bg-blue-100 text-blue-600 dark:bg-blue-900/30 dark:text-blue-400'}`}>
+                                <span className={`text-[9px] font-bold px-2 py-0.5 rounded-full uppercase tracking-widest mt-0.5 shadow-sm border
+                                    ${isSuperAdmin ? 'bg-amber-100 text-amber-700 border-amber-200 dark:bg-amber-900/30 dark:text-amber-400 dark:border-amber-800/50' : 
+                                      rawRole === 'admin' ? 'bg-rose-100 text-rose-600 border-rose-200 dark:bg-rose-900/30 dark:text-rose-400 dark:border-rose-800/50' : 
+                                      'bg-purple-100 text-purple-700 border-purple-200 dark:bg-purple-900/30 dark:text-purple-400 dark:border-purple-800/50'}`}>
                                     {userRole}
                                 </span>
                             </div>
@@ -102,12 +102,12 @@ function Header({ toggleSidebar }) {
                                 <img 
                                     src={userPhoto} 
                                     alt="User" 
-                                    className={`w-9 h-9 sm:w-10 sm:h-10 rounded-full object-cover border-2 shadow-sm group-hover:ring-2 transition-all
-                                    ${isSuperAdmin ? 'border-amber-400 ring-amber-200' : 'border-white dark:border-gray-800 ring-indigo-100 dark:ring-indigo-900'}`}
+                                    className={`w-10 h-10 sm:w-11 sm:h-11 rounded-full object-cover border-2 shadow-md group-hover:shadow-lg group-hover:scale-105 transition-all
+                                    ${isSuperAdmin ? 'border-amber-400 shadow-amber-500/20' : 'border-white dark:border-gray-800 shadow-purple-500/10'}`}
                                 />
-                                <div className="absolute bottom-0 right-0 w-2.5 h-2.5 bg-emerald-500 border-2 border-white dark:border-gray-800 rounded-full"></div>
+                                <div className="absolute bottom-0 right-0 w-3 h-3 bg-emerald-400 border-2 border-white dark:border-gray-800 rounded-full shadow-[0_0_8px_rgba(16,185,129,0.5)]"></div>
                             </div>
-                            <ChevronDown size={16} className={`text-gray-400 hidden sm:block transition-transform ${isDropdownOpen ? 'rotate-180' : ''}`} />
+                            <ChevronDown size={16} className={`text-gray-400 group-hover:text-purple-500 hidden sm:block transition-transform duration-300 ${isDropdownOpen ? 'rotate-180' : ''}`} />
                         </button>
 
                         <AnimatePresence>
@@ -127,14 +127,14 @@ function Header({ toggleSidebar }) {
                                     <div className="p-2 space-y-1">
                                         <button 
                                             onClick={() => { navigate('/employee/profile'); setIsDropdownOpen(false); }} 
-                                            className="w-full flex items-center gap-3 px-3 py-2 text-sm font-medium text-gray-600 dark:text-gray-300 hover:bg-indigo-50 dark:hover:bg-gray-700 hover:text-indigo-600 dark:hover:text-indigo-400 rounded-xl transition-all"
+                                            className="w-full flex items-center gap-3 px-3 py-2 text-sm font-medium text-gray-600 dark:text-gray-300 hover:bg-violet-50 dark:hover:bg-gray-700 hover:text-violet-600 dark:hover:text-violet-400 rounded-xl transition-all"
                                         >
                                             <User size={16} /> My Profile
                                         </button>
                                         
                                         <button 
                                             onClick={() => { navigate('/settings'); setIsDropdownOpen(false); }} 
-                                            className="w-full flex items-center gap-3 px-3 py-2 text-sm font-medium text-gray-600 dark:text-gray-300 hover:bg-indigo-50 dark:hover:bg-gray-700 hover:text-indigo-600 dark:hover:text-indigo-400 rounded-xl transition-all"
+                                            className="w-full flex items-center gap-3 px-3 py-2 text-sm font-medium text-gray-600 dark:text-gray-300 hover:bg-violet-50 dark:hover:bg-gray-700 hover:text-violet-600 dark:hover:text-violet-400 rounded-xl transition-all"
                                         >
                                             <Settings size={16} /> Settings
                                         </button>

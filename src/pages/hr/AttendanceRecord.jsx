@@ -134,8 +134,8 @@ function AttendanceRecords() {
             case 'Absent': return { color: 'bg-rose-100 dark:bg-rose-900/30 text-rose-700 dark:text-rose-400 border-rose-200 dark:border-rose-800', icon: <XCircle size={14} /> };
             case 'Late': return { color: 'bg-amber-100 dark:bg-amber-900/30 text-amber-700 dark:text-amber-400 border-amber-200 dark:border-amber-800', icon: <Clock size={14} /> };
             case 'Half Day': return { color: 'bg-purple-100 dark:bg-purple-900/30 text-purple-700 dark:text-purple-400 border-purple-200 dark:border-purple-800', icon: <Coffee size={14} /> };
-            case 'Leave': return { color: 'bg-blue-100 dark:bg-blue-900/30 text-blue-700 dark:text-blue-400 border-blue-200 dark:border-blue-800', icon: <Plane size={14} /> };
-            case 'Holiday': return { color: 'bg-teal-100 dark:bg-teal-900/30 text-teal-700 dark:text-teal-400 border-teal-200 dark:border-teal-800', icon: <Sun size={14} /> };
+            case 'Leave': return { color: 'bg-purple-100 dark:bg-purple-900/30 text-purple-700 dark:text-purple-400 border-purple-200 dark:border-purple-800', icon: <Plane size={14} /> };
+            case 'Holiday': return { color: 'bg-emerald-100 dark:bg-emerald-900/30 text-emerald-700 dark:text-emerald-400 border-emerald-200 dark:border-emerald-800', icon: <Sun size={14} /> };
             case 'Others': return { color: 'bg-gray-100 dark:bg-gray-700/50 text-gray-700 dark:text-gray-300 border-gray-200 dark:border-gray-600', icon: <AlertCircle size={14} /> };
             default: return { color: 'bg-slate-100 dark:bg-slate-800 text-slate-500 dark:text-slate-400 border-slate-200 dark:border-slate-700', icon: <ChevronDown size={14} /> };
         }
@@ -143,8 +143,8 @@ function AttendanceRecords() {
 
     const getRoleIcon = (role) => {
         if (role === 'admin') return <Shield size={12} className="text-purple-500"/>;
-        if (role === 'hr') return <User size={12} className="text-teal-500"/>;
-        return <Briefcase size={12} className="text-blue-500"/>;
+        if (role === 'hr') return <User size={12} className="text-emerald-500"/>;
+        return <Briefcase size={12} className="text-purple-500"/>;
     };
 
     return (
@@ -172,14 +172,14 @@ function AttendanceRecords() {
                             type="date" 
                             value={selectedDate} 
                             onChange={(e) => setSelectedDate(e.target.value)} 
-                            className="pl-10 pr-4 py-2.5 bg-white dark:bg-gray-800 border border-gray-300 dark:border-gray-700 rounded-xl shadow-sm focus:ring-2 focus:ring-indigo-500 text-sm font-medium text-gray-700 dark:text-white outline-none w-full sm:w-auto cursor-pointer"
+                            className="pl-10 pr-4 py-2.5 bg-white dark:bg-gray-800 border border-gray-300 dark:border-gray-700 rounded-xl shadow-sm focus:ring-2 focus:ring-violet-500 text-sm font-medium text-gray-700 dark:text-white outline-none w-full sm:w-auto cursor-pointer"
                         />
                     </div>
 
                     {/* Report Button */}
                     <button 
                         onClick={() => navigate('/hr/monthly-report')}
-                        className="flex items-center justify-center gap-2 px-5 py-2.5 bg-indigo-600 hover:bg-indigo-700 text-white rounded-xl shadow-md transition-all active:scale-95 font-medium text-sm"
+                        className="flex items-center justify-center gap-2 px-5 py-2.5 bg-violet-600 hover:bg-violet-700 text-white rounded-xl shadow-md transition-all active:scale-95 font-medium text-sm"
                     >
                         <FileText size={16} /> Monthly Report
                     </button>
@@ -224,7 +224,7 @@ function AttendanceRecords() {
                                                 {/* Name & Role */}
                                                 <td className="px-6 py-4">
                                                     <div className="flex items-center gap-4">
-                                                        <div className="w-10 h-10 rounded-full bg-gradient-to-br from-indigo-500 to-purple-600 text-white flex items-center justify-center text-sm font-bold shadow-md">
+                                                        <div className="w-10 h-10 rounded-full bg-gradient-to-br from-violet-500 to-purple-600 text-white flex items-center justify-center text-sm font-bold shadow-md">
                                                             {(emp.name || emp.email).charAt(0).toUpperCase()}
                                                         </div>
                                                         <div>
@@ -260,7 +260,7 @@ function AttendanceRecords() {
                                                 {/* Action Dropdown */}
                                                 <td className="px-6 py-4 text-right">
                                                     {loadingUpdate === emp.uid ? (
-                                                        <div className="inline-flex items-center gap-2 px-4 py-2 bg-gray-50 dark:bg-gray-700 rounded-lg text-indigo-600 dark:text-indigo-400 text-xs font-bold">
+                                                        <div className="inline-flex items-center gap-2 px-4 py-2 bg-gray-50 dark:bg-gray-700 rounded-lg text-violet-600 dark:text-violet-400 text-xs font-bold">
                                                             <LoadingSpinner size="16px" /> Saving...
                                                         </div>
                                                     ) : (
@@ -268,7 +268,7 @@ function AttendanceRecords() {
                                                             <select 
                                                                 value={emp.currentStatus}
                                                                 onChange={(e) => handleStatusChange(emp, e.target.value)}
-                                                                className="appearance-none w-40 px-4 py-2 pr-8 text-sm font-medium bg-white dark:bg-gray-800 border border-gray-300 dark:border-gray-600 rounded-lg shadow-sm text-gray-700 dark:text-gray-200 focus:outline-none focus:ring-2 focus:ring-indigo-500 cursor-pointer hover:border-indigo-400 transition-all"
+                                                                className="appearance-none w-40 px-4 py-2 pr-8 text-sm font-medium bg-white dark:bg-gray-800 border border-gray-300 dark:border-gray-600 rounded-lg shadow-sm text-gray-700 dark:text-gray-200 focus:outline-none focus:ring-2 focus:ring-violet-500 cursor-pointer hover:border-violet-400 transition-all"
                                                             >
                                                                 <option value="Not Marked" disabled>Mark Status</option>
                                                                 <option value="Present">✅ Present</option>

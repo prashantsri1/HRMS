@@ -120,173 +120,139 @@ function LoginPage() {
     };
 
     return (
-        <div className="min-h-screen flex items-center justify-center bg-[#f8fafc] dark:bg-gray-900 p-4 relative overflow-hidden transition-colors duration-300">
+        <div className="min-h-screen flex items-center justify-center bg-gray-950 p-4 relative overflow-hidden transition-colors duration-300">
 
-            {/* Background Blobs */}
-            <div className="absolute top-[-10%] left-[-10%] w-[40%] h-[40%] bg-purple-300 dark:bg-purple-900/40 rounded-full blur-[120px] opacity-30 animate-pulse"></div>
-            <div className="absolute bottom-[-10%] right-[-10%] w-[40%] h-[40%] bg-blue-300 dark:bg-blue-900/40 rounded-full blur-[120px] opacity-30 animate-pulse delay-700"></div>
+            {/* Cinematic Mesh Gradient Background */}
+            <div className="absolute inset-0 w-full h-full">
+                <div className="absolute top-[-10%] left-[-10%] w-[50%] h-[50%] bg-violet-600/30 rounded-full blur-[120px] mix-blend-screen animate-pulse"></div>
+                <div className="absolute bottom-[-10%] right-[-10%] w-[50%] h-[50%] bg-purple-600/30 rounded-full blur-[120px] mix-blend-screen animate-pulse delay-700"></div>
+                <div className="absolute top-[20%] right-[20%] w-[30%] h-[30%] bg-emerald-500/20 rounded-full blur-[100px] mix-blend-screen animate-pulse delay-1000"></div>
+            </div>
 
-            {/* Main Container */}
+            {/* Floating Glass Container */}
             <motion.div
-                initial={{ opacity: 0, scale: 0.95 }}
-                animate={{ opacity: 1, scale: 1 }}
-                transition={{ duration: 0.5 }}
-                className="w-full max-w-5xl bg-white dark:bg-gray-800 rounded-3xl shadow-2xl dark:shadow-black/50 overflow-hidden grid md:grid-cols-2 z-10 border border-transparent dark:border-gray-700"
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.6, ease: "easeOut" }}
+                className="w-full max-w-md backdrop-blur-2xl bg-white/10 dark:bg-gray-900/40 rounded-[2rem] shadow-[0_8px_32px_0_rgba(0,0,0,0.3)] border border-white/20 p-8 md:p-10 z-10"
             >
-
-                {/* --- LEFT SIDE: BRANDING --- */}
-                <div className="relative bg-gray-900 p-10 flex flex-col justify-between overflow-hidden">
-                    <div className="absolute inset-0 bg-gradient-to-br from-indigo-600 to-purple-800 opacity-90"></div>
-                    <div className="absolute inset-0 bg-[url('https://www.transparenttextures.com/patterns/cubes.png')] opacity-10"></div>
-
-                    <div className="relative z-10">
-                        <div className="w-12 h-12 bg-white/20 backdrop-blur-md rounded-xl flex items-center justify-center text-white font-bold text-xl mb-6 shadow-inner">
-                            M
-                        </div>
-                        <h1 className="text-4xl font-extrabold text-white tracking-tight leading-tight">
-                            Manage Your <br /> Workspace <span className="text-indigo-300">Efficiently.</span>
-                        </h1>
-                        <p className="text-indigo-100 mt-4 text-sm leading-relaxed max-w-xs">
-                            HRMS handles your payroll, leaves, and tasks in one seamless platform.
-                        </p>
+                {/* Header Area */}
+                <div className="text-center mb-8">
+                    <div className="mx-auto w-16 h-16 bg-gradient-to-br from-violet-500 to-purple-600 rounded-2xl flex items-center justify-center text-white font-black text-3xl mb-6 shadow-[0_0_30px_rgba(124,58,237,0.5)] border border-white/20">
+                        M
                     </div>
-
-                    <div className="relative z-10 mt-10">
-                        <div className="flex items-center gap-3">
-                            <div className="flex -space-x-3">
-                                {[1, 2, 3].map(i => (
-                                    <div key={i} className="w-10 h-10 rounded-full border-2 border-indigo-500 bg-gray-200"></div>
-                                ))}
-                            </div>
-                            <p className="text-white text-xs font-medium">Trusted by teams everywhere</p>
-                        </div>
-                    </div>
+                    <h2 className="text-3xl font-black text-white tracking-tight mb-2">
+                        {isResetMode ? "Reset Password" : "Welcome Back"}
+                    </h2>
+                    <p className="text-gray-300 text-sm font-medium">
+                        {isResetMode ? "Enter your email for recovery." : "Sign in to your HRMS workspace."}
+                    </p>
                 </div>
 
-                {/* --- RIGHT SIDE: FORM --- */}
-                <div className="p-8 md:p-12 flex flex-col justify-center bg-white dark:bg-gray-800 transition-colors duration-300">
+                {/* Messages Area */}
+                <AnimatePresence>
+                    {error && (
+                        <motion.div initial={{ opacity: 0, y: -10 }} animate={{ opacity: 1, y: 0 }} exit={{ opacity: 0 }} className="mb-6 p-3.5 rounded-xl bg-red-500/20 text-red-200 text-sm font-bold flex items-center gap-2 border border-red-500/30 backdrop-blur-sm">
+                            <AlertTriangle size={16} /> {error}
+                        </motion.div>
+                    )}
+                    {message && (
+                        <motion.div initial={{ opacity: 0, y: -10 }} animate={{ opacity: 1, y: 0 }} exit={{ opacity: 0 }} className="mb-6 p-3.5 rounded-xl bg-emerald-500/20 text-emerald-200 text-sm font-bold flex items-center gap-2 border border-emerald-500/30 backdrop-blur-sm">
+                            <CheckCircle size={16} /> {message}
+                        </motion.div>
+                    )}
+                </AnimatePresence>
 
-                    <div className="mb-8">
-                        <h2 className="text-2xl font-bold text-gray-800 dark:text-white">
-                            {isResetMode ? "Reset Password" : "Welcome Back! 👋"}
-                        </h2>
-                        <p className="text-gray-500 dark:text-gray-400 text-sm mt-1">
-                            {isResetMode ? "Enter your email to receive a recovery link." : "Please enter your details to sign in."}
-                        </p>
+                <form className="space-y-5">
+                    {/* Email Input */}
+                    <div>
+                        <div className="relative group">
+                            <Mail className="absolute left-4 top-4 text-gray-400 group-focus-within:text-violet-400 transition-colors" size={20} />
+                            <input
+                                type="email"
+                                placeholder="Email Address"
+                                value={email}
+                                onChange={(e) => setEmail(e.target.value)}
+                                className="w-full pl-12 pr-4 py-3.5 bg-white/5 border border-white/10 rounded-2xl focus:bg-white/10 focus:border-violet-400/50 outline-none transition-all font-medium text-white placeholder-gray-400 shadow-inner"
+                            />
+                        </div>
                     </div>
 
-                    {/* Messages Area */}
-                    <AnimatePresence>
-                        {error && (
-                            <motion.div initial={{ opacity: 0, y: -10 }} animate={{ opacity: 1, y: 0 }} exit={{ opacity: 0 }} className="mb-4 p-3 rounded-lg bg-red-50 dark:bg-red-900/20 text-red-600 dark:text-red-400 text-sm font-medium flex items-center gap-2 border border-red-100 dark:border-red-800">
-                                <AlertTriangle size={16} /> {error}
-                            </motion.div>
-                        )}
-                        {message && (
-                            <motion.div initial={{ opacity: 0, y: -10 }} animate={{ opacity: 1, y: 0 }} exit={{ opacity: 0 }} className="mb-4 p-3 rounded-lg bg-emerald-50 dark:bg-emerald-900/20 text-emerald-600 dark:text-emerald-400 text-sm font-medium flex items-center gap-2 border border-emerald-100 dark:border-emerald-800">
-                                <CheckCircle size={16} /> {message}
-                            </motion.div>
-                        )}
-                    </AnimatePresence>
-
-                    <form className="space-y-5">
-
-                        {/* Email Input */}
+                    {/* Password Input (Only for Login) */}
+                    {!isResetMode && (
                         <div>
-                            <label className="block text-xs font-bold text-gray-600 dark:text-gray-400 uppercase mb-1">Email Address</label>
                             <div className="relative group">
-                                <Mail className="absolute left-3 top-3.5 text-gray-400 dark:text-gray-500 group-focus-within:text-indigo-600 dark:group-focus-within:text-indigo-400 transition-colors" size={18} />
+                                <Lock className="absolute left-4 top-4 text-gray-400 group-focus-within:text-violet-400 transition-colors" size={20} />
                                 <input
-                                    type="email"
-                                    placeholder="you@[EMAIL_ADDRESS]"
-                                    value={email}
-                                    onChange={(e) => setEmail(e.target.value)}
-                                    className="w-full pl-10 pr-4 py-3 bg-gray-50 dark:bg-gray-700 border border-gray-200 dark:border-gray-600 rounded-xl focus:bg-white dark:focus:bg-gray-800 focus:ring-2 focus:ring-indigo-500 dark:focus:ring-indigo-400 focus:border-transparent outline-none transition-all font-medium text-gray-700 dark:text-white"
+                                    type="password"
+                                    placeholder="Password"
+                                    value={password}
+                                    onChange={(e) => setPassword(e.target.value)}
+                                    className="w-full pl-12 pr-4 py-3.5 bg-white/5 border border-white/10 rounded-2xl focus:bg-white/10 focus:border-violet-400/50 outline-none transition-all font-medium text-white placeholder-gray-400 shadow-inner"
                                 />
                             </div>
+                            <div className="flex justify-end mt-2">
+                                <button type="button" onClick={() => { setIsResetMode(true); setError(''); }} className="text-xs font-bold text-violet-300 hover:text-white transition-colors">
+                                    Forgot Password?
+                                </button>
+                            </div>
                         </div>
+                    )}
 
-                        {/* Password Input (Only for Login) */}
-                        {!isResetMode && (
-                            <div>
-                                <div className="flex justify-between items-center mb-1">
-                                    <label className="block text-xs font-bold text-gray-600 dark:text-gray-400 uppercase">Password</label>
-                                    <button type="button" onClick={() => { setIsResetMode(true); setError(''); }} className="text-xs font-semibold text-indigo-600 dark:text-indigo-400 hover:text-indigo-700 dark:hover:text-indigo-300">
-                                        Forgot Password?
-                                    </button>
-                                </div>
-                                <div className="relative group">
-                                    <Lock className="absolute left-3 top-3.5 text-gray-400 dark:text-gray-500 group-focus-within:text-indigo-600 dark:group-focus-within:text-indigo-400 transition-colors" size={18} />
-                                    <input
-                                        type="password"
-                                        placeholder="••••••••"
-                                        value={password}
-                                        onChange={(e) => setPassword(e.target.value)}
-                                        className="w-full pl-10 pr-4 py-3 bg-gray-50 dark:bg-gray-700 border border-gray-200 dark:border-gray-600 rounded-xl focus:bg-white dark:focus:bg-gray-800 focus:ring-2 focus:ring-indigo-500 dark:focus:ring-indigo-400 focus:border-transparent outline-none transition-all font-medium text-gray-700 dark:text-white"
-                                    />
-                                </div>
-                            </div>
-                        )}
+                    {/* Actions */}
+                    {!isResetMode ? (
+                        <div className="pt-2">
+                            <p className="text-[10px] text-gray-400 font-bold uppercase tracking-widest text-center mb-4">Select Role to Login</p>
 
-                        {/* Actions */}
-                        {!isResetMode ? (
-                            <div className="mt-6">
-                                <p className="text-xs text-gray-400 dark:text-gray-500 font-bold uppercase mb-3 text-center tracking-wider">Select Role to Login</p>
-
-                                {/* 👑 Super Admin / Admin Button (Combined Visual) */}
+                            <div className="grid grid-cols-2 gap-3 mb-3">
+                                {/* Super Admin */}
                                 <button onClick={(e) => handleLogin(e, 'super_admin')} disabled={loading}
-                                    className="group w-full mb-3 relative flex items-center justify-between p-3 rounded-xl border border-amber-200 dark:border-amber-800 bg-amber-50 dark:bg-amber-900/20 hover:bg-amber-500 dark:hover:bg-amber-600 transition-all duration-300">
-                                    <div className="flex items-center gap-3">
-                                        <div className="p-2 bg-white dark:bg-gray-800 rounded-lg text-amber-600 dark:text-amber-400 shadow-sm"><Crown size={18} /></div>
-                                        <span className="font-bold text-amber-900 dark:text-amber-300 group-hover:text-white">Super Admin / Owner</span>
-                                    </div>
-                                    <ArrowRight size={18} className="text-amber-400 group-hover:text-white transform group-hover:translate-x-1 transition-transform" />
+                                    className="group relative flex flex-col items-center justify-center gap-2 p-4 rounded-2xl border border-amber-500/30 bg-amber-500/10 hover:bg-amber-500/20 transition-all backdrop-blur-sm">
+                                    <Crown size={24} className="text-amber-400 group-hover:scale-110 transition-transform" />
+                                    <span className="font-bold text-xs text-amber-100 uppercase tracking-wide">Owner</span>
                                 </button>
 
-                                {/* Admin (Manager) Button */}
+                                {/* Admin */}
                                 <button onClick={(e) => handleLogin(e, 'admin')} disabled={loading}
-                                    className="group w-full mb-3 relative flex items-center justify-between p-3 rounded-xl border border-purple-100 dark:border-purple-800 bg-purple-50 dark:bg-purple-900/20 hover:bg-purple-600 dark:hover:bg-purple-700 transition-all duration-300">
-                                    <div className="flex items-center gap-3">
-                                        <div className="p-2 bg-white dark:bg-gray-800 rounded-lg text-purple-600 dark:text-purple-400 shadow-sm"><Shield size={18} /></div>
-                                        <span className="font-bold text-purple-900 dark:text-purple-300 group-hover:text-white">Admin (Operations)</span>
-                                    </div>
-                                    <ArrowRight size={18} className="text-purple-400 group-hover:text-white transform group-hover:translate-x-1 transition-transform" />
-                                </button>
-
-                                <div className="grid grid-cols-2 gap-3">
-                                    {/* HR Button */}
-                                    <button onClick={(e) => handleLogin(e, 'hr')} disabled={loading}
-                                        className="group flex items-center justify-center gap-2 p-3 rounded-xl border border-teal-100 dark:border-teal-800 bg-teal-50 dark:bg-teal-900/20 hover:bg-teal-500 dark:hover:bg-teal-700 hover:border-teal-500 dark:hover:border-teal-700 transition-all duration-300">
-                                        <Users size={16} className="text-teal-600 dark:text-teal-400 group-hover:text-white" />
-                                        <span className="font-bold text-sm text-teal-900 dark:text-teal-300 group-hover:text-white">HR Login</span>
-                                    </button>
-
-                                    {/* Employee Button */}
-                                    <button onClick={(e) => handleLogin(e, 'employee')} disabled={loading}
-                                        className="group flex items-center justify-center gap-2 p-3 rounded-xl border border-blue-100 dark:border-blue-800 bg-blue-50 dark:bg-blue-900/20 hover:bg-blue-600 dark:hover:bg-blue-700 hover:border-blue-600 dark:hover:border-blue-700 transition-all duration-300">
-                                        <User size={16} className="text-blue-600 dark:text-blue-400 group-hover:text-white" />
-                                        <span className="font-bold text-sm text-blue-900 dark:text-blue-300 group-hover:text-white">Employee</span>
-                                    </button>
-                                </div>
-                            </div>
-                        ) : (
-                            <div className="space-y-3 pt-2">
-                                <button onClick={handlePasswordReset} disabled={loading}
-                                    className="w-full py-3.5 rounded-xl bg-indigo-600 hover:bg-indigo-700 dark:hover:bg-indigo-500 text-white font-bold shadow-lg shadow-indigo-200 dark:shadow-indigo-900/30 transition-all flex justify-center items-center gap-2">
-                                    {loading ? 'Sending...' : 'Send Recovery Link'} <ArrowRight size={18} />
-                                </button>
-                                <button type="button" onClick={() => setIsResetMode(false)} className="w-full py-3 rounded-xl text-gray-500 dark:text-gray-400 font-bold hover:bg-gray-50 dark:hover:bg-gray-700 transition-colors text-sm">
-                                    Back to Login
+                                    className="group relative flex flex-col items-center justify-center gap-2 p-4 rounded-2xl border border-purple-500/30 bg-purple-500/10 hover:bg-purple-500/20 transition-all backdrop-blur-sm">
+                                    <Shield size={24} className="text-purple-400 group-hover:scale-110 transition-transform" />
+                                    <span className="font-bold text-xs text-purple-100 uppercase tracking-wide">Admin</span>
                                 </button>
                             </div>
-                        )}
-                    </form>
-                </div>
+
+                            <div className="grid grid-cols-2 gap-3">
+                                {/* HR */}
+                                <button onClick={(e) => handleLogin(e, 'hr')} disabled={loading}
+                                    className="group relative flex flex-col items-center justify-center gap-2 p-4 rounded-2xl border border-emerald-500/30 bg-emerald-500/10 hover:bg-emerald-500/20 transition-all backdrop-blur-sm">
+                                    <Users size={24} className="text-emerald-400 group-hover:scale-110 transition-transform" />
+                                    <span className="font-bold text-xs text-emerald-100 uppercase tracking-wide">HR</span>
+                                </button>
+
+                                {/* Employee */}
+                                <button onClick={(e) => handleLogin(e, 'employee')} disabled={loading}
+                                    className="group relative flex flex-col items-center justify-center gap-2 p-4 rounded-2xl border border-white/10 bg-white/5 hover:bg-white/10 transition-all backdrop-blur-sm">
+                                    <User size={24} className="text-gray-300 group-hover:scale-110 transition-transform" />
+                                    <span className="font-bold text-xs text-gray-100 uppercase tracking-wide">Staff</span>
+                                </button>
+                            </div>
+                        </div>
+                    ) : (
+                        <div className="space-y-4 pt-2">
+                            <button onClick={handlePasswordReset} disabled={loading}
+                                className="w-full py-4 rounded-2xl bg-gradient-to-r from-violet-600 to-purple-600 hover:from-violet-500 hover:to-purple-500 text-white font-bold shadow-[0_0_20px_rgba(124,58,237,0.4)] hover:shadow-[0_0_30px_rgba(124,58,237,0.6)] transition-all">
+                                {loading ? 'Sending...' : 'Send Recovery Link'}
+                            </button>
+                            <button type="button" onClick={() => setIsResetMode(false)} className="w-full py-3 rounded-2xl text-gray-400 font-bold hover:bg-white/5 transition-colors text-sm">
+                                Back to Login
+                            </button>
+                        </div>
+                    )}
+                </form>
             </motion.div>
 
             {/* Footer */}
-            <div className="absolute bottom-4 text-center w-full text-xs text-gray-400 dark:text-gray-500 font-medium">
-                © 2025 HRMS Systems. Secure & Encrypted.
+            <div className="absolute bottom-6 text-center w-full text-[10px] text-gray-500 font-bold uppercase tracking-widest">
+                © 2025 HRMS Workspace
             </div>
         </div>
     );

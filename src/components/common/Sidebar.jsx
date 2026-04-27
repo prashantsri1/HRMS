@@ -78,18 +78,18 @@ function Sidebar({ isOpen, toggleSidebar }) {
 
             {/* 🔵 SIDEBAR CONTAINER */}
             <div className={`
-                fixed left-0 top-0 h-screen bg-[#0f172a] dark:bg-gray-900 text-white shadow-2xl z-[50] flex flex-col 
-                w-72 border-r border-gray-800/50 dark:border-gray-800
+                fixed left-0 top-0 h-screen bg-gradient-to-b from-gray-950 via-gray-900 to-violet-950 text-white shadow-[10px_0_30px_rgba(0,0,0,0.5)] z-[50] flex flex-col 
+                w-72 border-r border-white/10
                 transition-transform duration-300 ease-in-out
                 ${isOpen ? 'translate-x-0' : '-translate-x-full'} 
             `}>
                 {/* --- HEADER --- */}
-                <div className="flex justify-between items-center px-6 h-20 border-b border-gray-800/50 dark:border-gray-800 shrink-0 bg-[#0f172a] dark:bg-gray-900">
+                <div className="flex justify-between items-center px-6 h-20 border-b border-white/5 shrink-0 bg-transparent">
                     <div className="flex items-center gap-3">
-                        <div className="relative w-9 h-9 rounded-lg bg-gradient-to-br from-blue-600 to-indigo-700 flex items-center justify-center text-white font-bold text-lg shadow-xl">M</div>
+                        <div className="relative w-10 h-10 rounded-xl bg-gradient-to-br from-purple-500 to-violet-700 flex items-center justify-center text-white font-black text-xl shadow-[0_0_20px_rgba(124,58,237,0.5)] border border-white/20">M</div>
                         <div>
-                            <h2 className="text-lg font-bold tracking-wide text-white dark:text-gray-100">HRMS</h2>
-                            <p className="text-[10px] text-gray-400 uppercase tracking-widest font-semibold">Workspace</p>
+                            <h2 className="text-xl font-black tracking-tight text-white drop-shadow-md">HRMS</h2>
+                            <p className="text-[9px] text-purple-300 uppercase tracking-[0.2em] font-bold">Workspace</p>
                         </div>
                     </div>
                     <button onClick={toggleSidebar} className="md:hidden p-2 text-gray-400 hover:text-white rounded-lg"><X size={22} /></button>
@@ -97,15 +97,15 @@ function Sidebar({ isOpen, toggleSidebar }) {
 
                 {/* --- ROLE BADGE --- */}
                 <div className="px-5 py-6 shrink-0">
-                    <div className={`rounded-xl p-4 border backdrop-blur-md ${isSuperAdmin ? 'bg-amber-900/20 border-amber-700/50' : 'bg-gray-800/40 border-gray-700/30'}`}>
-                        <p className="text-[10px] text-gray-500 dark:text-gray-400 uppercase font-bold tracking-widest mb-2">Logged in as</p>
+                    <div className={`rounded-2xl p-4 backdrop-blur-md border shadow-inner ${isSuperAdmin ? 'bg-amber-900/30 border-amber-500/30 shadow-amber-900/20' : 'bg-white/5 border-white/10 shadow-white/5'}`}>
+                        <p className="text-[10px] text-gray-400 uppercase font-bold tracking-widest mb-2">Logged in as</p>
                         <div className="flex items-center gap-3">
                             {isSuperAdmin ? (
-                                <Crown size={18} className="text-amber-500" />
+                                <Crown size={18} className="text-amber-400 drop-shadow-md" />
                             ) : (
-                                <span className="relative inline-flex rounded-full h-3 w-3 bg-emerald-500"></span>
+                                <span className="relative inline-flex rounded-full h-3 w-3 bg-emerald-400 shadow-[0_0_10px_rgba(16,185,129,0.8)]"></span>
                             )}
-                            <span className={`text-sm font-bold capitalize tracking-wide ${isSuperAdmin ? 'text-amber-400' : 'text-gray-100'}`}>
+                            <span className={`text-sm font-black capitalize tracking-wide ${isSuperAdmin ? 'text-amber-400 drop-shadow-sm' : 'text-white'}`}>
                                 {currentRole.replace('_', ' ')}
                             </span>
                         </div>
@@ -113,28 +113,28 @@ function Sidebar({ isOpen, toggleSidebar }) {
                 </div>
 
                 {/* --- LINKS LIST --- */}
-                <div className="flex-1 overflow-y-auto px-3 pb-4 space-y-1 [&::-webkit-scrollbar]:hidden [-ms-overflow-style:'none'] [scrollbar-width:'none']">
+                <div className="flex-1 overflow-y-auto px-3 pb-4 space-y-1.5 [&::-webkit-scrollbar]:hidden [-ms-overflow-style:'none'] [scrollbar-width:'none']">
                     {filteredLinks.map((link) => (
                         <NavLink
                             key={link.path}
                             to={link.path}
                             onClick={() => isMobile && toggleSidebar()}
                             className={({ isActive }) => `
-                                flex items-center gap-3 px-4 py-3.5 rounded-xl text-sm font-medium transition-all duration-300 group relative overflow-hidden
+                                flex items-center gap-3 px-4 py-3 rounded-2xl text-sm font-bold transition-all duration-300 group relative overflow-hidden
                                 ${isActive
-                                    ? 'text-white bg-gradient-to-r from-blue-600/90 to-indigo-600/90 shadow-lg shadow-blue-500/20 translate-x-1'
-                                    : 'text-slate-400 hover:bg-gray-800/50 dark:hover:bg-gray-800 hover:text-white hover:translate-x-1'}
+                                    ? 'text-white bg-white/10 border border-white/20 shadow-[0_4px_20px_rgba(0,0,0,0.2)] backdrop-blur-md translate-x-1'
+                                    : 'text-gray-400 hover:bg-white/5 hover:text-white hover:translate-x-1 border border-transparent'}
                             `}
                         >
-                            <span className={`transition-colors duration-200 shrink-0 ${window.location.pathname.includes(link.path) ? 'text-white' : 'text-slate-400 group-hover:text-blue-400'}`}>{link.icon}</span>
+                            <span className={`transition-colors duration-200 shrink-0 ${window.location.pathname.includes(link.path) ? 'text-purple-400 drop-shadow-md' : 'text-gray-500 group-hover:text-purple-400'}`}>{link.icon}</span>
                             <span className="relative z-10 tracking-wide">{link.name}</span>
                         </NavLink>
                     ))}
                 </div>
 
                 {/* --- FOOTER --- */}
-                <div className="p-4 border-t border-gray-800/50 dark:border-gray-800 bg-[#0f172a] dark:bg-gray-900 shrink-0">
-                    <p className="text-[10px] text-center text-slate-500 dark:text-gray-500 font-medium tracking-wide">© 2025 HRMS System</p>
+                <div className="p-4 border-t border-white/5 bg-transparent shrink-0">
+                    <p className="text-[10px] text-center text-gray-500 font-bold tracking-widest uppercase">© 2025 HRMS</p>
                 </div>
             </div>
         </>

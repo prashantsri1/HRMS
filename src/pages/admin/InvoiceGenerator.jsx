@@ -368,7 +368,7 @@ const InvoiceGenerator = () => {
         {/* Header Actions */}
         <div className="flex flex-col md:flex-row justify-between items-center mb-6 gap-4">
           <div>
-            <h1 className="text-3xl font-extrabold text-indigo-700 dark:text-indigo-400 flex items-center gap-2">
+            <h1 className="text-3xl font-extrabold text-violet-700 dark:text-violet-400 flex items-center gap-2">
               <Truck size={32} /> GST Sales Invoice
             </h1>
             <p className="text-sm text-gray-500">Create invoices & Sync Inventory</p>
@@ -377,7 +377,7 @@ const InvoiceGenerator = () => {
             <button onClick={() => navigate('/admin/invoice-records')} className="btn-secondary flex gap-2"><List size={18} /> Records</button>
             <button onClick={() => window.location.reload()} className="p-2 bg-gray-200 dark:bg-gray-700 rounded-lg"><RefreshCw size={20} /></button>
             <button onClick={handleSave} className="flex items-center gap-2 bg-emerald-600 text-white px-5 py-2.5 rounded-xl font-bold shadow-lg hover:bg-emerald-700"><Save size={18} /> Save</button>
-            <button onClick={generatePDF} className="flex items-center gap-2 bg-indigo-600 text-white px-5 py-2.5 rounded-xl font-bold shadow-lg hover:bg-indigo-700"><Printer size={18} /> Print</button>
+            <button onClick={generatePDF} className="flex items-center gap-2 bg-violet-600 text-white px-5 py-2.5 rounded-xl font-bold shadow-lg hover:bg-violet-700"><Printer size={18} /> Print</button>
           </div>
         </div>
 
@@ -388,7 +388,7 @@ const InvoiceGenerator = () => {
           <div className="bg-white dark:bg-gray-800 p-5 rounded-xl shadow-sm border border-gray-200 dark:border-gray-700 space-y-4">
 
             <div className="flex items-center gap-2 border-b pb-2 mb-2 dark:border-gray-700">
-              <Layout className="text-indigo-500" size={18} />
+              <Layout className="text-violet-500" size={18} />
               <h3 className="font-bold text-gray-700 dark:text-gray-300 uppercase text-xs">Invoice Details</h3>
             </div>
 
@@ -406,7 +406,7 @@ const InvoiceGenerator = () => {
             {/* Transport Section */}
             <div className="pt-2">
               <div className="flex items-center gap-2 mb-2">
-                <Truck className="text-indigo-500" size={16} />
+                <Truck className="text-violet-500" size={16} />
                 <h3 className="font-bold text-gray-700 dark:text-gray-300 uppercase text-xs">Logistics</h3>
               </div>
               <div className="grid grid-cols-2 gap-3">
@@ -422,7 +422,7 @@ const InvoiceGenerator = () => {
             {/* Payment Section (Partial Logic) */}
             <div className="pt-2">
               <div className="flex items-center gap-2 mb-2">
-                <CreditCard className="text-indigo-500" size={16} />
+                <CreditCard className="text-violet-500" size={16} />
                 <h3 className="font-bold text-gray-700 dark:text-gray-300 uppercase text-xs">Payment</h3>
               </div>
               <div className="flex gap-2 mb-3">
@@ -430,7 +430,7 @@ const InvoiceGenerator = () => {
                   <button
                     key={status}
                     onClick={() => setInvoiceMeta({ ...invoiceMeta, paymentStatus: status, amountPaid: status === 'Paid' ? totals.grandTotal : (status === 'Due' ? 0 : invoiceMeta.amountPaid) })}
-                    className={`flex-1 py-1.5 text-xs font-bold rounded border transition-all ${invoiceMeta.paymentStatus === status ? 'bg-indigo-100 border-indigo-500 text-indigo-700' : 'bg-gray-50 border-gray-200 text-gray-500 dark:bg-gray-700 dark:border-gray-600'}`}
+                    className={`flex-1 py-1.5 text-xs font-bold rounded border transition-all ${invoiceMeta.paymentStatus === status ? 'bg-violet-100 border-violet-500 text-violet-700' : 'bg-gray-50 border-gray-200 text-gray-500 dark:bg-gray-700 dark:border-gray-600'}`}
                   >
                     {status}
                   </button>
@@ -468,7 +468,7 @@ const InvoiceGenerator = () => {
             </div>
 
             <div className="flex items-center gap-2 border-b pb-2 mb-4 dark:border-gray-700">
-              <User className="text-indigo-500" size={18} />
+              <User className="text-violet-500" size={18} />
               <h3 className="font-bold text-gray-700 dark:text-gray-300 uppercase text-xs">Customer Details</h3>
             </div>
 
@@ -506,7 +506,7 @@ const InvoiceGenerator = () => {
                   </div>
                 </div>
                 <div className="flex items-center gap-2 mt-4">
-                  <input type="checkbox" id="sameAddr" checked={partyDetails.sameAsBilling} onChange={e => setPartyDetails({ ...partyDetails, sameAsBilling: e.target.checked })} className="w-4 h-4 text-indigo-600 rounded" />
+                  <input type="checkbox" id="sameAddr" checked={partyDetails.sameAsBilling} onChange={e => setPartyDetails({ ...partyDetails, sameAsBilling: e.target.checked })} className="w-4 h-4 text-violet-600 rounded" />
                   <label htmlFor="sameAddr" className="text-sm text-gray-600 dark:text-gray-400">Shipping Address same as Billing</label>
                 </div>
               </div>
@@ -538,7 +538,7 @@ const InvoiceGenerator = () => {
                   <tr key={item.id} className="hover:bg-gray-50 dark:hover:bg-gray-700/50">
                     <td className="p-3 text-center text-gray-400">{index + 1}</td>
                     <td className="p-3 relative">
-                      <input type="text" list={`products-${item.id}`} value={item.desc} onChange={(e) => handleProductSelect(item.id, e.target.value)} placeholder="Search Item" className={`w-full bg-transparent outline-none font-medium ${item.inventoryId ? 'text-blue-600 dark:text-blue-400' : ''}`} />
+                      <input type="text" list={`products-${item.id}`} value={item.desc} onChange={(e) => handleProductSelect(item.id, e.target.value)} placeholder="Search Item" className={`w-full bg-transparent outline-none font-medium ${item.inventoryId ? 'text-purple-600 dark:text-purple-400' : ''}`} />
                       <datalist id={`products-${item.id}`}>{inventoryItems && inventoryItems.map(prod => (<option key={prod.id} value={prod.name}>Stock: {prod.qty} | ₹{prod.sellingPrice}</option>))}</datalist>
                     </td>
                     <td className="p-3"><input type="text" value={item.hsn} onChange={(e) => handleItemChange(item.id, 'hsn', e.target.value)} className="w-full bg-transparent outline-none" /></td>
@@ -555,7 +555,7 @@ const InvoiceGenerator = () => {
               </tbody>
             </table>
           </div>
-          <button onClick={addItem} className="w-full py-2 bg-gray-50 dark:bg-gray-700/50 text-indigo-500 font-bold text-sm hover:bg-gray-100 dark:hover:bg-gray-700 border-t border-gray-200 dark:border-gray-700 transition-colors">
+          <button onClick={addItem} className="w-full py-2 bg-gray-50 dark:bg-gray-700/50 text-violet-500 font-bold text-sm hover:bg-gray-100 dark:hover:bg-gray-700 border-t border-gray-200 dark:border-gray-700 transition-colors">
             + Add Line Item (Alt + C)
           </button>
         </div>
@@ -570,7 +570,7 @@ const InvoiceGenerator = () => {
               <p><span className="font-bold">IFSC:</span> {BANKS[0].ifsc}</p>
             </div>
           </div>
-          <div className="bg-white dark:bg-gray-800 p-6 rounded-xl shadow-lg border border-indigo-100 dark:border-indigo-900">
+          <div className="bg-white dark:bg-gray-800 p-6 rounded-xl shadow-lg border border-violet-100 dark:border-violet-900">
             <div className="space-y-3 text-sm">
               <div className="flex justify-between text-gray-500"><span>Total Taxable</span><span className="font-mono">₹{totals.totalTaxable.toFixed(2)}</span></div>
               {totals.isInterState ? (
@@ -583,7 +583,7 @@ const InvoiceGenerator = () => {
               )}
               <div className="flex justify-between text-gray-400 text-xs"><span>Round Off</span><span className="font-mono">{totals.roundOff}</span></div>
               <div className="h-px bg-gray-200 dark:bg-gray-700 my-2"></div>
-              <div className="flex justify-between items-end"><span className="font-bold text-lg">Grand Total</span><span className="font-extrabold text-3xl text-indigo-600 font-mono">₹{totals.grandTotal.toLocaleString()}</span></div>
+              <div className="flex justify-between items-end"><span className="font-bold text-lg">Grand Total</span><span className="font-extrabold text-3xl text-violet-600 font-mono">₹{totals.grandTotal.toLocaleString()}</span></div>
             </div>
           </div>
         </div>
@@ -609,7 +609,7 @@ const InvoiceGenerator = () => {
         }
         .input-field:focus {
             ring: 2px;
-            border-color: #6366f1;
+            border-color: #7C3AED;
         }
         .btn-secondary {
             background-color: #4b5563;

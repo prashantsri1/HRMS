@@ -1,11 +1,103 @@
 @import "tailwindcss";
 
-/* 1. Theme Configuration (Colors) */
+/* 1. Theme Configuration (Colors & Fonts) */
 @theme {
-  --color-primary: #0EA5A4;
-  --color-accent: #7C3AED;
+  --color-primary: #7C3AED; /* Amethyst Purple */
+  --color-accent: #10B981; /* Emerald Green */
+  --font-sans: 'Plus Jakarta Sans', sans-serif;
 }
 
 /* 2. Dark Mode Configuration ('class' strategy) */
-/* Ye line wahi kaam karegi jo 'darkMode: class' karti thi */
 @variant dark (&:where(.dark, .dark *));
+
+/* -------------------------------------------------------------------------- */
+/* GLOBAL DESIGN SYSTEM OVERRIDES (Applying Premium Aesthetics)               */
+/* -------------------------------------------------------------------------- */
+
+@layer base {
+  body {
+    font-family: 'Plus Jakarta Sans', sans-serif;
+    @apply bg-gray-50 text-gray-900 transition-colors duration-300 antialiased;
+  }
+  .dark body {
+    @apply bg-gray-950 text-white;
+  }
+
+  /* Global Scrollbar styling */
+  ::-webkit-scrollbar {
+    width: 6px;
+    height: 6px;
+  }
+  ::-webkit-scrollbar-track {
+    @apply bg-transparent;
+  }
+  ::-webkit-scrollbar-thumb {
+    @apply bg-gray-300 rounded-full dark:bg-gray-700 transition-colors;
+  }
+  ::-webkit-scrollbar-thumb:hover {
+    @apply bg-purple-400 dark:bg-purple-500;
+  }
+}
+
+@layer components {
+  /* 🪄 Premium Button Overrides */
+  button {
+    @apply transition-all duration-300;
+  }
+  /* Target primary filled buttons implicitly */
+  button.bg-purple-600, button.bg-violet-600, button.bg-emerald-600 {
+    @apply rounded-full shadow-[0_4px_14px_0_rgba(124,58,237,0.39)] hover:shadow-[0_6px_20px_rgba(124,58,237,0.23)] hover:-translate-y-0.5 active:scale-95;
+  }
+
+  /* 💎 Premium Card Overrides */
+  .rounded-2xl, .rounded-3xl, .rounded-xl {
+    @apply shadow-[0_8px_30px_rgb(0,0,0,0.04)] dark:shadow-[0_8px_30px_rgb(0,0,0,0.12)] border border-gray-200/60 dark:border-white/5;
+  }
+  .bg-white, .dark .bg-gray-800 {
+    @apply backdrop-blur-xl bg-white/95 dark:bg-gray-900/80;
+  }
+
+  /* ⌨️ Premium Inputs Overrides */
+  input[type="text"], input[type="email"], input[type="password"], input[type="number"], input[type="tel"], select, textarea {
+    @apply rounded-2xl border border-gray-200 dark:border-gray-800 bg-gray-50/50 dark:bg-gray-900/50 transition-all duration-300 focus:bg-white dark:focus:bg-gray-800 focus:ring-4 focus:ring-purple-500/20 focus:border-purple-500 dark:focus:ring-purple-400/20 outline-none placeholder-gray-400;
+  }
+
+  /* 📊 Premium Tables Overrides */
+  table {
+    @apply w-full border-collapse rounded-2xl overflow-hidden shadow-sm;
+  }
+  thead {
+    @apply bg-gray-50/80 dark:bg-gray-900/80 backdrop-blur-md border-b border-gray-200 dark:border-gray-800;
+  }
+  th {
+    @apply text-left py-4 px-6 text-xs font-bold text-gray-500 dark:text-gray-400 uppercase tracking-widest;
+  }
+  td {
+    @apply py-4 px-6 border-b border-gray-100 dark:border-gray-800/50 transition-colors;
+  }
+  tbody tr {
+    @apply hover:bg-purple-50/50 dark:hover:bg-purple-900/10 transition-colors cursor-default;
+  }
+
+  /* ✨ Utilities */
+  .glass {
+    @apply bg-white/70 dark:bg-gray-900/70 backdrop-blur-xl border border-white/20 dark:border-white/10 shadow-xl;
+  }
+}
+
+/* Custom Animations */
+@keyframes blob {
+  0% { transform: translate(0px, 0px) scale(1); }
+  33% { transform: translate(30px, -50px) scale(1.1); }
+  66% { transform: translate(-20px, 20px) scale(0.9); }
+  100% { transform: translate(0px, 0px) scale(1); }
+}
+.animate-blob {
+  animation: blob 7s infinite;
+}
+.animation-delay-2000 {
+  animation-delay: 2s;
+}
+.animation-delay-4000 {
+  animation-delay: 4s;
+}

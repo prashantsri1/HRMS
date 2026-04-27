@@ -26,7 +26,7 @@ const ForceStopPage = () => {
         <motion.div 
           animate={{ x: [0, 50, -50, 0], y: [0, 50, -50, 0] }}
           transition={{ duration: 15, repeat: Infinity, ease: "linear" }}
-          className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[500px] h-[500px] bg-indigo-900 rounded-full mix-blend-multiply filter blur-[100px] opacity-20"
+          className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[500px] h-[500px] bg-violet-900 rounded-full mix-blend-multiply filter blur-[100px] opacity-20"
         />
       </div>
 

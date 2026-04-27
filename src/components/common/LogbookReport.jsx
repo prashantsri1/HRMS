@@ -138,7 +138,7 @@ const LogbookReport = () => {
             <div className="flex flex-col md:flex-row justify-between items-start md:items-end mb-8 gap-4">
                 <div>
                     <h1 className="text-3xl font-extrabold text-gray-900 dark:text-white tracking-tight flex items-center gap-2">
-                        <span className="bg-indigo-600 w-2 h-8 rounded-full"></span>
+                        <span className="bg-violet-600 w-2 h-8 rounded-full"></span>
                         Logbook Report
                     </h1>
                     <p className="text-gray-500 dark:text-gray-400 mt-1 ml-4">
@@ -150,7 +150,7 @@ const LogbookReport = () => {
                 <div className="bg-white dark:bg-gray-800 p-1 rounded-xl border border-gray-200 dark:border-gray-700 flex shadow-sm">
                     <button 
                         onClick={() => setViewMode('daily')}
-                        className={`px-4 py-2 rounded-lg text-sm font-bold flex items-center gap-2 transition-all ${viewMode === 'daily' ? 'bg-indigo-100 text-indigo-700 dark:bg-indigo-900/50 dark:text-indigo-300' : 'text-gray-500 hover:bg-gray-50 dark:hover:bg-gray-700'}`}
+                        className={`px-4 py-2 rounded-lg text-sm font-bold flex items-center gap-2 transition-all ${viewMode === 'daily' ? 'bg-violet-100 text-violet-700 dark:bg-violet-900/50 dark:text-violet-300' : 'text-gray-500 hover:bg-gray-50 dark:hover:bg-gray-700'}`}
                     >
                         <List size={16}/> Daily Summary
                     </button>
@@ -176,7 +176,7 @@ const LogbookReport = () => {
                                 placeholder="Search Employee..." 
                                 value={searchTerm}
                                 onChange={(e) => setSearchTerm(e.target.value)}
-                                className="w-full pl-10 pr-4 py-2.5 bg-gray-50 dark:bg-gray-900 border border-gray-200 dark:border-gray-600 rounded-xl focus:ring-2 focus:ring-indigo-500 outline-none"
+                                className="w-full pl-10 pr-4 py-2.5 bg-gray-50 dark:bg-gray-900 border border-gray-200 dark:border-gray-600 rounded-xl focus:ring-2 focus:ring-violet-500 outline-none"
                             />
                         </div>
                         <div className="relative">
@@ -184,7 +184,7 @@ const LogbookReport = () => {
                                 type="date" 
                                 value={selectedDate}
                                 onChange={(e) => setSelectedDate(e.target.value)}
-                                className="pl-10 pr-4 py-2.5 bg-gray-50 dark:bg-gray-900 border border-gray-200 dark:border-gray-600 rounded-xl focus:ring-2 focus:ring-indigo-500 outline-none font-medium"
+                                className="pl-10 pr-4 py-2.5 bg-gray-50 dark:bg-gray-900 border border-gray-200 dark:border-gray-600 rounded-xl focus:ring-2 focus:ring-violet-500 outline-none font-medium"
                             />
                             <Calendar size={16} className="absolute left-3 top-3.5 text-gray-400"/>
                         </div>
@@ -253,7 +253,7 @@ const LogbookReport = () => {
                                     <motion.tr 
                                         key={log.id} 
                                         initial={{ opacity: 0 }} animate={{ opacity: 1 }}
-                                        className="hover:bg-indigo-50/30 dark:hover:bg-gray-700/30 transition-colors"
+                                        className="hover:bg-violet-50/30 dark:hover:bg-gray-700/30 transition-colors"
                                     >
                                         {viewMode === 'history' && (
                                             <td className="p-5 font-bold text-gray-700 dark:text-gray-300 whitespace-nowrap">
@@ -262,7 +262,7 @@ const LogbookReport = () => {
                                         )}
                                         <td className="p-5">
                                             <div className="flex items-center gap-3">
-                                                <div className="w-8 h-8 rounded-full bg-gradient-to-tr from-blue-500 to-purple-500 flex items-center justify-center text-white text-xs font-bold shadow-md">
+                                                <div className="w-8 h-8 rounded-full bg-gradient-to-tr from-purple-500 to-purple-500 flex items-center justify-center text-white text-xs font-bold shadow-md">
                                                     {log.userName.charAt(0)}
                                                 </div>
                                                 <div>
@@ -280,7 +280,7 @@ const LogbookReport = () => {
                                             {log.lastActive ? new Date(log.lastActive.seconds * 1000).toLocaleTimeString([], {hour: '2-digit', minute:'2-digit'}) : '-'}
                                         </td>
                                         <td className="p-5">
-                                            <span className="bg-indigo-100 dark:bg-indigo-900/30 text-indigo-700 dark:text-indigo-300 px-2 py-1 rounded font-bold text-xs whitespace-nowrap">
+                                            <span className="bg-violet-100 dark:bg-violet-900/30 text-violet-700 dark:text-violet-300 px-2 py-1 rounded font-bold text-xs whitespace-nowrap">
                                                 {formatDuration(log.totalDuration)}
                                             </span>
                                         </td>

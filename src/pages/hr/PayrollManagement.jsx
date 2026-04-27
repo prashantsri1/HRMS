@@ -145,7 +145,7 @@ function PayrollManagement() {
                 <div className="flex flex-col md:flex-row justify-between items-center mb-8 gap-4">
                     <div>
                         <h1 className="text-3xl font-extrabold text-gray-900 dark:text-white tracking-tight flex items-center gap-3">
-                            <Banknote className="text-indigo-600" size={32} /> Payroll History
+                            <Banknote className="text-violet-600" size={32} /> Payroll History
                             {userProfile?.role === 'super_admin' && <span className="text-xs bg-amber-100 text-amber-700 px-2 py-1 rounded-full border border-amber-200"><Crown size={12} className="inline mr-1" />Owner</span>}
                         </h1>
                         <p className="text-gray-500 dark:text-gray-400 mt-1">
@@ -161,7 +161,7 @@ function PayrollManagement() {
                         </button>
                         <button
                             onClick={() => navigate('/hr/advanced-payroll')}
-                            className="flex items-center gap-2 bg-indigo-600 hover:bg-indigo-700 text-white px-6 py-2.5 rounded-xl shadow-lg hover:shadow-indigo-500/30 transition-all font-bold active:scale-95"
+                            className="flex items-center gap-2 bg-violet-600 hover:bg-violet-700 text-white px-6 py-2.5 rounded-xl shadow-lg hover:shadow-violet-500/30 transition-all font-bold active:scale-95"
                         >
                             <Plus size={18} /> Create New Payroll
                         </button>
@@ -181,7 +181,7 @@ function PayrollManagement() {
                                     placeholder="Search by Employee Name or ID..."
                                     value={searchTerm}
                                     onChange={(e) => setSearchTerm(e.target.value)}
-                                    className="w-full pl-10 pr-4 py-2 bg-white dark:bg-gray-700 border border-gray-200 dark:border-gray-600 rounded-xl outline-none focus:ring-2 focus:ring-indigo-500 text-sm"
+                                    className="w-full pl-10 pr-4 py-2 bg-white dark:bg-gray-700 border border-gray-200 dark:border-gray-600 rounded-xl outline-none focus:ring-2 focus:ring-violet-500 text-sm"
                                 />
                             </div>
                             <div className="flex items-center gap-2">
@@ -190,7 +190,7 @@ function PayrollManagement() {
                                     type="month"
                                     value={selectedMonth}
                                     onChange={(e) => setSelectedMonth(e.target.value)}
-                                    className="px-3 py-2 bg-white dark:bg-gray-700 border border-gray-200 dark:border-gray-600 rounded-xl outline-none focus:ring-2 focus:ring-indigo-500 text-sm font-medium dark:[color-scheme:dark]"
+                                    className="px-3 py-2 bg-white dark:bg-gray-700 border border-gray-200 dark:border-gray-600 rounded-xl outline-none focus:ring-2 focus:ring-violet-500 text-sm font-medium dark:[color-scheme:dark]"
                                 />
                             </div>
                         </div>
@@ -226,7 +226,7 @@ function PayrollManagement() {
 
                                             <td className="px-6 py-4">
                                                 <div className="flex items-center gap-3">
-                                                    <div className="w-8 h-8 rounded-full bg-indigo-100 dark:bg-indigo-900/50 flex items-center justify-center text-indigo-600 dark:text-indigo-400 font-bold text-xs">
+                                                    <div className="w-8 h-8 rounded-full bg-violet-100 dark:bg-violet-900/50 flex items-center justify-center text-violet-600 dark:text-violet-400 font-bold text-xs">
                                                         {rec.employeeName?.charAt(0)}
                                                     </div>
                                                     <div>
@@ -258,7 +258,7 @@ function PayrollManagement() {
 
                                             <td className="px-6 py-4">
                                                 <div className="flex justify-center gap-2">
-                                                    <button onClick={() => downloadSlip(rec)} className="p-2 text-blue-600 hover:bg-blue-50 dark:text-blue-400 dark:hover:bg-blue-900/30 rounded-lg transition-colors" title="Download Slip">
+                                                    <button onClick={() => downloadSlip(rec)} className="p-2 text-purple-600 hover:bg-purple-50 dark:text-purple-400 dark:hover:bg-purple-900/30 rounded-lg transition-colors" title="Download Slip">
                                                         <Download size={18} />
                                                     </button>
                                                     <button onClick={() => handleDelete(rec.id)} className="p-2 text-red-600 hover:bg-red-50 dark:text-red-400 dark:hover:bg-red-900/30 rounded-lg transition-colors" title="Delete Record">

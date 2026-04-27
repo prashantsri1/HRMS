@@ -159,7 +159,7 @@ function LeaveRequests() {
             label = req.leaveType || 'Leave';
             if (label === 'Sick Leave') colorClass = 'bg-red-50 dark:bg-red-900/30 text-red-700 dark:text-red-400 border-red-100 dark:border-red-800';
             else if (label === 'Casual Leave') colorClass = 'bg-yellow-50 dark:bg-yellow-900/30 text-yellow-700 dark:text-yellow-400 border-yellow-100 dark:border-yellow-800';
-            else colorClass = 'bg-blue-50 dark:bg-blue-900/30 text-blue-700 dark:text-blue-400 border-blue-100 dark:border-blue-800';
+            else colorClass = 'bg-purple-50 dark:bg-purple-900/30 text-purple-700 dark:text-purple-400 border-purple-100 dark:border-purple-800';
         }
 
         return (
@@ -187,7 +187,7 @@ function LeaveRequests() {
                         {isSuperAdmin && <span className="text-xs bg-amber-100 text-amber-700 border border-amber-200 px-2 py-1 rounded-full"><Crown size={12} className="inline mr-1"/>God Mode</span>}
                     </h2>
                     <p className="text-sm text-gray-500 dark:text-gray-400 mt-1">
-                        Current Role: <span className="font-bold uppercase text-blue-600 dark:text-blue-400">{userRole.replace('_', ' ')}</span>
+                        Current Role: <span className="font-bold uppercase text-purple-600 dark:text-purple-400">{userRole.replace('_', ' ')}</span>
                     </p>
                 </div>
                 <div className="bg-white dark:bg-gray-800 px-4 py-2 rounded-lg shadow-sm border border-gray-200 dark:border-gray-700 flex items-center gap-2">
@@ -291,7 +291,7 @@ function LeaveRequests() {
                                                 {/* 🟢 HR Actions */}
                                                 {isHR && (req.status === 'Pending HR' || req.status === 'Pending') && (
                                                     <>
-                                                        <button onClick={() => handleHRApprove(req)} className="bg-blue-600 hover:bg-blue-700 text-white px-3 py-1.5 rounded text-xs font-bold shadow-sm transition">
+                                                        <button onClick={() => handleHRApprove(req)} className="bg-purple-600 hover:bg-purple-700 text-white px-3 py-1.5 rounded text-xs font-bold shadow-sm transition">
                                                             Forward
                                                         </button>
                                                         <button onClick={() => handleReject(req)} className="bg-white dark:bg-gray-700 hover:bg-red-50 dark:hover:bg-red-900/20 text-red-600 dark:text-red-400 border border-red-200 dark:border-red-800 px-3 py-1.5 rounded text-xs font-bold transition">

@@ -206,7 +206,7 @@ const Appointment = () => {
       <div className="flex flex-col md:flex-row justify-between items-start md:items-center mb-6 gap-4">
         <div>
           <h1 className="text-2xl sm:text-3xl font-extrabold text-gray-900 dark:text-white flex items-center gap-3">
-            <Calendar className="text-indigo-600" size={28}/> Appointment Hub
+            <Calendar className="text-violet-600" size={28}/> Appointment Hub
             {isSuperAdmin && <span className="text-xs bg-amber-100 text-amber-700 px-2 py-1 rounded-full border border-amber-200"><Crown size={12} className="inline mr-1"/>Owner</span>}
           </h1>
           <p className="text-sm text-gray-500 dark:text-gray-400 mt-1">Manage, Track & Control Schedules</p>
@@ -217,12 +217,12 @@ const Appointment = () => {
             onClick={() => navigate('/admin/appointment-report')} 
             className="flex-1 md:flex-none justify-center bg-white dark:bg-gray-800 text-gray-700 dark:text-gray-200 border border-gray-300 dark:border-gray-600 px-4 py-2.5 rounded-xl font-bold hover:bg-gray-50 dark:hover:bg-gray-700 flex items-center gap-2 transition-transform active:scale-95 shadow-sm text-sm"
           >
-            <BarChart size={18} className="text-indigo-500"/> View Reports
+            <BarChart size={18} className="text-violet-500"/> View Reports
           </button>
 
           <button 
             onClick={openCreateModal}
-            className="flex-1 md:flex-none justify-center bg-indigo-600 hover:bg-indigo-700 text-white px-5 py-2.5 rounded-xl font-bold shadow-lg shadow-indigo-500/30 flex items-center gap-2 transition-transform active:scale-95 text-sm"
+            className="flex-1 md:flex-none justify-center bg-violet-600 hover:bg-violet-700 text-white px-5 py-2.5 rounded-xl font-bold shadow-lg shadow-violet-500/30 flex items-center gap-2 transition-transform active:scale-95 text-sm"
           >
             <Plus size={18}/> New Booking
           </button>
@@ -237,7 +237,7 @@ const Appointment = () => {
             onClick={() => setFilterStatus(status)}
             className={`px-4 py-2 rounded-full text-xs sm:text-sm font-bold border transition-all whitespace-nowrap
               ${filterStatus === status 
-                ? 'bg-indigo-600 text-white border-indigo-600' 
+                ? 'bg-violet-600 text-white border-violet-600' 
                 : 'bg-white dark:bg-gray-800 text-gray-600 dark:text-gray-300 border-gray-200 dark:border-gray-700 hover:bg-gray-100'}`}
           >
             {status}
@@ -259,7 +259,7 @@ const Appointment = () => {
               {/* Top Row */}
               <div className="flex justify-between items-start mb-4">
                  <div className="flex items-start gap-3 min-w-0">
-                    <div className="bg-indigo-50 dark:bg-indigo-900/30 p-3 rounded-2xl text-indigo-600 shrink-0">
+                    <div className="bg-violet-50 dark:bg-violet-900/30 p-3 rounded-2xl text-violet-600 shrink-0">
                       <User size={20} />
                     </div>
                     <div className="min-w-0">
@@ -275,7 +275,7 @@ const Appointment = () => {
                       value={appt.status} 
                       onChange={(e) => handleStatusChange(appt.id, e.target.value)}
                       className={`text-[10px] uppercase font-bold py-1 px-2 rounded-lg border-none outline-none cursor-pointer appearance-none text-center
-                        ${appt.status === 'Scheduled' ? 'bg-indigo-100 text-indigo-700' : 
+                        ${appt.status === 'Scheduled' ? 'bg-violet-100 text-violet-700' : 
                           appt.status === 'Completed' ? 'bg-green-100 text-green-700' : 'bg-red-100 text-red-700'}`}
                     >
                       <option value="Scheduled">Scheduled</option>
@@ -344,20 +344,20 @@ const Appointment = () => {
               initial={{ scale: 0.95, opacity: 0 }} animate={{ scale: 1, opacity: 1 }} exit={{ scale: 0.95, opacity: 0 }}
               className="bg-white dark:bg-gray-800 w-full md:w-[95%] max-w-2xl rounded-2xl shadow-2xl overflow-hidden flex flex-col max-h-[90vh]"
             >
-              <div className="p-5 bg-indigo-600 flex justify-between items-center text-white">
+              <div className="p-5 bg-violet-600 flex justify-between items-center text-white">
                 <h2 className="text-lg font-bold flex items-center gap-2">
                     {editingAppt ? <Edit2 size={24}/> : <Plus size={24}/>} 
                     {editingAppt ? 'Edit Appointment' : 'New Appointment'}
                 </h2>
-                <button onClick={() => setIsModalOpen(false)} className="hover:bg-indigo-700 p-1 rounded-full"><X size={24}/></button>
+                <button onClick={() => setIsModalOpen(false)} className="hover:bg-violet-700 p-1 rounded-full"><X size={24}/></button>
               </div>
 
               <div className="p-5 overflow-y-auto custom-scrollbar space-y-5">
                 {/* 1. Client Selection */}
                 <div className="bg-gray-50 dark:bg-gray-700/30 p-4 rounded-xl border border-gray-200 dark:border-gray-600">
                   <div className="flex flex-col sm:flex-row gap-3 mb-4">
-                    <button onClick={() => setBookingType('lead')} disabled={!!editingAppt} className={`flex-1 py-2 rounded-lg text-sm font-bold border transition-colors ${bookingType === 'lead' ? 'bg-indigo-100 text-indigo-700 border-indigo-300' : 'bg-white border-gray-300 text-gray-500'} ${editingAppt && 'opacity-50 cursor-not-allowed'}`}>Existing Lead</button>
-                    <button onClick={() => { setBookingType('walk-in'); setSelectedLeadId(''); if(!editingAppt) setFormData(prev => ({...prev, clientName: '', clientEmail: ''})); }} disabled={!!editingAppt} className={`flex-1 py-2 rounded-lg text-sm font-bold border transition-colors ${bookingType === 'walk-in' ? 'bg-indigo-100 text-indigo-700 border-indigo-300' : 'bg-white border-gray-300 text-gray-500'} ${editingAppt && 'opacity-50 cursor-not-allowed'}`}>New Walk-in</button>
+                    <button onClick={() => setBookingType('lead')} disabled={!!editingAppt} className={`flex-1 py-2 rounded-lg text-sm font-bold border transition-colors ${bookingType === 'lead' ? 'bg-violet-100 text-violet-700 border-violet-300' : 'bg-white border-gray-300 text-gray-500'} ${editingAppt && 'opacity-50 cursor-not-allowed'}`}>Existing Lead</button>
+                    <button onClick={() => { setBookingType('walk-in'); setSelectedLeadId(''); if(!editingAppt) setFormData(prev => ({...prev, clientName: '', clientEmail: ''})); }} disabled={!!editingAppt} className={`flex-1 py-2 rounded-lg text-sm font-bold border transition-colors ${bookingType === 'walk-in' ? 'bg-violet-100 text-violet-700 border-violet-300' : 'bg-white border-gray-300 text-gray-500'} ${editingAppt && 'opacity-50 cursor-not-allowed'}`}>New Walk-in</button>
                   </div>
                   {bookingType === 'lead' && (
                     <div className="relative">
@@ -406,7 +406,7 @@ const Appointment = () => {
 
               <div className="p-5 border-t border-gray-200 dark:border-gray-700 bg-gray-50 dark:bg-gray-700/30 flex justify-end gap-3 rounded-b-2xl">
                 <button onClick={() => setIsModalOpen(false)} className="px-5 py-2.5 text-gray-500 font-bold hover:text-gray-700 text-sm">Cancel</button>
-                <button onClick={handleSave} disabled={loading} className="px-6 py-2.5 bg-indigo-600 text-white rounded-lg font-bold shadow-md hover:bg-indigo-700 flex items-center gap-2 text-sm">{loading ? 'Processing...' : <><CheckCircle size={16}/> {editingAppt ? 'Update Changes' : 'Confirm Booking'}</>}</button>
+                <button onClick={handleSave} disabled={loading} className="px-6 py-2.5 bg-violet-600 text-white rounded-lg font-bold shadow-md hover:bg-violet-700 flex items-center gap-2 text-sm">{loading ? 'Processing...' : <><CheckCircle size={16}/> {editingAppt ? 'Update Changes' : 'Confirm Booking'}</>}</button>
               </div>
             </motion.div>
           </div>
@@ -416,7 +416,7 @@ const Appointment = () => {
       <style>{`
         .input-std { width: 100%; padding: 0.75rem; border-radius: 0.5rem; border: 1px solid #e5e7eb; background-color: white; outline: none; transition: all 0.2s; }
         .dark .input-std { background-color: #1f2937; border-color: #374151; color: white; }
-        .input-std:focus { border-color: #6366f1; box-shadow: 0 0 0 3px rgba(99, 102, 241, 0.1); }
+        .input-std:focus { border-color: #7C3AED; box-shadow: 0 0 0 3px rgba(124, 58, 237, 0.1); }
         .scrollbar-hide::-webkit-scrollbar { display: none; }
         .scrollbar-hide { -ms-overflow-style: none; scrollbar-width: none; }
       `}</style>

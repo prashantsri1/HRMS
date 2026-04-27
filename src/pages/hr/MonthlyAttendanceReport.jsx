@@ -141,7 +141,7 @@ function MonthlyAttendanceReport() {
                         <select 
                             value={selectedEmployeeId}
                             onChange={(e) => setSelectedEmployeeId(e.target.value)}
-                            className="w-full pl-10 pr-4 py-3 bg-gray-50 dark:bg-gray-700 border border-gray-200 dark:border-gray-600 rounded-xl focus:bg-white dark:focus:bg-gray-800 focus:ring-2 focus:ring-indigo-500 outline-none appearance-none cursor-pointer transition-all hover:border-indigo-300 font-medium text-gray-700 dark:text-gray-200"
+                            className="w-full pl-10 pr-4 py-3 bg-gray-50 dark:bg-gray-700 border border-gray-200 dark:border-gray-600 rounded-xl focus:bg-white dark:focus:bg-gray-800 focus:ring-2 focus:ring-violet-500 outline-none appearance-none cursor-pointer transition-all hover:border-violet-300 font-medium text-gray-700 dark:text-gray-200"
                         >
                             <option value="" disabled>-- Choose Employee --</option>
                             {employees?.map(emp => (
@@ -165,7 +165,7 @@ function MonthlyAttendanceReport() {
                             type="month" 
                             value={selectedMonth}
                             onChange={(e) => setSelectedMonth(e.target.value)}
-                            className="w-full pl-10 pr-4 py-3 bg-gray-50 dark:bg-gray-700 border border-gray-200 dark:border-gray-600 rounded-xl focus:bg-white dark:focus:bg-gray-800 focus:ring-2 focus:ring-indigo-500 outline-none transition-all hover:border-indigo-300 font-medium text-gray-700 dark:text-gray-200 dark:[color-scheme:dark]"
+                            className="w-full pl-10 pr-4 py-3 bg-gray-50 dark:bg-gray-700 border border-gray-200 dark:border-gray-600 rounded-xl focus:bg-white dark:focus:bg-gray-800 focus:ring-2 focus:ring-violet-500 outline-none transition-all hover:border-violet-300 font-medium text-gray-700 dark:text-gray-200 dark:[color-scheme:dark]"
                         />
                     </div>
                 </div>
@@ -191,7 +191,7 @@ function MonthlyAttendanceReport() {
                                     <StatCard label="Present" value={reportData.stats.present} icon={<CheckCircle size={20} />} color="text-emerald-600 dark:text-emerald-400" bg="bg-emerald-50 dark:bg-emerald-900/20" border="border-emerald-100 dark:border-emerald-800" />
                                     <StatCard label="Absent" value={reportData.stats.absent} icon={<XCircle size={20} />} color="text-rose-600 dark:text-rose-400" bg="bg-rose-50 dark:bg-rose-900/20" border="border-rose-100 dark:border-rose-800" />
                                     <StatCard label="Late" value={reportData.stats.late} icon={<Clock size={20} />} color="text-amber-600 dark:text-amber-400" bg="bg-amber-50 dark:bg-amber-900/20" border="border-amber-100 dark:border-amber-800" />
-                                    <StatCard label="Leaves" value={reportData.stats.leave} icon={<Briefcase size={20} />} color="text-blue-600 dark:text-blue-400" bg="bg-blue-50 dark:bg-blue-900/20" border="border-blue-100 dark:border-blue-800" />
+                                    <StatCard label="Leaves" value={reportData.stats.leave} icon={<Briefcase size={20} />} color="text-purple-600 dark:text-purple-400" bg="bg-purple-50 dark:bg-purple-900/20" border="border-purple-100 dark:border-purple-800" />
                                     <StatCard label="Half Days" value={reportData.stats.halfDay} icon={<AlertTriangle size={20} />} color="text-purple-600 dark:text-purple-400" bg="bg-purple-50 dark:bg-purple-900/20" border="border-purple-100 dark:border-purple-800" />
                                     
                                     <div className="pt-4 mt-2 border-t border-gray-100 dark:border-gray-700 flex justify-between items-center">
@@ -254,7 +254,7 @@ function MonthlyAttendanceReport() {
                 )
             ) : (
                 <div className="flex flex-col items-center justify-center py-24 bg-white dark:bg-gray-800 rounded-2xl border-2 border-dashed border-gray-200 dark:border-gray-700 transition-colors duration-300">
-                    <div className="p-4 bg-indigo-50 dark:bg-indigo-900/20 text-indigo-500 dark:text-indigo-400 rounded-full mb-4 animate-bounce">
+                    <div className="p-4 bg-violet-50 dark:bg-violet-900/20 text-violet-500 dark:text-violet-400 rounded-full mb-4 animate-bounce">
                         <User size={32} />
                     </div>
                     <h3 className="text-xl font-bold text-gray-800 dark:text-white">Select a Team Member</h3>
@@ -281,7 +281,7 @@ const StatusBadge = ({ status }) => {
         'Present': 'bg-emerald-100 dark:bg-emerald-900/30 text-emerald-700 dark:text-emerald-400 border-emerald-200 dark:border-emerald-800',
         'Absent': 'bg-rose-100 dark:bg-rose-900/30 text-rose-700 dark:text-rose-400 border-rose-200 dark:border-rose-800',
         'Late': 'bg-amber-100 dark:bg-amber-900/30 text-amber-700 dark:text-amber-400 border-amber-200 dark:border-amber-800',
-        'Leave': 'bg-blue-100 dark:bg-blue-900/30 text-blue-700 dark:text-blue-400 border-blue-200 dark:border-blue-800',
+        'Leave': 'bg-purple-100 dark:bg-purple-900/30 text-purple-700 dark:text-purple-400 border-purple-200 dark:border-purple-800',
         'Half Day': 'bg-purple-100 dark:bg-purple-900/30 text-purple-700 dark:text-purple-400 border-purple-200 dark:border-purple-800'
     };
     return (

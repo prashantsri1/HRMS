@@ -90,10 +90,10 @@ const Accounting = () => {
             desc: "Calculate salaries, PF/PT/TDS, and generate Payslips.",
             path: "/hr/advanced-payroll",
             icon: <Calculator size={40} />,
-            color: "text-blue-600 dark:text-blue-400",
-            bg: "bg-blue-50 dark:bg-blue-900/20",
-            border: "border-blue-200 dark:border-blue-800",
-            hover: "hover:border-blue-400 dark:hover:border-blue-600",
+            color: "text-purple-600 dark:text-purple-400",
+            bg: "bg-purple-50 dark:bg-purple-900/20",
+            border: "border-purple-200 dark:border-purple-800",
+            hover: "hover:border-purple-400 dark:hover:border-purple-600",
             isVisible: canSeePayroll
         },
         {
@@ -161,13 +161,13 @@ const Accounting = () => {
                             <div className={`w-16 h-16 rounded-2xl flex items-center justify-center mb-6 ${tool.bg} ${tool.color} shadow-inner transition-colors duration-300`}>
                                 {tool.icon}
                             </div>
-                            <h3 className="text-2xl font-bold text-gray-800 dark:text-gray-100 mb-3 group-hover:text-indigo-600 dark:group-hover:text-indigo-400 transition-colors">
+                            <h3 className="text-2xl font-bold text-gray-800 dark:text-gray-100 mb-3 group-hover:text-violet-600 dark:group-hover:text-violet-400 transition-colors">
                                 {tool.title}
                             </h3>
                             <p className="text-gray-500 dark:text-gray-400 leading-relaxed mb-8">
                                 {tool.desc}
                             </p>
-                            <div className="absolute bottom-8 right-8 w-10 h-10 bg-gray-100 dark:bg-gray-700 rounded-full flex items-center justify-center group-hover:bg-indigo-600 group-hover:text-white transition-all duration-300">
+                            <div className="absolute bottom-8 right-8 w-10 h-10 bg-gray-100 dark:bg-gray-700 rounded-full flex items-center justify-center group-hover:bg-violet-600 group-hover:text-white transition-all duration-300">
                                 <ArrowRight size={20} />
                             </div>
                         </div>
@@ -182,7 +182,7 @@ const Accounting = () => {
                         
                         <div className="px-6 py-4 border-b border-gray-200 dark:border-gray-700 flex justify-between items-center bg-gray-50 dark:bg-gray-700/30 rounded-t-2xl">
                             <h2 className="text-lg font-bold text-gray-800 dark:text-white flex items-center gap-2">
-                                <ShieldCheck className="text-indigo-500" /> Tool Access Control
+                                <ShieldCheck className="text-violet-500" /> Tool Access Control
                             </h2>
                             <button onClick={() => setIsModalOpen(false)} className="text-gray-400 hover:text-red-500"><X size={20} /></button>
                         </div>
@@ -200,9 +200,9 @@ const Accounting = () => {
                                     const isAllowed = allowedUserIds.includes(emp.id);
 
                                     return (
-                                        <label key={emp.id} className={`flex items-center justify-between p-3 rounded-xl border cursor-pointer transition-colors ${isAllowed ? 'bg-indigo-50 border-indigo-200 dark:bg-indigo-900/20 dark:border-indigo-800' : 'border-gray-100 dark:border-gray-700 hover:bg-gray-50 dark:hover:bg-gray-700/50'}`}>
+                                        <label key={emp.id} className={`flex items-center justify-between p-3 rounded-xl border cursor-pointer transition-colors ${isAllowed ? 'bg-violet-50 border-violet-200 dark:bg-violet-900/20 dark:border-violet-800' : 'border-gray-100 dark:border-gray-700 hover:bg-gray-50 dark:hover:bg-gray-700/50'}`}>
                                             <div className="flex items-center gap-3">
-                                                <div className={`w-8 h-8 rounded-full flex items-center justify-center text-xs font-bold ${isAllowed ? 'bg-indigo-100 text-indigo-600' : 'bg-gray-200 text-gray-500'}`}>
+                                                <div className={`w-8 h-8 rounded-full flex items-center justify-center text-xs font-bold ${isAllowed ? 'bg-violet-100 text-violet-600' : 'bg-gray-200 text-gray-500'}`}>
                                                     {initial}
                                                 </div>
                                                 <div>
@@ -211,7 +211,7 @@ const Accounting = () => {
                                                 </div>
                                             </div>
                                             
-                                            <div className={`w-6 h-6 rounded border flex items-center justify-center transition-all ${isAllowed ? 'bg-indigo-600 border-indigo-600' : 'border-gray-300 dark:border-gray-500'}`}>
+                                            <div className={`w-6 h-6 rounded border flex items-center justify-center transition-all ${isAllowed ? 'bg-violet-600 border-violet-600' : 'border-gray-300 dark:border-gray-500'}`}>
                                                 {isAllowed && <Check size={14} className="text-white" />}
                                             </div>
                                             
@@ -228,7 +228,7 @@ const Accounting = () => {
                         </div>
                         
                         <div className="px-6 py-4 border-t border-gray-200 dark:border-gray-700 bg-gray-50 dark:bg-gray-700/30 rounded-b-2xl text-right">
-                            <button onClick={() => setIsModalOpen(false)} className="px-6 py-2 bg-indigo-600 text-white rounded-lg font-bold shadow-md hover:bg-indigo-700 active:scale-95 transition-all">Done</button>
+                            <button onClick={() => setIsModalOpen(false)} className="px-6 py-2 bg-violet-600 text-white rounded-lg font-bold shadow-md hover:bg-violet-700 active:scale-95 transition-all">Done</button>
                         </div>
                     </div>
                 </div>

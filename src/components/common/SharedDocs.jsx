@@ -66,14 +66,14 @@ const UserSelector = ({ selectedUsers, setSelectedUsers, currentUserRole }) => {
         <div className="mb-4 border border-gray-200 dark:border-gray-700 p-3 rounded-lg bg-gray-50 dark:bg-gray-900/50 max-h-60 overflow-y-auto custom-scrollbar shadow-inner">
             <label className="block text-sm font-bold mb-3 text-gray-700 dark:text-gray-300 flex justify-between items-center sticky top-0 bg-gray-50 dark:bg-gray-900/90 backdrop-blur-sm pb-2 border-b border-gray-200 dark:border-gray-700 z-10">
                 <span>Select People to Share With:</span>
-                <span className="text-xs bg-blue-100 dark:bg-blue-900/30 text-blue-700 dark:text-blue-400 px-2 py-0.5 rounded-full font-medium">{selectedUsers.length} selected</span>
+                <span className="text-xs bg-purple-100 dark:bg-purple-900/30 text-purple-700 dark:text-purple-400 px-2 py-0.5 rounded-full font-medium">{selectedUsers.length} selected</span>
             </label>
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-2">
                 {users.map(user => {
                     const isAdminUser = ['admin', 'super_admin'].includes(user.role);
                     const isLocked = isAdminUser; 
                     return (
-                        <div key={user.id} onClick={() => !isLocked && toggleUser(user.id)} className={`cursor-pointer p-2.5 text-xs rounded-lg border flex items-center gap-3 transition-all duration-200 ${selectedUsers.includes(user.id) ? 'bg-blue-50 dark:bg-blue-900/20 border-blue-500 dark:border-blue-500 shadow-sm ring-1 ring-blue-500' : 'bg-white dark:bg-gray-800 border-gray-200 dark:border-gray-700 hover:bg-gray-100 dark:hover:bg-gray-700 hover:border-gray-300 dark:hover:border-gray-600'} ${isLocked ? 'opacity-60 cursor-not-allowed bg-gray-100 dark:bg-gray-800/50' : ''}`}>
+                        <div key={user.id} onClick={() => !isLocked && toggleUser(user.id)} className={`cursor-pointer p-2.5 text-xs rounded-lg border flex items-center gap-3 transition-all duration-200 ${selectedUsers.includes(user.id) ? 'bg-purple-50 dark:bg-purple-900/20 border-purple-500 dark:border-purple-500 shadow-sm ring-1 ring-purple-500' : 'bg-white dark:bg-gray-800 border-gray-200 dark:border-gray-700 hover:bg-gray-100 dark:hover:bg-gray-700 hover:border-gray-300 dark:hover:border-gray-600'} ${isLocked ? 'opacity-60 cursor-not-allowed bg-gray-100 dark:bg-gray-800/50' : ''}`}>
                             <input type="checkbox" checked={selectedUsers.includes(user.id)} readOnly className="accent-blue-600 w-4 h-4 cursor-pointer rounded" disabled={isLocked} />
                             <div className="flex flex-col truncate w-full">
                                 <span className="font-semibold text-gray-800 dark:text-gray-200 truncate flex items-center gap-1">{user.name || user.email} {isLocked && <span className="text-[9px] bg-red-100 dark:bg-red-900/30 text-red-600 dark:text-red-400 px-1 rounded border border-red-200 dark:border-red-800">ADMIN</span>}</span>
@@ -354,10 +354,10 @@ const FolderBrowser = ({ parentId, parentName, onSelect, onBack, isRoot, parentF
                 <div className="fixed inset-0 bg-black/60 dark:bg-black/80 flex items-center justify-center z-[60] p-4 backdrop-blur-sm animate-fade-in">
                     <div className="bg-white dark:bg-gray-800 p-8 rounded-2xl shadow-2xl w-full max-w-lg border border-gray-100 dark:border-gray-700">
                         <h3 className="text-xl font-bold mb-6 text-gray-800 dark:text-white flex items-center gap-2">📊 Import & Share</h3>
-                        <div className="mb-6 bg-blue-50 dark:bg-blue-900/20 p-4 rounded-xl border border-blue-100 dark:border-blue-800 flex items-center gap-3">
+                        <div className="mb-6 bg-purple-50 dark:bg-purple-900/20 p-4 rounded-xl border border-purple-100 dark:border-purple-800 flex items-center gap-3">
                             <span className="text-3xl">📄</span>
                             <div>
-                                <p className="text-xs text-blue-600 dark:text-blue-400 font-bold uppercase tracking-wide">Selected File</p>
+                                <p className="text-xs text-purple-600 dark:text-purple-400 font-bold uppercase tracking-wide">Selected File</p>
                                 <p className="text-sm font-semibold text-gray-800 dark:text-gray-200">{importFile.name}</p>
                             </div>
                         </div>
@@ -379,7 +379,7 @@ const FolderBrowser = ({ parentId, parentName, onSelect, onBack, isRoot, parentF
                         <UserSelector selectedUsers={tempSharedWith} setSelectedUsers={setTempSharedWith} currentUserRole={role} />
                         <div className="flex justify-end gap-3 mt-6 pt-4 border-t border-gray-100 dark:border-gray-700">
                             <button onClick={() => setManageAccessItem(null)} className="px-5 py-2.5 bg-gray-100 dark:bg-gray-700 text-gray-700 dark:text-gray-300 rounded-xl hover:bg-gray-200 dark:hover:bg-gray-600 transition font-semibold text-sm">Cancel</button>
-                            <button onClick={handleSaveAccess} className="px-5 py-2.5 bg-indigo-600 hover:bg-indigo-700 text-white rounded-xl shadow-md transition font-bold text-sm">Save Changes</button>
+                            <button onClick={handleSaveAccess} className="px-5 py-2.5 bg-violet-600 hover:bg-violet-700 text-white rounded-xl shadow-md transition font-bold text-sm">Save Changes</button>
                         </div>
                     </div>
                 </div>
@@ -412,7 +412,7 @@ const FolderBrowser = ({ parentId, parentName, onSelect, onBack, isRoot, parentF
                                 </button>
                             </>
                         )}
-                        <button onClick={() => setIsCreating(true)} className="bg-indigo-600 hover:bg-indigo-700 text-white px-5 py-2.5 rounded-xl shadow-lg shadow-indigo-500/20 transition-all font-semibold text-sm flex items-center gap-2 active:scale-95 flex-1 md:flex-none justify-center">
+                        <button onClick={() => setIsCreating(true)} className="bg-violet-600 hover:bg-violet-700 text-white px-5 py-2.5 rounded-xl shadow-lg shadow-violet-500/20 transition-all font-semibold text-sm flex items-center gap-2 active:scale-95 flex-1 md:flex-none justify-center">
                             <span className="text-lg">+</span> Create New
                         </button>
                     </div>
@@ -421,8 +421,8 @@ const FolderBrowser = ({ parentId, parentName, onSelect, onBack, isRoot, parentF
 
             {/* Create New Item Section */}
             {isCreating && (
-                <div className="bg-white dark:bg-gray-800 p-8 rounded-2xl shadow-xl border border-indigo-100 dark:border-gray-700 mb-8 animate-fade-in-down relative overflow-hidden">
-                    <div className="absolute top-0 left-0 w-1.5 h-full bg-indigo-500"></div>
+                <div className="bg-white dark:bg-gray-800 p-8 rounded-2xl shadow-xl border border-violet-100 dark:border-gray-700 mb-8 animate-fade-in-down relative overflow-hidden">
+                    <div className="absolute top-0 left-0 w-1.5 h-full bg-violet-500"></div>
                     <h3 className="font-bold text-xl mb-6 text-gray-800 dark:text-white">Create New {isRoot ? 'Folder' : 'Sheet'}</h3>
                     
                     <div className="mb-6">
@@ -431,7 +431,7 @@ const FolderBrowser = ({ parentId, parentName, onSelect, onBack, isRoot, parentF
                             type="text" 
                             value={newFolderName} 
                             onChange={(e) => setNewFolderName(e.target.value)} 
-                            className="w-full p-3 bg-gray-50 dark:bg-gray-700 border border-gray-300 dark:border-gray-600 rounded-xl focus:ring-2 focus:ring-indigo-500 dark:focus:ring-indigo-400 focus:border-transparent outline-none transition-all text-gray-900 dark:text-white" 
+                            className="w-full p-3 bg-gray-50 dark:bg-gray-700 border border-gray-300 dark:border-gray-600 rounded-xl focus:ring-2 focus:ring-violet-500 dark:focus:ring-violet-400 focus:border-transparent outline-none transition-all text-gray-900 dark:text-white" 
                             placeholder="Enter name..." 
                         />
                     </div>
@@ -447,20 +447,20 @@ const FolderBrowser = ({ parentId, parentName, onSelect, onBack, isRoot, parentF
                                         <input 
                                             value={f} 
                                             onChange={(e) => handleFieldChange(i, e.target.value)} 
-                                            className="flex-1 p-2.5 bg-white dark:bg-gray-800 border border-gray-300 dark:border-gray-600 rounded-lg text-sm focus:border-indigo-500 dark:focus:border-indigo-400 outline-none text-gray-900 dark:text-white" 
+                                            className="flex-1 p-2.5 bg-white dark:bg-gray-800 border border-gray-300 dark:border-gray-600 rounded-lg text-sm focus:border-violet-500 dark:focus:border-violet-400 outline-none text-gray-900 dark:text-white" 
                                             placeholder={`Column ${i+1}`} 
                                         />
                                         <button onClick={() => {const u=[...newFields]; u.splice(i,1); setNewFields(u)}} className="text-gray-400 hover:text-red-500 px-2 transition text-lg">✕</button>
                                     </div>
                                 ))}
                             </div>
-                            <button onClick={handleAddField} className="mt-4 text-xs text-indigo-600 dark:text-indigo-400 font-bold hover:underline uppercase tracking-wider flex items-center gap-1">+ Add Another Column</button>
+                            <button onClick={handleAddField} className="mt-4 text-xs text-violet-600 dark:text-violet-400 font-bold hover:underline uppercase tracking-wider flex items-center gap-1">+ Add Another Column</button>
                         </div>
                     )}
 
                     <div className="flex gap-3 justify-end pt-4 border-t border-gray-100 dark:border-gray-700">
                         <button onClick={() => setIsCreating(false)} className="bg-gray-100 dark:bg-gray-700 text-gray-700 dark:text-gray-300 px-6 py-2.5 rounded-xl hover:bg-gray-200 dark:hover:bg-gray-600 transition font-semibold text-sm">Cancel</button>
-                        <button onClick={handleCreate} className="bg-indigo-600 hover:bg-indigo-700 text-white px-6 py-2.5 rounded-xl shadow-md transition font-bold text-sm">Create</button>
+                        <button onClick={handleCreate} className="bg-violet-600 hover:bg-violet-700 text-white px-6 py-2.5 rounded-xl shadow-md transition font-bold text-sm">Create</button>
                     </div>
                 </div>
             )}
@@ -475,7 +475,7 @@ const FolderBrowser = ({ parentId, parentName, onSelect, onBack, isRoot, parentF
                             className={`
                                 group relative p-6 rounded-2xl border transition-all duration-300 cursor-pointer flex flex-col justify-between h-48
                                 ${item.type === 'workbook' 
-                                    ? 'bg-gradient-to-br from-indigo-50 to-white dark:from-gray-800 dark:to-gray-800 border-indigo-100 dark:border-gray-700 hover:border-indigo-300 dark:hover:border-indigo-500 hover:shadow-xl hover:-translate-y-1' 
+                                    ? 'bg-gradient-to-br from-violet-50 to-white dark:from-gray-800 dark:to-gray-800 border-violet-100 dark:border-gray-700 hover:border-violet-300 dark:hover:border-violet-500 hover:shadow-xl hover:-translate-y-1' 
                                     : 'bg-white dark:bg-gray-800 border-gray-200 dark:border-gray-700 hover:border-emerald-400 dark:hover:border-emerald-500 hover:shadow-xl hover:-translate-y-1'}
                             `}
                         >
@@ -486,7 +486,7 @@ const FolderBrowser = ({ parentId, parentName, onSelect, onBack, isRoot, parentF
                                         
                                         {/* Manage Access: Owner or Admin */}
                                         {item.type === 'workbook' && (isSuperAdmin || isAdmin || item.createdBy === currentUser.uid) && (
-                                            <button onClick={(e) => openManageAccess(e, item)} className="text-blue-600 dark:text-blue-400 hover:bg-blue-50 dark:hover:bg-blue-900/30 p-1.5 rounded transition" title="Manage Access">👥</button>
+                                            <button onClick={(e) => openManageAccess(e, item)} className="text-purple-600 dark:text-purple-400 hover:bg-purple-50 dark:hover:bg-purple-900/30 p-1.5 rounded transition" title="Manage Access">👥</button>
                                         )}
                                         
                                         {/* Download: Everyone */}
@@ -512,7 +512,7 @@ const FolderBrowser = ({ parentId, parentName, onSelect, onBack, isRoot, parentF
                                     <p className="text-[10px] text-gray-400 dark:text-gray-500 mt-1 truncate max-w-[100px]">By: {item.createdBy === currentUser.uid ? 'You' : (userMap[item.createdBy] || 'Unknown')}</p>
                                 </div>
                                 {item.type === 'workbook' && (
-                                    <span className="text-[10px] bg-indigo-100 dark:bg-indigo-900/30 text-indigo-700 dark:text-indigo-300 px-2.5 py-1 rounded-full font-bold shadow-sm">
+                                    <span className="text-[10px] bg-violet-100 dark:bg-violet-900/30 text-violet-700 dark:text-violet-300 px-2.5 py-1 rounded-full font-bold shadow-sm">
                                         {item.sharedWith?.length || 0} Users
                                     </span>
                                 )}
@@ -736,7 +736,7 @@ const FolderDataView = ({ folder, onBack }) => {
                         <button onClick={onBack} className="bg-gray-100 dark:bg-gray-700 hover:bg-gray-200 dark:hover:bg-gray-600 p-2.5 rounded-full transition text-gray-600 dark:text-gray-300 border border-transparent dark:border-gray-600">⬅</button>
                         <div>
                             <h2 className="text-2xl font-extrabold text-gray-800 dark:text-white flex items-center gap-2">📄 {folder.name}</h2>
-                            <span className="text-[10px] uppercase bg-indigo-50 dark:bg-indigo-900/30 text-indigo-600 dark:text-indigo-400 border border-indigo-100 dark:border-indigo-800 px-2 py-0.5 rounded font-bold tracking-wider">Sheet Data</span>
+                            <span className="text-[10px] uppercase bg-violet-50 dark:bg-violet-900/30 text-violet-600 dark:text-violet-400 border border-violet-100 dark:border-violet-800 px-2 py-0.5 rounded font-bold tracking-wider">Sheet Data</span>
                         </div>
                     </div>
                     <div className="flex gap-3 w-full md:w-auto overflow-x-auto pb-2 md:pb-0 no-scrollbar">
@@ -744,7 +744,7 @@ const FolderDataView = ({ folder, onBack }) => {
                         <button onClick={handleDownloadExcel} className="bg-emerald-600 hover:bg-emerald-700 text-white px-4 py-2 rounded-xl shadow text-sm whitespace-nowrap font-medium flex items-center gap-2 transition active:scale-95"><span>📊</span> Export</button>
                         
                         <button onClick={() => setIsAddingColumn(true)} className="bg-purple-600 hover:bg-purple-700 text-white px-4 py-2 rounded-xl shadow text-sm whitespace-nowrap font-medium transition active:scale-95">+ Column</button>
-                        <button onClick={() => { setIsAdding(true); setEditingId(null); setFormData({}); }} className="bg-blue-600 hover:bg-blue-700 text-white px-4 py-2 rounded-xl shadow text-sm whitespace-nowrap font-medium transition active:scale-95">+ Row</button>
+                        <button onClick={() => { setIsAdding(true); setEditingId(null); setFormData({}); }} className="bg-purple-600 hover:bg-purple-700 text-white px-4 py-2 rounded-xl shadow text-sm whitespace-nowrap font-medium transition active:scale-95">+ Row</button>
                     </div>
                 </div>
                 <div className="relative w-full">
@@ -754,7 +754,7 @@ const FolderDataView = ({ folder, onBack }) => {
                         value={searchQuery} 
                         onChange={(e) => setSearchQuery(e.target.value)} 
                         placeholder="Search data..." 
-                        className="w-full pl-11 pr-4 py-3 bg-gray-50 dark:bg-gray-900 border border-gray-200 dark:border-gray-600 rounded-xl focus:bg-white dark:focus:bg-gray-800 focus:ring-2 focus:ring-blue-500 dark:focus:ring-blue-400 outline-none transition text-sm shadow-inner text-gray-900 dark:text-white" 
+                        className="w-full pl-11 pr-4 py-3 bg-gray-50 dark:bg-gray-900 border border-gray-200 dark:border-gray-600 rounded-xl focus:bg-white dark:focus:bg-gray-800 focus:ring-2 focus:ring-purple-500 dark:focus:ring-purple-400 outline-none transition text-sm shadow-inner text-gray-900 dark:text-white" 
                     />
                 </div>
             </div>
@@ -798,7 +798,7 @@ const FolderDataView = ({ folder, onBack }) => {
                                             type="text" 
                                             value={formData[field] !== undefined ? formData[field] : ''} 
                                             onChange={(e) => handleInputChange(field, e.target.value)} 
-                                            className="w-full p-3 border border-gray-300 dark:border-gray-600 rounded-xl focus:ring-2 focus:ring-blue-500 dark:focus:ring-blue-400 outline-none transition text-sm bg-gray-50 dark:bg-gray-700 focus:bg-white dark:focus:bg-gray-800 text-gray-900 dark:text-white" 
+                                            className="w-full p-3 border border-gray-300 dark:border-gray-600 rounded-xl focus:ring-2 focus:ring-purple-500 dark:focus:ring-purple-400 outline-none transition text-sm bg-gray-50 dark:bg-gray-700 focus:bg-white dark:focus:bg-gray-800 text-gray-900 dark:text-white" 
                                             placeholder={`Enter ${field}`} 
                                         />
                                     </div>
@@ -806,7 +806,7 @@ const FolderDataView = ({ folder, onBack }) => {
                             </div>
                             <div className="flex gap-3 justify-end sticky bottom-0 bg-white dark:bg-gray-800 pt-4 border-t border-gray-100 dark:border-gray-700">
                                 <button type="button" onClick={() => setIsAdding(false)} className="bg-gray-100 dark:bg-gray-700 text-gray-700 dark:text-gray-300 px-6 py-2.5 rounded-xl font-medium text-sm hover:bg-gray-200 dark:hover:bg-gray-600 transition">Cancel</button>
-                                <button type="submit" className="bg-blue-600 hover:bg-blue-700 text-white px-6 py-2.5 rounded-xl shadow-md font-bold text-sm transition">{editingId ? 'Update Entry' : 'Save Entry'}</button>
+                                <button type="submit" className="bg-purple-600 hover:bg-purple-700 text-white px-6 py-2.5 rounded-xl shadow-md font-bold text-sm transition">{editingId ? 'Update Entry' : 'Save Entry'}</button>
                             </div>
                         </form>
                     </div>
@@ -835,17 +835,17 @@ const FolderDataView = ({ folder, onBack }) => {
                             </thead>
                             <tbody className="divide-y divide-gray-100 dark:divide-gray-700">
                                 {folderData.length > 0 ? folderData.map(row => (
-                                    <tr key={row.id} className="hover:bg-blue-50/50 dark:hover:bg-gray-700/50 transition duration-150 group">
+                                    <tr key={row.id} className="hover:bg-purple-50/50 dark:hover:bg-gray-700/50 transition duration-150 group">
                                         {folder.fields.map(f => (
                                             <td key={f} className="p-4 text-sm text-gray-700 dark:text-gray-300 border-r border-gray-100 dark:border-gray-700 max-w-[200px] truncate" title={row[f]}>
                                                 {/* Display VALUE in table */}
                                                 {row[f] !== undefined && row[f] !== null && row[f] !== "" ? row[f] : <span className="text-gray-300 dark:text-gray-600 text-xs italic">Empty</span>}
                                             </td>
                                         ))}
-                                        <td className="p-3 flex justify-center gap-2 sticky right-0 bg-white dark:bg-gray-800 group-hover:bg-blue-50/50 dark:group-hover:bg-gray-700/50 shadow-[-5px_0_10px_-5px_rgba(0,0,0,0.05)] border-l border-gray-100 dark:border-gray-700">
+                                        <td className="p-3 flex justify-center gap-2 sticky right-0 bg-white dark:bg-gray-800 group-hover:bg-purple-50/50 dark:group-hover:bg-gray-700/50 shadow-[-5px_0_10px_-5px_rgba(0,0,0,0.05)] border-l border-gray-100 dark:border-gray-700">
                                             {canEditData ? (
                                                 <>
-                                                    <button onClick={() => handleEdit(row)} className="text-blue-500 dark:text-blue-400 hover:text-blue-700 dark:hover:text-blue-300 hover:bg-blue-100 dark:hover:bg-blue-900/30 p-2 rounded-lg transition" title="Edit"><svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15.232 5.232l3.536 3.536m-2.036-5.036a2.5 2.5 0 113.536 3.536L6.5 21.036H3v-3.572L16.732 3.732z" /></svg></button>
+                                                    <button onClick={() => handleEdit(row)} className="text-purple-500 dark:text-purple-400 hover:text-purple-700 dark:hover:text-purple-300 hover:bg-purple-100 dark:hover:bg-purple-900/30 p-2 rounded-lg transition" title="Edit"><svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15.232 5.232l3.536 3.536m-2.036-5.036a2.5 2.5 0 113.536 3.536L6.5 21.036H3v-3.572L16.732 3.732z" /></svg></button>
                                                     <button onClick={() => window.confirm("Delete this row?") && deleteDocument(row.id)} className="text-red-400 hover:text-red-600 dark:hover:text-red-300 hover:bg-red-100 dark:hover:bg-red-900/30 p-2 rounded-lg transition" title="Delete"><svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 7l-.867 12.142A2 2 0 0116.138 21H7.862a2 2 0 01-1.995-1.858L5 7m5 4v6m4-6v6m1-10V4a1 1 0 00-1-1h-4a1 1 0 00-1 1v3M4 7h16" /></svg></button>
                                                 </>
                                             ) : (
@@ -856,7 +856,7 @@ const FolderDataView = ({ folder, onBack }) => {
                                 )) : (
                                     <tr>
                                         <td colSpan={folder.fields.length + 1} className="p-16 text-center text-gray-400 dark:text-gray-500 italic bg-gray-50/20 dark:bg-gray-800/20">
-                                            {canEditData ? <>No data found. Click <span className="font-bold text-blue-500">+ Row</span> to add entries.</> : "No data available."}
+                                            {canEditData ? <>No data found. Click <span className="font-bold text-purple-500">+ Row</span> to add entries.</> : "No data available."}
                                         </td>
                                     </tr>
                                 )}

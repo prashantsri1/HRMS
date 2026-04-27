@@ -178,7 +178,7 @@ const FolderBrowser = ({ parentId, parentName, onSelect, onBack, isRoot, canWrit
                                     </button>
                                 </>
                             )}
-                            <button onClick={() => setIsCreating(true)} className="bg-indigo-600 hover:bg-indigo-700 text-white px-5 py-2.5 rounded-xl shadow-lg shadow-indigo-500/20 transition-all font-semibold text-sm flex items-center gap-2 active:scale-95">
+                            <button onClick={() => setIsCreating(true)} className="bg-violet-600 hover:bg-violet-700 text-white px-5 py-2.5 rounded-xl shadow-lg shadow-violet-500/20 transition-all font-semibold text-sm flex items-center gap-2 active:scale-95">
                                 <span className="text-lg">+</span> New {isRoot ? 'Folder' : 'Sheet'}
                             </button>
                         </>
@@ -198,7 +198,7 @@ const FolderBrowser = ({ parentId, parentName, onSelect, onBack, isRoot, canWrit
                                 type="text" 
                                 value={newFolderName} 
                                 onChange={(e) => setNewFolderName(e.target.value)} 
-                                className="w-full p-3 bg-gray-50 dark:bg-gray-700 border border-gray-300 dark:border-gray-600 rounded-xl focus:ring-2 focus:ring-indigo-500 dark:focus:ring-indigo-400 focus:border-transparent outline-none transition-all text-gray-900 dark:text-white" 
+                                className="w-full p-3 bg-gray-50 dark:bg-gray-700 border border-gray-300 dark:border-gray-600 rounded-xl focus:ring-2 focus:ring-violet-500 dark:focus:ring-violet-400 focus:border-transparent outline-none transition-all text-gray-900 dark:text-white" 
                                 placeholder={isRoot ? "e.g. Vendor Data" : "e.g. Sheet 1"} 
                             />
                         </div>
@@ -207,7 +207,7 @@ const FolderBrowser = ({ parentId, parentName, onSelect, onBack, isRoot, canWrit
                             <div className="mb-6">
                                 <div className="flex justify-between items-center mb-3">
                                     <label className="block text-sm font-bold text-gray-700 dark:text-gray-300 uppercase tracking-wide">Columns</label>
-                                    <button onClick={handleAddField} className="text-xs text-indigo-600 dark:text-indigo-400 font-bold hover:underline uppercase tracking-wider">+ Add Column</button>
+                                    <button onClick={handleAddField} className="text-xs text-violet-600 dark:text-violet-400 font-bold hover:underline uppercase tracking-wider">+ Add Column</button>
                                 </div>
                                 <div className="max-h-48 overflow-y-auto custom-scrollbar border border-gray-200 dark:border-gray-700 rounded-xl p-3 bg-gray-50 dark:bg-gray-900/50 space-y-2">
                                     {newFields.map((f, i) => (
@@ -216,7 +216,7 @@ const FolderBrowser = ({ parentId, parentName, onSelect, onBack, isRoot, canWrit
                                                 type="text" 
                                                 value={f} 
                                                 onChange={(e) => handleFieldChange(i, e.target.value)} 
-                                                className="flex-1 p-2.5 bg-white dark:bg-gray-800 border border-gray-300 dark:border-gray-600 rounded-lg text-sm focus:border-indigo-500 dark:focus:border-indigo-400 outline-none text-gray-900 dark:text-white" 
+                                                className="flex-1 p-2.5 bg-white dark:bg-gray-800 border border-gray-300 dark:border-gray-600 rounded-lg text-sm focus:border-violet-500 dark:focus:border-violet-400 outline-none text-gray-900 dark:text-white" 
                                                 placeholder={`Column ${i+1}`} 
                                             />
                                         </div>
@@ -227,7 +227,7 @@ const FolderBrowser = ({ parentId, parentName, onSelect, onBack, isRoot, canWrit
 
                         <div className="flex gap-3 justify-end pt-4 border-t border-gray-100 dark:border-gray-700">
                             <button onClick={() => setIsCreating(false)} className="px-5 py-2.5 bg-gray-100 dark:bg-gray-700 text-gray-700 dark:text-gray-300 rounded-xl hover:bg-gray-200 dark:hover:bg-gray-600 transition font-semibold text-sm">Cancel</button>
-                            <button onClick={handleCreate} className="px-5 py-2.5 bg-indigo-600 dark:bg-indigo-500 text-white rounded-xl hover:bg-indigo-700 dark:hover:bg-indigo-600 transition shadow-md font-semibold text-sm">Create</button>
+                            <button onClick={handleCreate} className="px-5 py-2.5 bg-violet-600 dark:bg-violet-500 text-white rounded-xl hover:bg-violet-700 dark:hover:bg-violet-600 transition shadow-md font-semibold text-sm">Create</button>
                         </div>
                     </div>
                 </div>
@@ -243,12 +243,12 @@ const FolderBrowser = ({ parentId, parentName, onSelect, onBack, isRoot, canWrit
                             className={`
                                 group relative p-6 rounded-2xl border transition-all duration-300 cursor-pointer flex flex-col justify-between h-48
                                 ${item.type === 'workbook' 
-                                    ? 'bg-white dark:bg-gray-800 border-gray-200 dark:border-gray-700 hover:border-blue-400 dark:hover:border-blue-500 hover:shadow-xl hover:-translate-y-1' 
+                                    ? 'bg-white dark:bg-gray-800 border-gray-200 dark:border-gray-700 hover:border-purple-400 dark:hover:border-purple-500 hover:shadow-xl hover:-translate-y-1' 
                                     : 'bg-white dark:bg-gray-800 border-gray-200 dark:border-gray-700 hover:border-emerald-400 dark:hover:border-emerald-500 hover:shadow-xl hover:-translate-y-1'}
                             `}
                         >
                             <div>
-                                <div className={`text-4xl mb-4 w-14 h-14 flex items-center justify-center rounded-2xl shadow-sm ${item.type === 'workbook' ? 'bg-blue-50 dark:bg-blue-900/30 text-blue-500 dark:text-blue-400' : 'bg-emerald-50 dark:bg-emerald-900/30 text-emerald-500 dark:text-emerald-400'}`}>
+                                <div className={`text-4xl mb-4 w-14 h-14 flex items-center justify-center rounded-2xl shadow-sm ${item.type === 'workbook' ? 'bg-purple-50 dark:bg-purple-900/30 text-purple-500 dark:text-purple-400' : 'bg-emerald-50 dark:bg-emerald-900/30 text-emerald-500 dark:text-emerald-400'}`}>
                                     {item.type === 'workbook' ? '📁' : '📄'}
                                 </div>
                                 <h3 className="font-bold text-gray-800 dark:text-gray-100 truncate text-lg mb-1" title={item.name}>{item.name}</h3>
@@ -438,7 +438,7 @@ const FolderDataView = ({ folder, onBack, canWrite }) => {
                         {canWrite && (
                             <>
                                 <button onClick={() => setIsAddingColumn(true)} className="bg-purple-600 hover:bg-purple-700 text-white px-4 py-2 rounded-xl shadow text-sm whitespace-nowrap font-medium transition active:scale-95">+ Column</button>
-                                <button onClick={() => { setIsAdding(true); setEditingId(null); setFormData({}); }} className="bg-blue-600 hover:bg-blue-700 text-white px-4 py-2 rounded-xl shadow text-sm whitespace-nowrap font-medium transition active:scale-95">+ Row</button>
+                                <button onClick={() => { setIsAdding(true); setEditingId(null); setFormData({}); }} className="bg-purple-600 hover:bg-purple-700 text-white px-4 py-2 rounded-xl shadow text-sm whitespace-nowrap font-medium transition active:scale-95">+ Row</button>
                             </>
                         )}
                     </div>
@@ -446,7 +446,7 @@ const FolderDataView = ({ folder, onBack, canWrite }) => {
                 {/* Search Bar */}
                 <div className="relative w-full">
                     <span className="absolute inset-y-0 left-0 flex items-center pl-4 text-gray-400">🔍</span>
-                    <input type="text" value={searchQuery} onChange={(e) => setSearchQuery(e.target.value)} placeholder="Search data..." className="w-full pl-11 pr-4 py-3 bg-gray-50 dark:bg-gray-900 border border-gray-200 dark:border-gray-600 rounded-xl focus:bg-white dark:focus:bg-gray-800 focus:ring-2 focus:ring-blue-500 dark:focus:ring-blue-400 outline-none transition text-sm shadow-inner text-gray-900 dark:text-white" />
+                    <input type="text" value={searchQuery} onChange={(e) => setSearchQuery(e.target.value)} placeholder="Search data..." className="w-full pl-11 pr-4 py-3 bg-gray-50 dark:bg-gray-900 border border-gray-200 dark:border-gray-600 rounded-xl focus:bg-white dark:focus:bg-gray-800 focus:ring-2 focus:ring-purple-500 dark:focus:ring-purple-400 outline-none transition text-sm shadow-inner text-gray-900 dark:text-white" />
                 </div>
             </div>
 
@@ -475,13 +475,13 @@ const FolderDataView = ({ folder, onBack, canWrite }) => {
                                 {folder.fields.map((field) => (
                                     <div key={field}>
                                         <label className="block text-xs font-bold text-gray-500 dark:text-gray-400 mb-2 uppercase tracking-wide">{field}</label>
-                                        <input type="text" value={formData[field] !== undefined ? formData[field] : ''} onChange={(e) => handleInputChange(field, e.target.value)} className="w-full p-3 border border-gray-300 dark:border-gray-600 rounded-xl focus:ring-2 focus:ring-blue-500 dark:focus:ring-blue-400 outline-none transition text-sm bg-gray-50 dark:bg-gray-700 focus:bg-white dark:focus:bg-gray-800 text-gray-900 dark:text-white" placeholder={`Enter ${field}`} />
+                                        <input type="text" value={formData[field] !== undefined ? formData[field] : ''} onChange={(e) => handleInputChange(field, e.target.value)} className="w-full p-3 border border-gray-300 dark:border-gray-600 rounded-xl focus:ring-2 focus:ring-purple-500 dark:focus:ring-purple-400 outline-none transition text-sm bg-gray-50 dark:bg-gray-700 focus:bg-white dark:focus:bg-gray-800 text-gray-900 dark:text-white" placeholder={`Enter ${field}`} />
                                     </div>
                                 ))}
                             </div>
                             <div className="flex gap-3 justify-end sticky bottom-0 bg-white dark:bg-gray-800 pt-4 border-t border-gray-100 dark:border-gray-700">
                                 <button type="button" onClick={() => setIsAdding(false)} className="bg-gray-100 dark:bg-gray-700 text-gray-700 dark:text-gray-300 px-6 py-2.5 rounded-xl font-medium text-sm hover:bg-gray-200 dark:hover:bg-gray-600 transition">Cancel</button>
-                                <button type="submit" className="bg-blue-600 hover:bg-blue-700 text-white px-6 py-2.5 rounded-xl shadow-md font-bold text-sm transition">{editingId ? 'Update Entry' : 'Save Entry'}</button>
+                                <button type="submit" className="bg-purple-600 hover:bg-purple-700 text-white px-6 py-2.5 rounded-xl shadow-md font-bold text-sm transition">{editingId ? 'Update Entry' : 'Save Entry'}</button>
                             </div>
                         </form>
                     </div>
@@ -508,16 +508,16 @@ const FolderDataView = ({ folder, onBack, canWrite }) => {
                             </thead>
                             <tbody className="divide-y divide-gray-100 dark:divide-gray-700">
                                 {folderData.length > 0 ? folderData.map(row => (
-                                    <tr key={row.id} className="hover:bg-blue-50/50 dark:hover:bg-gray-700/50 transition duration-150 group">
+                                    <tr key={row.id} className="hover:bg-purple-50/50 dark:hover:bg-gray-700/50 transition duration-150 group">
                                         {folder.fields.map(f => (
                                             <td key={f} className="p-4 text-sm text-gray-700 dark:text-gray-300 border-r border-gray-100 dark:border-gray-700 max-w-[200px] truncate" title={row[f]}>
                                                 {row[f] !== undefined && row[f] !== null && row[f] !== "" ? row[f] : <span className="text-gray-300 dark:text-gray-600 text-xs italic">Empty</span>}
                                             </td>
                                         ))}
-                                        <td className="p-3 flex justify-center gap-2 sticky right-0 bg-white dark:bg-gray-800 group-hover:bg-blue-50/50 dark:group-hover:bg-gray-700/50 shadow-[-5px_0_10px_-5px_rgba(0,0,0,0.05)] border-l border-gray-100 dark:border-gray-700">
+                                        <td className="p-3 flex justify-center gap-2 sticky right-0 bg-white dark:bg-gray-800 group-hover:bg-purple-50/50 dark:group-hover:bg-gray-700/50 shadow-[-5px_0_10px_-5px_rgba(0,0,0,0.05)] border-l border-gray-100 dark:border-gray-700">
                                             {canWrite ? (
                                                 <>
-                                                    <button onClick={() => handleEdit(row)} className="text-blue-500 dark:text-blue-400 hover:text-blue-700 dark:hover:text-blue-300 hover:bg-blue-100 dark:hover:bg-blue-900/30 p-2 rounded-lg transition" title="Edit"><svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15.232 5.232l3.536 3.536m-2.036-5.036a2.5 2.5 0 113.536 3.536L6.5 21.036H3v-3.572L16.732 3.732z" /></svg></button>
+                                                    <button onClick={() => handleEdit(row)} className="text-purple-500 dark:text-purple-400 hover:text-purple-700 dark:hover:text-purple-300 hover:bg-purple-100 dark:hover:bg-purple-900/30 p-2 rounded-lg transition" title="Edit"><svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15.232 5.232l3.536 3.536m-2.036-5.036a2.5 2.5 0 113.536 3.536L6.5 21.036H3v-3.572L16.732 3.732z" /></svg></button>
                                                     <button onClick={() => window.confirm("Delete this row?") && deleteDocument(row.id)} className="text-red-400 hover:text-red-600 dark:hover:text-red-300 hover:bg-red-100 dark:hover:bg-red-900/30 p-2 rounded-lg transition" title="Delete"><svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 7l-.867 12.142A2 2 0 0116.138 21H7.862a2 2 0 01-1.995-1.858L5 7m5 4v6m4-6v6m1-10V4a1 1 0 00-1-1h-4a1 1 0 00-1 1v3M4 7h16" /></svg></button>
                                                 </>
                                             ) : <span className="text-gray-400 text-xs italic">Read Only</span>}
@@ -526,7 +526,7 @@ const FolderDataView = ({ folder, onBack, canWrite }) => {
                                 )) : (
                                     <tr>
                                         <td colSpan={folder.fields.length + 1} className="p-16 text-center text-gray-400 dark:text-gray-500 italic bg-gray-50/20 dark:bg-gray-800/20">
-                                            {canWrite ? <>No data found. Click <span className="font-bold text-blue-500">+ Row</span> to add entries.</> : "No data available."}
+                                            {canWrite ? <>No data found. Click <span className="font-bold text-purple-500">+ Row</span> to add entries.</> : "No data available."}
                                         </td>
                                     </tr>
                                 )}
@@ -641,7 +641,7 @@ function OfficeData() {
                 <div className="fixed inset-0 bg-black/80 flex items-center justify-center z-[70] p-4 backdrop-blur-sm">
                     <div className="bg-white dark:bg-gray-800 w-full max-w-2xl rounded-2xl shadow-2xl border border-gray-700 flex flex-col max-h-[85vh]">
                         <div className="p-6 border-b border-gray-700 flex justify-between items-center bg-gray-50 dark:bg-gray-700/30 rounded-t-2xl">
-                            <h2 className="text-xl font-bold text-gray-800 dark:text-white flex items-center gap-2"><ShieldAlert className="text-indigo-500"/> User Access Control</h2>
+                            <h2 className="text-xl font-bold text-gray-800 dark:text-white flex items-center gap-2"><ShieldAlert className="text-violet-500"/> User Access Control</h2>
                             <button onClick={() => setIsAccessModalOpen(false)} className="text-gray-400 hover:text-red-500 transition"><ShieldAlert size={20}/></button>
                         </div>
                         <div className="p-6 overflow-y-auto custom-scrollbar flex-1">
@@ -654,7 +654,7 @@ function OfficeData() {
                                     return (
                                         <div key={user.id} className="flex items-center justify-between p-4 bg-white dark:bg-gray-700/50 rounded-xl border border-gray-200 dark:border-gray-600 hover:shadow-md transition">
                                             <div className="flex items-center gap-3">
-                                                <div className="w-10 h-10 rounded-full bg-gradient-to-br from-indigo-500 to-purple-500 flex items-center justify-center text-white font-bold text-sm">
+                                                <div className="w-10 h-10 rounded-full bg-gradient-to-br from-violet-500 to-purple-500 flex items-center justify-center text-white font-bold text-sm">
                                                     {user.name?.charAt(0) || user.email?.charAt(0)}
                                                 </div>
                                                 <div>
@@ -685,7 +685,7 @@ function OfficeData() {
                             </div>
                         </div>
                         <div className="p-4 border-t border-gray-200 dark:border-gray-700 bg-gray-50 dark:bg-gray-700/30 rounded-b-2xl flex justify-end">
-                            <button onClick={() => setIsAccessModalOpen(false)} className="px-6 py-2 bg-indigo-600 hover:bg-indigo-700 text-white rounded-xl font-bold shadow-lg transition active:scale-95">Close</button>
+                            <button onClick={() => setIsAccessModalOpen(false)} className="px-6 py-2 bg-violet-600 hover:bg-violet-700 text-white rounded-xl font-bold shadow-lg transition active:scale-95">Close</button>
                         </div>
                     </div>
                 </div>

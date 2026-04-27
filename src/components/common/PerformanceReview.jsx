@@ -20,7 +20,7 @@ const ROLE_LEVELS = {
 // --- CONFIGURATION ---
 const BADGES = [
     { id: 'top_performer', label: '🔥 Top Performer', color: 'bg-orange-100 text-orange-600 border-orange-200' },
-    { id: 'fast_learner', label: '🚀 Fast Learner', color: 'bg-blue-100 text-blue-600 border-blue-200' },
+    { id: 'fast_learner', label: '🚀 Fast Learner', color: 'bg-purple-100 text-purple-600 border-purple-200' },
     { id: 'team_player', label: '🤝 Team Player', color: 'bg-green-100 text-green-600 border-green-200' },
     { id: 'punctual', label: '⏰ Punctual', color: 'bg-purple-100 text-purple-600 border-purple-200' },
     { id: 'problem_solver', label: '🧠 Problem Solver', color: 'bg-pink-100 text-pink-600 border-pink-200' },
@@ -57,7 +57,7 @@ const PerformanceReview = ({ employeeData }) => {
     // --- LOGIC: Appraisal Suggestion ---
     const getAppraisalStatus = (stars) => {
         if (stars >= 4.5) return { text: 'Promotion & High Hike Eligible', color: 'text-green-600 bg-green-50 border-green-200' };
-        if (stars >= 4) return { text: 'Eligible for Hike', color: 'text-blue-600 bg-blue-50 border-blue-200' };
+        if (stars >= 4) return { text: 'Eligible for Hike', color: 'text-purple-600 bg-purple-50 border-purple-200' };
         if (stars >= 3) return { text: 'Good Performance', color: 'text-orange-600 bg-orange-50 border-orange-200' };
         return { text: 'Needs Improvement', color: 'text-red-600 bg-red-50 border-red-200' };
     };
@@ -104,12 +104,12 @@ const PerformanceReview = ({ employeeData }) => {
         <div className="w-full bg-white dark:bg-gray-800 rounded-3xl shadow-xl border border-gray-100 dark:border-gray-700 overflow-hidden relative transition-colors duration-300">
             
             {/* --- HEADER --- */}
-            <div className="p-6 bg-gradient-to-r from-indigo-600 to-violet-600 flex justify-between items-center text-white">
+            <div className="p-6 bg-gradient-to-r from-violet-600 to-violet-600 flex justify-between items-center text-white">
                 <div className="flex items-center gap-3">
                     <Award className="text-yellow-300" size={28} />
                     <div>
                         <h2 className="text-xl font-bold">Performance Card</h2>
-                        <p className="text-xs text-indigo-200 uppercase tracking-widest font-semibold">
+                        <p className="text-xs text-violet-200 uppercase tracking-widest font-semibold">
                             {canEdit ? 'Manage Employee Rating' : 'My Performance Report'}
                         </p>
                     </div>
@@ -208,7 +208,7 @@ const PerformanceReview = ({ employeeData }) => {
                             <label className="text-xs font-bold text-gray-400 dark:text-gray-500 uppercase mb-1 block">Manager's Feedback</label>
                             {isEditing ? (
                                 <textarea 
-                                    className="w-full p-3 bg-gray-50 dark:bg-gray-900 border border-gray-200 dark:border-gray-700 rounded-xl outline-none focus:ring-2 focus:ring-indigo-500 text-sm text-gray-700 dark:text-gray-200 resize-none"
+                                    className="w-full p-3 bg-gray-50 dark:bg-gray-900 border border-gray-200 dark:border-gray-700 rounded-xl outline-none focus:ring-2 focus:ring-violet-500 text-sm text-gray-700 dark:text-gray-200 resize-none"
                                     rows="3"
                                     placeholder="Write constructive feedback..."
                                     value={feedback}
@@ -237,7 +237,7 @@ const PerformanceReview = ({ employeeData }) => {
                                         <span className="absolute right-4 top-2 text-gray-400 font-bold">%</span>
                                     </div>
                                 ) : (
-                                    hikePercent && <div className="font-bold text-indigo-600 dark:text-indigo-400">{hikePercent}% Hike Proposed</div>
+                                    hikePercent && <div className="font-bold text-violet-600 dark:text-violet-400">{hikePercent}% Hike Proposed</div>
                                 )}
                             </div>
                         )}
@@ -260,7 +260,7 @@ const PerformanceReview = ({ employeeData }) => {
                             <button 
                                 onClick={handleSave}
                                 disabled={loading}
-                                className="flex-1 py-3 rounded-xl font-bold text-white bg-indigo-600 hover:bg-indigo-700 shadow-lg shadow-indigo-500/30 flex items-center justify-center gap-2 transition-transform active:scale-95"
+                                className="flex-1 py-3 rounded-xl font-bold text-white bg-violet-600 hover:bg-violet-700 shadow-lg shadow-violet-500/30 flex items-center justify-center gap-2 transition-transform active:scale-95"
                             >
                                 {loading ? 'Saving...' : <><Save size={18}/> Update Rating</>}
                             </button>

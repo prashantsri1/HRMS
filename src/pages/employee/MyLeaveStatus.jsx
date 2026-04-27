@@ -98,7 +98,7 @@ function MyLeaveStatus() {
 
     const getTypeIcon = (type) => {
         switch(type) {
-            case 'leave': return <div className="p-2.5 rounded-xl bg-blue-100 dark:bg-blue-900/30 text-blue-600 dark:text-blue-400"><Calendar size={20} /></div>;
+            case 'leave': return <div className="p-2.5 rounded-xl bg-purple-100 dark:bg-purple-900/30 text-purple-600 dark:text-purple-400"><Calendar size={20} /></div>;
             case 'travel': return <div className="p-2.5 rounded-xl bg-purple-100 dark:bg-purple-900/30 text-purple-600 dark:text-purple-400"><Plane size={20} /></div>;
             default: return <div className="p-2.5 rounded-xl bg-pink-100 dark:bg-pink-900/30 text-pink-600 dark:text-pink-400"><MessageSquare size={20} /></div>;
         }
@@ -121,7 +121,7 @@ function MyLeaveStatus() {
                 {/* Stats Cards */}
                 <div className="grid grid-cols-2 md:grid-cols-3 gap-4 mt-6">
                     <div className="bg-white dark:bg-gray-800 p-5 rounded-2xl shadow-sm border border-gray-100 dark:border-gray-700 flex items-center gap-4">
-                        <div className="p-3 bg-indigo-50 dark:bg-indigo-900/20 text-indigo-600 dark:text-indigo-400 rounded-xl"><Filter size={24} /></div>
+                        <div className="p-3 bg-violet-50 dark:bg-violet-900/20 text-violet-600 dark:text-violet-400 rounded-xl"><Filter size={24} /></div>
                         <div><p className="text-xs text-gray-500 font-bold uppercase">Total</p><h4 className="text-2xl font-bold text-gray-800 dark:text-white">{stats.total}</h4></div>
                     </div>
                     <div className="bg-white dark:bg-gray-800 p-5 rounded-2xl shadow-sm border border-gray-100 dark:border-gray-700 flex items-center gap-4">
@@ -139,7 +139,7 @@ function MyLeaveStatus() {
                     <div className="flex gap-2 overflow-x-auto pb-2 scrollbar-hide w-full md:w-auto">
                         {['All', 'Pending', 'Approved', 'Rejected'].map((status) => (
                             <button key={status} onClick={() => setFilterStatus(status)}
-                                className={`px-5 py-2 rounded-full text-sm font-bold whitespace-nowrap transition-all border ${filterStatus === status ? 'bg-gray-800 dark:bg-indigo-600 text-white border-transparent shadow-lg' : 'bg-white dark:bg-gray-800 text-gray-500 dark:text-gray-400 border-gray-200 dark:border-gray-700 hover:bg-gray-50'}`}
+                                className={`px-5 py-2 rounded-full text-sm font-bold whitespace-nowrap transition-all border ${filterStatus === status ? 'bg-gray-800 dark:bg-violet-600 text-white border-transparent shadow-lg' : 'bg-white dark:bg-gray-800 text-gray-500 dark:text-gray-400 border-gray-200 dark:border-gray-700 hover:bg-gray-50'}`}
                             >
                                 {status}
                             </button>
@@ -147,7 +147,7 @@ function MyLeaveStatus() {
                     </div>
                     <div className="relative group w-full md:w-auto">
                         <ArrowUpDown size={16} className="absolute left-3 top-1/2 -translate-y-1/2 text-gray-400"/>
-                        <select value={sortBy} onChange={(e) => setSortBy(e.target.value)} className="w-full md:w-48 pl-9 pr-4 py-2.5 bg-white dark:bg-gray-800 border border-gray-200 dark:border-gray-700 text-gray-700 dark:text-gray-300 text-sm font-semibold rounded-xl shadow-sm outline-none cursor-pointer focus:ring-2 focus:ring-indigo-500">
+                        <select value={sortBy} onChange={(e) => setSortBy(e.target.value)} className="w-full md:w-48 pl-9 pr-4 py-2.5 bg-white dark:bg-gray-800 border border-gray-200 dark:border-gray-700 text-gray-700 dark:text-gray-300 text-sm font-semibold rounded-xl shadow-sm outline-none cursor-pointer focus:ring-2 focus:ring-violet-500">
                             <option value="newest">📅 Latest First</option>
                             <option value="oldest">📅 Oldest First</option>
                         </select>
@@ -157,7 +157,7 @@ function MyLeaveStatus() {
 
             {/* List */}
             <div className="max-w-6xl mx-auto space-y-4">
-                {loading && <div className="text-center py-10"><div className="animate-spin rounded-full h-8 w-8 border-b-2 border-indigo-600 mx-auto"></div></div>}
+                {loading && <div className="text-center py-10"><div className="animate-spin rounded-full h-8 w-8 border-b-2 border-violet-600 mx-auto"></div></div>}
                 
                 {!loading && processedLeaves.length === 0 && (
                     <div className="text-center py-20 bg-white dark:bg-gray-800 rounded-3xl border border-dashed border-gray-300 dark:border-gray-700">

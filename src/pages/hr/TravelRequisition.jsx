@@ -84,33 +84,33 @@ const RequisitionFormModal = ({ isOpen, onClose, userProfile }) => {
     return (
         <div className="fixed inset-0 bg-black/60 backdrop-blur-sm flex items-center justify-center z-[70] p-4">
             <motion.div variants={fadeIn} initial="hidden" animate="visible" exit="exit" className="bg-white dark:bg-gray-800 w-full max-w-3xl rounded-3xl shadow-2xl border border-gray-200 dark:border-gray-700 overflow-hidden flex flex-col max-h-[90vh]">
-                <div className="px-6 py-4 border-b border-gray-100 dark:border-gray-700 flex justify-between items-center bg-indigo-50 dark:bg-gray-700/50">
-                    <h2 className="text-xl font-black text-indigo-700 dark:text-indigo-400 flex items-center gap-2"><Plane size={24} /> New Travel Requisition</h2>
-                    <button onClick={onClose} className="p-2 hover:bg-indigo-100 dark:bg-gray-800 hover:dark:bg-gray-600 rounded-full"><X size={20} /></button>
+                <div className="px-6 py-4 border-b border-gray-100 dark:border-gray-700 flex justify-between items-center bg-violet-50 dark:bg-gray-700/50">
+                    <h2 className="text-xl font-black text-violet-700 dark:text-violet-400 flex items-center gap-2"><Plane size={24} /> New Travel Requisition</h2>
+                    <button onClick={onClose} className="p-2 hover:bg-violet-100 dark:bg-gray-800 hover:dark:bg-gray-600 rounded-full"><X size={20} /></button>
                 </div>
 
                 <div className="p-6 overflow-y-auto custom-scrollbar space-y-6">
                     {/* Trip Info */}
                     <div>
-                        <h3 className="text-sm font-bold text-gray-800 dark:text-gray-200 mb-4 flex items-center gap-2"><MapPin size={16} className="text-indigo-500" /> Trip Information</h3>
+                        <h3 className="text-sm font-bold text-gray-800 dark:text-gray-200 mb-4 flex items-center gap-2"><MapPin size={16} className="text-violet-500" /> Trip Information</h3>
                         <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                             <div>
                                 <label className="block text-xs font-bold text-gray-500 uppercase mb-1">Purpose</label>
-                                <select className="w-full bg-gray-50 dark:bg-gray-900 border border-gray-200 dark:border-gray-700 rounded-xl px-4 py-2.5 outline-none focus:ring-2 focus:ring-indigo-500" value={formData.purpose} onChange={e => setFormData({ ...formData, purpose: e.target.value })}>
+                                <select className="w-full bg-gray-50 dark:bg-gray-900 border border-gray-200 dark:border-gray-700 rounded-xl px-4 py-2.5 outline-none focus:ring-2 focus:ring-violet-500" value={formData.purpose} onChange={e => setFormData({ ...formData, purpose: e.target.value })}>
                                     <option>Meeting</option><option>Site Visit</option><option>Event</option><option>Training</option>
                                 </select>
                             </div>
                             <div>
                                 <label className="block text-xs font-bold text-gray-500 uppercase mb-1">Destination</label>
-                                <input type="text" className="w-full bg-gray-50 dark:bg-gray-900 border border-gray-200 dark:border-gray-700 rounded-xl px-4 py-2.5 outline-none focus:ring-2 focus:ring-indigo-500" placeholder="City, State" value={formData.destination} onChange={e => setFormData({ ...formData, destination: e.target.value })} />
+                                <input type="text" className="w-full bg-gray-50 dark:bg-gray-900 border border-gray-200 dark:border-gray-700 rounded-xl px-4 py-2.5 outline-none focus:ring-2 focus:ring-violet-500" placeholder="City, State" value={formData.destination} onChange={e => setFormData({ ...formData, destination: e.target.value })} />
                             </div>
                             <div>
                                 <label className="block text-xs font-bold text-gray-500 uppercase mb-1">Start Date</label>
-                                <input type="date" className="w-full bg-gray-50 dark:bg-gray-900 border border-gray-200 dark:border-gray-700 rounded-xl px-4 py-2.5 outline-none focus:ring-2 focus:ring-indigo-500" value={formData.startDate} onChange={e => setFormData({ ...formData, startDate: e.target.value })} />
+                                <input type="date" className="w-full bg-gray-50 dark:bg-gray-900 border border-gray-200 dark:border-gray-700 rounded-xl px-4 py-2.5 outline-none focus:ring-2 focus:ring-violet-500" value={formData.startDate} onChange={e => setFormData({ ...formData, startDate: e.target.value })} />
                             </div>
                             <div>
                                 <label className="block text-xs font-bold text-gray-500 uppercase mb-1">End Date</label>
-                                <input type="date" className="w-full bg-gray-50 dark:bg-gray-900 border border-gray-200 dark:border-gray-700 rounded-xl px-4 py-2.5 outline-none focus:ring-2 focus:ring-indigo-500" value={formData.endDate} onChange={e => setFormData({ ...formData, endDate: e.target.value })} />
+                                <input type="date" className="w-full bg-gray-50 dark:bg-gray-900 border border-gray-200 dark:border-gray-700 rounded-xl px-4 py-2.5 outline-none focus:ring-2 focus:ring-violet-500" value={formData.endDate} onChange={e => setFormData({ ...formData, endDate: e.target.value })} />
                             </div>
                         </div>
                     </div>
@@ -152,14 +152,14 @@ const RequisitionFormModal = ({ isOpen, onClose, userProfile }) => {
 
                         <div className="mt-5 pt-4 border-t border-amber-200 dark:border-amber-800/50 flex justify-between items-center">
                             <span className="text-sm font-black text-gray-600 dark:text-gray-400 uppercase tracking-widest">Total Request Amount</span>
-                            <span className="text-2xl font-black text-indigo-600 dark:text-indigo-400">{formatCurrency(totalAmount)}</span>
+                            <span className="text-2xl font-black text-violet-600 dark:text-violet-400">{formatCurrency(totalAmount)}</span>
                         </div>
                     </div>
                 </div>
 
                 <div className="p-5 border-t border-gray-100 dark:border-gray-700 bg-gray-50/50 dark:bg-gray-800 flex justify-end gap-3 shrink-0">
                     <button onClick={onClose} className="px-6 py-2.5 rounded-xl text-gray-500 hover:bg-gray-200 font-bold transition-colors">Cancel</button>
-                    <button onClick={handleSubmit} disabled={isSubmitting} className="bg-indigo-600 hover:bg-indigo-700 text-white px-8 py-2.5 rounded-xl font-bold shadow-lg shadow-indigo-200 transition-transform active:scale-95 disabled:opacity-70 flex items-center gap-2">
+                    <button onClick={handleSubmit} disabled={isSubmitting} className="bg-violet-600 hover:bg-violet-700 text-white px-8 py-2.5 rounded-xl font-bold shadow-lg shadow-violet-200 transition-transform active:scale-95 disabled:opacity-70 flex items-center gap-2">
                         {isSubmitting ? "Submitting..." : <><CheckCircle size={18} /> Submit for Approval</>}
                     </button>
                 </div>
@@ -194,7 +194,7 @@ const ApprovalModal = ({ isOpen, onClose, onConfirm, reqId }) => {
                     <label className="block text-xs font-bold text-gray-500 uppercase mb-2">Voucher ID (Optional)</label>
                     <input
                         type="text"
-                        className="w-full bg-gray-50 dark:bg-gray-900 border border-gray-200 dark:border-gray-700 rounded-xl px-4 py-3 outline-none focus:ring-2 focus:ring-indigo-500 font-mono text-sm"
+                        className="w-full bg-gray-50 dark:bg-gray-900 border border-gray-200 dark:border-gray-700 rounded-xl px-4 py-3 outline-none focus:ring-2 focus:ring-violet-500 font-mono text-sm"
                         placeholder={`Auto: TRV-${reqId.substring(0, 6).toUpperCase()}`}
                         value={customVoucherId}
                         onChange={e => setCustomVoucherId(e.target.value)}
@@ -453,7 +453,7 @@ const TravelRequisition = () => {
             {/* Header & Controls */}
             <div className="bg-white dark:bg-gray-800 px-6 py-5 border-b border-gray-200 dark:border-gray-700 flex flex-col xl:flex-row justify-between items-start xl:items-center gap-4 shrink-0 shadow-sm z-10">
                 <div className="flex items-center gap-3">
-                    <div className="bg-indigo-100 dark:bg-indigo-900/50 p-2.5 rounded-xl text-indigo-600 dark:text-indigo-400">
+                    <div className="bg-violet-100 dark:bg-violet-900/50 p-2.5 rounded-xl text-violet-600 dark:text-violet-400">
                         <Plane size={24} />
                     </div>
                     <div>
@@ -466,12 +466,12 @@ const TravelRequisition = () => {
                     {/* Tabs for Managers */}
                     {isManager && (
                         <div className="flex bg-gray-100 dark:bg-gray-900 p-1 rounded-xl w-full md:w-auto">
-                            <button onClick={() => setActiveTab('my_requests')} className={`flex-1 md:flex-none px-4 py-2.5 rounded-lg text-sm font-bold transition-all ${activeTab === 'my_requests' ? 'bg-white shadow text-indigo-600' : 'text-gray-500'}`}>My Requests</button>
-                            <button onClick={() => setActiveTab('team_requests')} className={`flex-1 md:flex-none px-4 py-2.5 rounded-lg text-sm font-bold transition-all ${activeTab === 'team_requests' ? 'bg-white shadow text-indigo-600' : 'text-gray-500'}`}>Team Approvals</button>
+                            <button onClick={() => setActiveTab('my_requests')} className={`flex-1 md:flex-none px-4 py-2.5 rounded-lg text-sm font-bold transition-all ${activeTab === 'my_requests' ? 'bg-white shadow text-violet-600' : 'text-gray-500'}`}>My Requests</button>
+                            <button onClick={() => setActiveTab('team_requests')} className={`flex-1 md:flex-none px-4 py-2.5 rounded-lg text-sm font-bold transition-all ${activeTab === 'team_requests' ? 'bg-white shadow text-violet-600' : 'text-gray-500'}`}>Team Approvals</button>
                         </div>
                     )}
 
-                    <button onClick={() => setIsModalOpen(true)} className="w-full md:w-auto flex items-center justify-center gap-2 bg-indigo-600 hover:bg-indigo-700 text-white px-5 py-2.5 rounded-xl font-bold shadow-lg shadow-indigo-200 transition-all active:scale-95 shrink-0">
+                    <button onClick={() => setIsModalOpen(true)} className="w-full md:w-auto flex items-center justify-center gap-2 bg-violet-600 hover:bg-violet-700 text-white px-5 py-2.5 rounded-xl font-bold shadow-lg shadow-violet-200 transition-all active:scale-95 shrink-0">
                         <Plus size={18} /> New Request
                     </button>
                 </div>
@@ -483,7 +483,7 @@ const TravelRequisition = () => {
                     <Search className="absolute left-3 top-2.5 text-gray-400" size={16} />
                     <input
                         placeholder="Search destination, name, voucher ID..."
-                        className="w-full bg-white dark:bg-gray-900 pl-9 pr-4 py-2 rounded-xl border border-gray-200 dark:border-gray-700 outline-none focus:ring-2 focus:ring-indigo-500 text-sm"
+                        className="w-full bg-white dark:bg-gray-900 pl-9 pr-4 py-2 rounded-xl border border-gray-200 dark:border-gray-700 outline-none focus:ring-2 focus:ring-violet-500 text-sm"
                         value={searchTerm}
                         onChange={e => setSearchTerm(e.target.value)}
                     />
@@ -507,7 +507,7 @@ const TravelRequisition = () => {
             {/* Content List */}
             <div className="flex-1 overflow-y-auto p-6 custom-scrollbar">
                 {loading ? (
-                    <div className="h-full flex items-center justify-center"><div className="animate-spin rounded-full h-8 w-8 border-b-2 border-indigo-600"></div></div>
+                    <div className="h-full flex items-center justify-center"><div className="animate-spin rounded-full h-8 w-8 border-b-2 border-violet-600"></div></div>
                 ) : displayedData.length === 0 ? (
                     <div className="h-full flex flex-col items-center justify-center text-gray-400">
                         <FileCheck size={48} className="mb-4 opacity-20" />
@@ -523,7 +523,7 @@ const TravelRequisition = () => {
                                     {/* --- ALWAYS VISIBLE STATUS BADGE --- */}
                                     <div className="flex justify-between items-start mb-4">
                                         <div className="flex items-center gap-3">
-                                            <div className="h-10 w-10 bg-indigo-50 dark:bg-indigo-900/30 rounded-full flex items-center justify-center text-indigo-600 font-bold text-lg shrink-0">
+                                            <div className="h-10 w-10 bg-violet-50 dark:bg-violet-900/30 rounded-full flex items-center justify-center text-violet-600 font-bold text-lg shrink-0">
                                                 {req.userName.charAt(0)}
                                             </div>
                                             <div>
@@ -549,7 +549,7 @@ const TravelRequisition = () => {
                                             <p className="text-sm font-bold text-gray-800 dark:text-gray-200 truncate">{req.destination}</p>
                                         </div>
                                         <div className="col-span-2 flex items-center gap-2 text-xs font-medium text-gray-600 dark:text-gray-400 bg-white dark:bg-gray-800 p-2 rounded-xl border border-gray-100 dark:border-gray-700">
-                                            <Calendar size={14} className="text-indigo-500 shrink-0" />
+                                            <Calendar size={14} className="text-violet-500 shrink-0" />
                                             {formatDate(req.startDate)} <ArrowRightIcon /> {formatDate(req.endDate)}
                                         </div>
                                     </div>
@@ -557,7 +557,7 @@ const TravelRequisition = () => {
                                     <div className="flex items-center justify-between pt-4 border-t border-gray-100 dark:border-gray-700">
                                         <div>
                                             <p className="text-[10px] text-gray-400 uppercase font-bold mb-0.5">Total Est. Cost</p>
-                                            <p className="text-lg font-black text-indigo-600 dark:text-indigo-400">{formatCurrency(req.totalAmount)}</p>
+                                            <p className="text-lg font-black text-violet-600 dark:text-violet-400">{formatCurrency(req.totalAmount)}</p>
                                         </div>
 
                                         {/* Actions based on Tab and Role */}
@@ -570,7 +570,7 @@ const TravelRequisition = () => {
                                             )}
 
                                             {req.status === 'Approved' && (
-                                                <button onClick={() => generateVoucherPDF(req)} className="px-4 py-2 bg-indigo-50 text-indigo-700 hover:bg-indigo-100 border border-indigo-200 rounded-xl text-xs font-black transition-colors flex items-center gap-2">
+                                                <button onClick={() => generateVoucherPDF(req)} className="px-4 py-2 bg-violet-50 text-violet-700 hover:bg-violet-100 border border-violet-200 rounded-xl text-xs font-black transition-colors flex items-center gap-2">
                                                     <Download size={14} /> Voucher
                                                 </button>
                                             )}

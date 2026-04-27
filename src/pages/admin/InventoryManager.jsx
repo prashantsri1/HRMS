@@ -175,7 +175,7 @@ const InventoryManager = () => {
         <div className="flex flex-col md:flex-row justify-between items-center mb-8 gap-4">
           <div>
             <h1 className="text-3xl font-extrabold flex items-center gap-3 text-gray-900 dark:text-white">
-              <Package className="text-blue-600" size={32} /> Global Inventory
+              <Package className="text-purple-600" size={32} /> Global Inventory
             </h1>
             <p className="text-sm text-gray-500 dark:text-gray-400 mt-1">
               Enterprise Grade Stock Management System
@@ -185,7 +185,7 @@ const InventoryManager = () => {
             <button onClick={exportToExcel} className="bg-emerald-600 hover:bg-emerald-700 text-white px-5 py-2.5 rounded-xl font-bold shadow-lg transition-all flex items-center gap-2">
               <FileSpreadsheet size={18} /> Export Excel
             </button>
-            <button onClick={openAddModal} className="bg-blue-600 hover:bg-blue-700 text-white px-5 py-2.5 rounded-xl font-bold shadow-lg transition-all flex items-center gap-2">
+            <button onClick={openAddModal} className="bg-purple-600 hover:bg-purple-700 text-white px-5 py-2.5 rounded-xl font-bold shadow-lg transition-all flex items-center gap-2">
               <Plus size={18} /> Add Product
             </button>
           </div>
@@ -194,7 +194,7 @@ const InventoryManager = () => {
         {/* --- KPI CARDS --- */}
         <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-8">
           <StatCard title="Inventory Value" value={`₹${stats.totalValue.toLocaleString()}`} icon={<DollarSign size={24} className="text-emerald-500"/>} bg="bg-emerald-50 dark:bg-emerald-900/20" border="border-emerald-200 dark:border-emerald-800"/>
-          <StatCard title="Total SKUs" value={stats.totalItems} icon={<Archive size={24} className="text-blue-500"/>} bg="bg-blue-50 dark:bg-blue-900/20" border="border-blue-200 dark:border-blue-800"/>
+          <StatCard title="Total SKUs" value={stats.totalItems} icon={<Archive size={24} className="text-purple-500"/>} bg="bg-purple-50 dark:bg-purple-900/20" border="border-purple-200 dark:border-purple-800"/>
           <StatCard title="Critical Stock" value={stats.lowStock} icon={<AlertTriangle size={24} className="text-red-500"/>} bg="bg-red-50 dark:bg-red-900/20" border="border-red-200 dark:border-red-800" textColor="text-red-600"/>
         </div>
 
@@ -204,11 +204,11 @@ const InventoryManager = () => {
             <div className="flex items-center gap-4 flex-1">
               <div className="relative flex-1 max-w-md">
                 <Search className="absolute left-3 top-2.5 text-gray-400" size={18} />
-                <input type="text" placeholder="Search SKU, Name..." value={searchTerm} onChange={(e) => setSearchTerm(e.target.value)} className="w-full pl-10 pr-4 py-2 bg-white dark:bg-gray-700 border border-gray-200 dark:border-gray-600 rounded-xl outline-none focus:ring-2 focus:ring-blue-500 text-sm" />
+                <input type="text" placeholder="Search SKU, Name..." value={searchTerm} onChange={(e) => setSearchTerm(e.target.value)} className="w-full pl-10 pr-4 py-2 bg-white dark:bg-gray-700 border border-gray-200 dark:border-gray-600 rounded-xl outline-none focus:ring-2 focus:ring-purple-500 text-sm" />
               </div>
               <div className="flex bg-white dark:bg-gray-700 rounded-lg border border-gray-200 dark:border-gray-600 p-1">
                 {['all', 'low_stock'].map(type => (
-                  <button key={type} onClick={() => setFilterType(type)} className={`px-4 py-1.5 text-xs font-bold rounded-md transition-all ${filterType === type ? 'bg-blue-100 dark:bg-blue-900/50 text-blue-700 dark:text-blue-300' : 'text-gray-500 hover:text-gray-700'}`}>
+                  <button key={type} onClick={() => setFilterType(type)} className={`px-4 py-1.5 text-xs font-bold rounded-md transition-all ${filterType === type ? 'bg-purple-100 dark:bg-purple-900/50 text-purple-700 dark:text-purple-300' : 'text-gray-500 hover:text-gray-700'}`}>
                     {type === 'all' ? 'All' : 'Low Stock'}
                   </button>
                 ))}
@@ -251,7 +251,7 @@ const InventoryManager = () => {
                       <div className="flex justify-center gap-2">
                         <button 
                           onClick={(e) => openEditModal(e, item)} 
-                          className="p-1.5 text-blue-600 hover:bg-blue-100 dark:text-blue-400 dark:hover:bg-blue-900/30 rounded" 
+                          className="p-1.5 text-purple-600 hover:bg-purple-100 dark:text-purple-400 dark:hover:bg-purple-900/30 rounded" 
                           title="Edit"
                         >
                           <Edit size={16} />
@@ -280,7 +280,7 @@ const InventoryManager = () => {
               {/* Modal Header */}
               <div className="px-6 py-4 border-b border-gray-200 dark:border-gray-700 flex justify-between items-center bg-gray-50 dark:bg-gray-700/30 rounded-t-2xl">
                 <h2 className="text-lg font-bold text-gray-800 dark:text-white flex items-center gap-2">
-                  <Package className="text-blue-500" /> {isEditing ? 'Edit Product' : 'Add New Product'}
+                  <Package className="text-purple-500" /> {isEditing ? 'Edit Product' : 'Add New Product'}
                 </h2>
                 <button onClick={() => setShowModal(false)} className="text-gray-400 hover:text-red-500"><X size={20} /></button>
               </div>
@@ -291,7 +291,7 @@ const InventoryManager = () => {
                   
                   {/* SECTION 1: BASIC INFO */}
                   <div className="space-y-4">
-                    <h3 className="text-xs font-bold text-blue-500 uppercase tracking-wider border-b pb-1">1. Product Identity</h3>
+                    <h3 className="text-xs font-bold text-purple-500 uppercase tracking-wider border-b pb-1">1. Product Identity</h3>
                     <div>
                       <label className="text-xs font-bold text-gray-500 uppercase block mb-1">Product Name *</label>
                       <input type="text" name="name" value={newItem.name} onChange={handleInputChange} className="w-full p-2 bg-gray-50 dark:bg-gray-700 border dark:border-gray-600 rounded-lg outline-none" placeholder="e.g. Dell XPS 13" />
@@ -324,7 +324,7 @@ const InventoryManager = () => {
 
                   {/* SECTION 2: PRICING & TAX */}
                   <div className="space-y-4">
-                    <h3 className="text-xs font-bold text-blue-500 uppercase tracking-wider border-b pb-1">2. Pricing & Financials</h3>
+                    <h3 className="text-xs font-bold text-purple-500 uppercase tracking-wider border-b pb-1">2. Pricing & Financials</h3>
                     <div className="grid grid-cols-2 gap-4">
                       <div>
                         <label className="text-xs font-bold text-gray-500 uppercase block mb-1">Cost Price (Buy)</label>
@@ -355,7 +355,7 @@ const InventoryManager = () => {
 
                   {/* SECTION 3: INVENTORY RULES */}
                   <div className="space-y-4">
-                    <h3 className="text-xs font-bold text-blue-500 uppercase tracking-wider border-b pb-1">3. Inventory Logic</h3>
+                    <h3 className="text-xs font-bold text-purple-500 uppercase tracking-wider border-b pb-1">3. Inventory Logic</h3>
                     <div className="grid grid-cols-3 gap-4">
                         <div>
                             <label className="text-xs font-bold text-gray-500 uppercase block mb-1">Current Qty</label>
@@ -374,7 +374,7 @@ const InventoryManager = () => {
 
                   {/* SECTION 4: LOCATION & SUPPLIER */}
                   <div className="space-y-4">
-                    <h3 className="text-xs font-bold text-blue-500 uppercase tracking-wider border-b pb-1">4. Logistics</h3>
+                    <h3 className="text-xs font-bold text-purple-500 uppercase tracking-wider border-b pb-1">4. Logistics</h3>
                     <div className="grid grid-cols-2 gap-4">
                         <div>
                             <label className="text-xs font-bold text-gray-500 uppercase block mb-1">Warehouse Location</label>
@@ -397,7 +397,7 @@ const InventoryManager = () => {
               {/* Footer Buttons */}
               <div className="px-6 py-4 border-t border-gray-200 dark:border-gray-700 flex justify-end gap-4 bg-gray-50 dark:bg-gray-700/30 rounded-b-2xl">
                 <button onClick={() => setShowModal(false)} className="px-6 py-2.5 bg-white dark:bg-gray-600 border border-gray-300 dark:border-gray-500 rounded-xl font-bold text-gray-700 dark:text-gray-200 hover:bg-gray-50">Cancel</button>
-                <button onClick={handleSaveItem} className="px-8 py-2.5 bg-blue-600 hover:bg-blue-700 text-white rounded-xl font-bold shadow-lg flex items-center gap-2">
+                <button onClick={handleSaveItem} className="px-8 py-2.5 bg-purple-600 hover:bg-purple-700 text-white rounded-xl font-bold shadow-lg flex items-center gap-2">
                     <Save size={18} /> {isEditing ? 'Update Product' : 'Save Product'}
                 </button>
               </div>
@@ -427,7 +427,7 @@ const InventoryManager = () => {
                     <p className="text-sm text-gray-500 dark:text-gray-400">{selectedDetailItem.brand} | {selectedDetailItem.category}</p>
                   </div>
                   <div className="text-right">
-                    <div className="text-3xl font-bold text-indigo-600 dark:text-indigo-400 font-mono">₹{selectedDetailItem.sellingPrice}</div>
+                    <div className="text-3xl font-bold text-violet-600 dark:text-violet-400 font-mono">₹{selectedDetailItem.sellingPrice}</div>
                     <p className="text-xs text-gray-400">Excl. {selectedDetailItem.taxRate}% GST</p>
                   </div>
                 </div>
@@ -457,7 +457,7 @@ const InventoryManager = () => {
               </div>
 
               <div className="px-6 py-4 border-t border-gray-200 dark:border-gray-700 flex justify-end bg-gray-50 dark:bg-gray-700/30 rounded-b-2xl">
-                <button onClick={() => setShowDetailModal(false)} className="px-6 py-2.5 bg-indigo-600 hover:bg-indigo-700 text-white rounded-xl font-bold shadow-lg">Close</button>
+                <button onClick={() => setShowDetailModal(false)} className="px-6 py-2.5 bg-violet-600 hover:bg-violet-700 text-white rounded-xl font-bold shadow-lg">Close</button>
               </div>
 
             </div>

@@ -126,7 +126,7 @@ function YearlyPayoffReport() {
                         <select 
                             value={selectedEmployeeId} 
                             onChange={(e) => setSelectedEmployeeId(e.target.value)} 
-                            className="w-full pl-10 pr-4 py-3 bg-gray-50 dark:bg-gray-700 border border-gray-200 dark:border-gray-600 rounded-xl focus:bg-white dark:focus:bg-gray-800 focus:ring-2 focus:ring-indigo-500 outline-none appearance-none cursor-pointer transition-all hover:border-indigo-300 font-medium text-gray-700 dark:text-white"
+                            className="w-full pl-10 pr-4 py-3 bg-gray-50 dark:bg-gray-700 border border-gray-200 dark:border-gray-600 rounded-xl focus:bg-white dark:focus:bg-gray-800 focus:ring-2 focus:ring-violet-500 outline-none appearance-none cursor-pointer transition-all hover:border-violet-300 font-medium text-gray-700 dark:text-white"
                         >
                             <option value="">-- Choose Employee --</option>
                             {employees?.map(emp => (
@@ -150,7 +150,7 @@ function YearlyPayoffReport() {
                             type="number" 
                             value={selectedYear} 
                             onChange={(e) => setSelectedYear(e.target.value)} 
-                            className="w-full pl-10 pr-4 py-3 bg-gray-50 dark:bg-gray-700 border border-gray-200 dark:border-gray-600 rounded-xl focus:bg-white dark:focus:bg-gray-800 focus:ring-2 focus:ring-indigo-500 outline-none transition-all hover:border-indigo-300 font-medium text-gray-700 dark:text-white placeholder-gray-400 dark:[color-scheme:dark]"
+                            className="w-full pl-10 pr-4 py-3 bg-gray-50 dark:bg-gray-700 border border-gray-200 dark:border-gray-600 rounded-xl focus:bg-white dark:focus:bg-gray-800 focus:ring-2 focus:ring-violet-500 outline-none transition-all hover:border-violet-300 font-medium text-gray-700 dark:text-white placeholder-gray-400 dark:[color-scheme:dark]"
                             placeholder="YYYY"
                         />
                     </div>
@@ -254,7 +254,7 @@ function YearlyPayoffReport() {
                 )
             ) : (
                 <div className="flex flex-col items-center justify-center py-24 bg-white dark:bg-gray-800 rounded-2xl border-2 border-dashed border-gray-200 dark:border-gray-700 transition-colors duration-300">
-                    <div className="p-4 bg-indigo-50 dark:bg-indigo-900/20 text-indigo-500 dark:text-indigo-400 rounded-full mb-4 animate-bounce">
+                    <div className="p-4 bg-violet-50 dark:bg-violet-900/20 text-violet-500 dark:text-violet-400 rounded-full mb-4 animate-bounce">
                         <User size={32} />
                     </div>
                     <h3 className="text-xl font-bold text-gray-800 dark:text-white">Select an Employee</h3>

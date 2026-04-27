@@ -253,7 +253,7 @@ const KRAManager = () => {
     const WeightBar = ({ current }) => (
         <div className="flex items-center gap-2 text-xs font-bold w-full max-w-xs">
             <div className="flex-1 h-2 bg-gray-200 dark:bg-gray-700 rounded-full overflow-hidden">
-                <div className={`h-full transition-all duration-500 ${current > 100 ? 'bg-red-500' : current === 100 ? 'bg-emerald-500' : 'bg-blue-500'}`} style={{ width: `${Math.min(current, 100)}%` }}></div>
+                <div className={`h-full transition-all duration-500 ${current > 100 ? 'bg-red-500' : current === 100 ? 'bg-emerald-500' : 'bg-purple-500'}`} style={{ width: `${Math.min(current, 100)}%` }}></div>
             </div>
             <span className={`${current > 100 ? 'text-red-500' : current === 100 ? 'text-emerald-500' : 'text-gray-500'}`}>{current}%</span>
         </div>
@@ -261,13 +261,13 @@ const KRAManager = () => {
 
     return (
         <div className="min-h-screen bg-gray-50/50 dark:bg-gray-900 p-4 sm:p-6 md:p-10 font-sans text-gray-800 dark:text-gray-100 overflow-x-hidden relative">
-            <div className="absolute top-0 left-0 w-full h-96 bg-gradient-to-b from-indigo-50/50 to-transparent dark:from-indigo-950/20 pointer-events-none -z-10" />
+            <div className="absolute top-0 left-0 w-full h-96 bg-gradient-to-b from-violet-50/50 to-transparent dark:from-violet-950/20 pointer-events-none -z-10" />
 
             {/* HEADER SECTION */}
             <div className="flex flex-col xl:flex-row justify-between items-start xl:items-center mb-8 sm:mb-12 gap-6 relative z-10">
                 <div>
-                    <h1 className="text-3xl sm:text-4xl font-black text-transparent bg-clip-text bg-gradient-to-r from-indigo-600 via-purple-600 to-pink-500 dark:from-indigo-400 dark:via-purple-400 dark:to-pink-400 flex items-center gap-3 drop-shadow-sm flex-wrap">
-                        <Target size={32} className="sm:w-10 sm:h-10 text-indigo-600 dark:text-indigo-400" strokeWidth={2.5} />
+                    <h1 className="text-3xl sm:text-4xl font-black text-transparent bg-clip-text bg-gradient-to-r from-violet-600 via-purple-600 to-pink-500 dark:from-violet-400 dark:via-purple-400 dark:to-pink-400 flex items-center gap-3 drop-shadow-sm flex-wrap">
+                        <Target size={32} className="sm:w-10 sm:h-10 text-violet-600 dark:text-violet-400" strokeWidth={2.5} />
                         KRA Management
                         {isSuperAdmin && <span className="text-xs bg-amber-100 text-amber-700 border border-amber-200 px-2 py-1 rounded-full"><Crown size={12} className="inline mr-1"/>Owner</span>}
                     </h1>
@@ -286,7 +286,7 @@ const KRAManager = () => {
                 {/* ACTION BAR */}
                 {canManage && (
                     <div className="grid grid-cols-2 sm:flex sm:flex-wrap gap-3 w-full xl:w-auto bg-white/60 dark:bg-gray-800/60 backdrop-blur-xl p-2 rounded-2xl shadow-lg border border-white/20 dark:border-gray-700">
-                        <button onClick={() => navigate('/kpi')} className="col-span-2 sm:col-span-1 bg-gradient-to-r from-emerald-500 to-teal-600 text-white px-4 py-2.5 rounded-xl font-bold shadow-lg shadow-emerald-500/20 flex items-center justify-center gap-2 hover:scale-105 transition-transform active:scale-95 text-xs sm:text-sm">
+                        <button onClick={() => navigate('/kpi')} className="col-span-2 sm:col-span-1 bg-gradient-to-r from-emerald-500 to-emerald-600 text-white px-4 py-2.5 rounded-xl font-bold shadow-lg shadow-emerald-500/20 flex items-center justify-center gap-2 hover:scale-105 transition-transform active:scale-95 text-xs sm:text-sm">
                             <BarChart2 size={18}/> KPI Scorecard
                         </button>
 
@@ -296,10 +296,10 @@ const KRAManager = () => {
 
                         <div className="relative group col-span-2 sm:col-span-1">
                             <div className="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none">
-                                <Filter className="h-4 w-4 text-indigo-500 group-focus-within:text-indigo-600" />
+                                <Filter className="h-4 w-4 text-violet-500 group-focus-within:text-violet-600" />
                             </div>
                             <select 
-                                className="w-full pl-9 pr-8 py-2.5 bg-indigo-50 dark:bg-gray-800 border-none rounded-xl text-xs sm:text-sm font-bold text-indigo-700 dark:text-indigo-300 focus:ring-2 focus:ring-indigo-500 outline-none cursor-pointer appearance-none hover:bg-indigo-100 dark:hover:bg-gray-700 transition-colors"
+                                className="w-full pl-9 pr-8 py-2.5 bg-violet-50 dark:bg-gray-800 border-none rounded-xl text-xs sm:text-sm font-bold text-violet-700 dark:text-violet-300 focus:ring-2 focus:ring-violet-500 outline-none cursor-pointer appearance-none hover:bg-violet-100 dark:hover:bg-gray-700 transition-colors"
                                 value={selectedDept}
                                 onChange={(e) => setSelectedDept(e.target.value)}
                             >
@@ -309,7 +309,7 @@ const KRAManager = () => {
 
                         <button 
                             onClick={openAddModal}
-                            className="col-span-2 sm:col-span-1 bg-indigo-600 hover:bg-indigo-700 text-white px-4 py-2.5 rounded-xl font-bold shadow-lg shadow-indigo-500/30 flex items-center justify-center gap-2 transition-all hover:scale-105 active:scale-95 text-xs sm:text-sm"
+                            className="col-span-2 sm:col-span-1 bg-violet-600 hover:bg-violet-700 text-white px-4 py-2.5 rounded-xl font-bold shadow-lg shadow-violet-500/30 flex items-center justify-center gap-2 transition-all hover:scale-105 active:scale-95 text-xs sm:text-sm"
                         >
                             <Plus size={18}/> New Template
                         </button>
@@ -324,31 +324,31 @@ const KRAManager = () => {
                         initial={{ height: 0, opacity: 0, y: -20 }} animate={{ height: 'auto', opacity: 1, y: 0 }} exit={{ height: 0, opacity: 0, y: -20 }}
                         className="mb-10 overflow-hidden relative z-20"
                     >
-                        <div className="bg-white dark:bg-gray-800 p-6 sm:p-8 rounded-3xl shadow-2xl border-2 border-indigo-100 dark:border-gray-700 relative">
-                            <h3 className="text-lg font-black text-transparent bg-clip-text bg-gradient-to-r from-indigo-600 to-purple-600 uppercase mb-6 tracking-widest flex items-center gap-2">
+                        <div className="bg-white dark:bg-gray-800 p-6 sm:p-8 rounded-3xl shadow-2xl border-2 border-violet-100 dark:border-gray-700 relative">
+                            <h3 className="text-lg font-black text-transparent bg-clip-text bg-gradient-to-r from-violet-600 to-purple-600 uppercase mb-6 tracking-widest flex items-center gap-2">
                                 <Zap size={20} className="text-yellow-500 fill-yellow-500" /> {editingKraId ? 'Edit Performance Metric' : 'Create Performance Metric'}
                             </h3>
                             <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6 relative z-10">
                                 <div className="col-span-2 group">
                                     <label className="text-xs font-bold text-gray-400 uppercase ml-1 mb-1 block">Title</label>
-                                    <input className="w-full p-4 bg-gray-50 dark:bg-gray-900 border-2 border-transparent focus:border-indigo-500 rounded-2xl outline-none font-bold text-gray-800 dark:text-white transition-all shadow-inner" 
+                                    <input className="w-full p-4 bg-gray-50 dark:bg-gray-900 border-2 border-transparent focus:border-violet-500 rounded-2xl outline-none font-bold text-gray-800 dark:text-white transition-all shadow-inner" 
                                         value={kraFormData.title} onChange={e=>setKraFormData({...kraFormData, title: e.target.value})} placeholder="e.g. Lead Generation" />
                                 </div>
                                 <div className="col-span-2 group">
                                     <label className="text-xs font-bold text-gray-400 uppercase ml-1 mb-1 block">Description</label>
-                                    <textarea className="w-full p-4 bg-gray-50 dark:bg-gray-900 border-2 border-transparent focus:border-indigo-500 rounded-2xl outline-none font-medium text-gray-700 dark:text-gray-300 transition-all shadow-inner resize-none h-24" 
+                                    <textarea className="w-full p-4 bg-gray-50 dark:bg-gray-900 border-2 border-transparent focus:border-violet-500 rounded-2xl outline-none font-medium text-gray-700 dark:text-gray-300 transition-all shadow-inner resize-none h-24" 
                                         value={kraFormData.description} onChange={e=>setKraFormData({...kraFormData, description: e.target.value})} placeholder="Success criteria..." />
                                 </div>
                                 <div>
                                     <label className="text-xs font-bold text-gray-400 uppercase ml-1 mb-1 block">Department</label>
-                                    <select className="w-full p-4 bg-gray-50 dark:bg-gray-900 border-2 border-transparent focus:border-indigo-500 rounded-2xl outline-none font-bold text-gray-800 dark:text-white cursor-pointer" 
+                                    <select className="w-full p-4 bg-gray-50 dark:bg-gray-900 border-2 border-transparent focus:border-violet-500 rounded-2xl outline-none font-bold text-gray-800 dark:text-white cursor-pointer" 
                                         value={kraFormData.department} onChange={e=>setKraFormData({...kraFormData, department: e.target.value})}>
                                         <option>IT</option><option>HR</option><option>Sales</option><option>Marketing</option><option>Management</option>
                                     </select>
                                 </div>
                                 <div>
                                     <label className="text-xs font-bold text-gray-400 uppercase ml-1 mb-1 block">Weightage (%)</label>
-                                    <input type="number" className="w-full p-4 bg-gray-50 dark:bg-gray-900 border-2 border-transparent focus:border-indigo-500 rounded-2xl outline-none font-bold text-gray-800 dark:text-white" 
+                                    <input type="number" className="w-full p-4 bg-gray-50 dark:bg-gray-900 border-2 border-transparent focus:border-violet-500 rounded-2xl outline-none font-bold text-gray-800 dark:text-white" 
                                         placeholder="20" value={kraFormData.weightage} onChange={e=>setKraFormData({...kraFormData, weightage: e.target.value})}/>
                                 </div>
                             </div>
@@ -363,7 +363,7 @@ const KRAManager = () => {
                                 </label>
                                 <div className="flex gap-2 w-full sm:w-auto">
                                     <button onClick={() => setIsFormOpen(false)} className="flex-1 sm:flex-none px-6 py-3 rounded-xl font-bold text-gray-500 hover:bg-gray-100 dark:hover:bg-gray-800">Cancel</button>
-                                    <button onClick={handleSaveKra} className="flex-1 sm:flex-none bg-indigo-600 hover:bg-indigo-700 text-white px-8 py-3 rounded-xl font-bold shadow-lg transition-all flex items-center justify-center gap-2">
+                                    <button onClick={handleSaveKra} className="flex-1 sm:flex-none bg-violet-600 hover:bg-violet-700 text-white px-8 py-3 rounded-xl font-bold shadow-lg transition-all flex items-center justify-center gap-2">
                                         {editingKraId ? 'Update KRA' : 'Add to Library'} <ArrowRight size={18}/>
                                     </button>
                                 </div>
@@ -397,11 +397,11 @@ const KRAManager = () => {
                                 transition={{ duration: 0.3, delay: i * 0.05 }}
                                 className={`relative p-6 rounded-3xl border-2 transition-all duration-300 group overflow-hidden hover:-translate-y-2
                                     ${isSelected 
-                                    ? 'bg-white dark:bg-gray-800 border-indigo-500 dark:border-indigo-500 shadow-2xl shadow-indigo-500/10' 
+                                    ? 'bg-white dark:bg-gray-800 border-violet-500 dark:border-violet-500 shadow-2xl shadow-violet-500/10' 
                                     : 'bg-white/80 dark:bg-gray-800/80 border-transparent hover:border-gray-300 dark:hover:border-gray-600 opacity-80 hover:opacity-100 shadow-sm'
                                     }`}
                             >
-                                {isSelected && <div className="absolute top-0 right-0 w-24 h-24 bg-gradient-to-bl from-indigo-500 to-transparent opacity-10 rounded-bl-full pointer-events-none"/>}
+                                {isSelected && <div className="absolute top-0 right-0 w-24 h-24 bg-gradient-to-bl from-violet-500 to-transparent opacity-10 rounded-bl-full pointer-events-none"/>}
                                 
                                 <div className="flex justify-between items-start mb-4 relative z-10">
                                     <button 
@@ -414,7 +414,7 @@ const KRAManager = () => {
                                                 ? 'bg-emerald-100 border-emerald-500 text-emerald-600 cursor-not-allowed'
                                                 : status === 'pending'
                                                     ? 'bg-amber-100 border-amber-500 text-amber-600 animate-pulse'
-                                                    : 'bg-gray-50 border-gray-200 text-gray-300 hover:border-indigo-300 hover:text-indigo-300'
+                                                    : 'bg-gray-50 border-gray-200 text-gray-300 hover:border-violet-300 hover:text-violet-300'
                                             }`}
                                     >
                                         {kra.isMandatory ? <Lock size={20}/> : 
@@ -425,7 +425,7 @@ const KRAManager = () => {
 
                                     {canManage && (
                                         <div className="flex gap-2">
-                                            <button onClick={() => openEditModal(kra)} className="p-2 text-blue-500 hover:bg-blue-50 dark:hover:bg-blue-900/20 rounded-xl transition-all" title="Edit KRA">
+                                            <button onClick={() => openEditModal(kra)} className="p-2 text-purple-500 hover:bg-purple-50 dark:hover:bg-purple-900/20 rounded-xl transition-all" title="Edit KRA">
                                                 <Edit2 size={20}/>
                                             </button>
                                             <button onClick={() => handleDeleteKra(kra.id)} className="p-2 text-gray-300 hover:text-red-500 hover:bg-red-50 dark:hover:bg-red-900/20 rounded-xl transition-all" title="Delete KRA">
@@ -447,9 +447,9 @@ const KRAManager = () => {
 
                                 <div className="mt-6 pt-4 border-t border-gray-100 dark:border-gray-700 flex gap-3 relative z-10">
                                     <span className="flex-1 py-2 bg-gray-50 dark:bg-gray-900/50 text-gray-600 dark:text-gray-300 text-xs font-bold uppercase rounded-xl border border-gray-200 dark:border-gray-600 text-center flex items-center justify-center gap-1">
-                                        <Hexagon size={12} className="text-indigo-500"/> {kra.weightage}% Weight
+                                        <Hexagon size={12} className="text-violet-500"/> {kra.weightage}% Weight
                                     </span>
-                                    <span className="flex-1 py-2 bg-blue-50 dark:bg-blue-900/20 text-blue-600 dark:text-blue-400 text-xs font-bold uppercase rounded-xl border border-blue-100 dark:border-blue-800 text-center">
+                                    <span className="flex-1 py-2 bg-purple-50 dark:bg-purple-900/20 text-purple-600 dark:text-purple-400 text-xs font-bold uppercase rounded-xl border border-purple-100 dark:border-purple-800 text-center">
                                         {kra.department}
                                     </span>
                                 </div>
@@ -486,8 +486,8 @@ const KRAManager = () => {
                                 <div className={`absolute inset-0 z-10 sm:relative sm:z-0 w-full sm:w-80 border-r border-gray-200 dark:border-gray-700 flex flex-col bg-gray-50 dark:bg-gray-900/30 transition-transform duration-300 ${!showMobileSidebar && selectedEmployeeForReport ? '-translate-x-full sm:translate-x-0' : 'translate-x-0'}`}>
                                     <div className="p-4">
                                         <div className="relative group">
-                                            <Search className="absolute left-4 top-3.5 text-gray-400 group-focus-within:text-indigo-500 transition-colors" size={18}/>
-                                            <input placeholder="Search..." className="w-full pl-12 pr-4 py-3 rounded-2xl border-2 border-transparent bg-white dark:bg-gray-800 text-sm font-bold outline-none focus:border-indigo-500 shadow-sm transition-all" value={employeeSearch} onChange={e=>setEmployeeSearch(e.target.value)} />
+                                            <Search className="absolute left-4 top-3.5 text-gray-400 group-focus-within:text-violet-500 transition-colors" size={18}/>
+                                            <input placeholder="Search..." className="w-full pl-12 pr-4 py-3 rounded-2xl border-2 border-transparent bg-white dark:bg-gray-800 text-sm font-bold outline-none focus:border-violet-500 shadow-sm transition-all" value={employeeSearch} onChange={e=>setEmployeeSearch(e.target.value)} />
                                         </div>
                                     </div>
                                     <div className="flex-1 overflow-y-auto p-3 space-y-2 custom-scrollbar">
@@ -497,7 +497,7 @@ const KRAManager = () => {
                                                 <div 
                                                     key={emp.id} 
                                                     onClick={() => { setSelectedEmployeeForReport(emp); setShowMobileSidebar(false); }}
-                                                    className={`p-4 rounded-2xl cursor-pointer flex items-center gap-4 transition-all group ${selectedEmployeeForReport?.id === emp.id ? 'bg-indigo-600 text-white shadow-lg' : 'bg-white dark:bg-gray-800 hover:bg-indigo-50 dark:hover:bg-gray-700'}`}
+                                                    className={`p-4 rounded-2xl cursor-pointer flex items-center gap-4 transition-all group ${selectedEmployeeForReport?.id === emp.id ? 'bg-violet-600 text-white shadow-lg' : 'bg-white dark:bg-gray-800 hover:bg-violet-50 dark:hover:bg-gray-700'}`}
                                                 >
                                                     <div className={`w-10 h-10 rounded-xl flex items-center justify-center text-sm font-black shadow-inner relative ${selectedEmployeeForReport?.id === emp.id ? 'bg-white/20 text-white' : 'bg-gray-100 dark:bg-gray-700 text-gray-600 dark:text-gray-300'}`}>
                                                         {emp.name?.charAt(0)}
@@ -505,7 +505,7 @@ const KRAManager = () => {
                                                     </div>
                                                     <div>
                                                         <h4 className="text-sm font-bold">{emp.name}</h4>
-                                                        <p className={`text-[10px] font-bold uppercase tracking-wide ${selectedEmployeeForReport?.id === emp.id ? 'text-indigo-200' : 'text-gray-400'}`}>{emp.department || 'N/A'}</p>
+                                                        <p className={`text-[10px] font-bold uppercase tracking-wide ${selectedEmployeeForReport?.id === emp.id ? 'text-violet-200' : 'text-gray-400'}`}>{emp.department || 'N/A'}</p>
                                                     </div>
                                                     <ChevronRight size={16} className={`ml-auto ${selectedEmployeeForReport?.id === emp.id ? 'text-white' : 'opacity-30'}`}/>
                                                 </div>
@@ -571,7 +571,7 @@ const KRAManager = () => {
             <style>{`
                 .input-std { width: 100%; padding: 1rem; border-radius: 1rem; background-color: #f8fafc; outline: none; transition: all 0.2s; font-size: 0.95rem; font-weight: 600; color: #334155; }
                 .dark .input-std { background-color: #1e293b; color: white; }
-                .input-std:focus { background-color: white; box-shadow: 0 0 0 4px rgba(99, 102, 241, 0.1); }
+                .input-std:focus { background-color: white; box-shadow: 0 0 0 4px rgba(124, 58, 237, 0.1); }
                 .dark .input-std:focus { background-color: #0f172a; }
             `}</style>
         </div>

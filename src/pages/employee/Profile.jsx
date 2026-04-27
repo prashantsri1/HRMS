@@ -109,7 +109,7 @@ function Profile() {
             case 'super_admin': return 'bg-amber-100 text-amber-700 border-amber-200 dark:bg-amber-900/30 dark:text-amber-400 dark:border-amber-800';
             case 'admin': return 'bg-rose-100 text-rose-700 border-rose-200 dark:bg-rose-900/30 dark:text-rose-400 dark:border-rose-800';
             case 'hr': return 'bg-purple-100 text-purple-700 border-purple-200 dark:bg-purple-900/30 dark:text-purple-400 dark:border-purple-800';
-            default: return 'bg-blue-100 text-blue-700 border-blue-200 dark:bg-blue-900/30 dark:text-blue-400 dark:border-blue-800';
+            default: return 'bg-purple-100 text-purple-700 border-purple-200 dark:bg-purple-900/30 dark:text-purple-400 dark:border-purple-800';
         }
     };
 
@@ -124,7 +124,7 @@ function Profile() {
         <div className="min-h-screen bg-gray-50/50 dark:bg-gray-900 pb-10 transition-colors duration-300">
             
             {/* --- 1. COVER BANNER --- */}
-            <div className={`h-48 md:h-64 relative overflow-hidden ${currentRole === 'super_admin' ? 'bg-gradient-to-r from-amber-900 via-orange-900 to-amber-900' : 'bg-gradient-to-r from-indigo-900 via-purple-900 to-indigo-900'}`}>
+            <div className={`h-48 md:h-64 relative overflow-hidden ${currentRole === 'super_admin' ? 'bg-gradient-to-r from-amber-900 via-orange-900 to-amber-900' : 'bg-gradient-to-r from-violet-900 via-purple-900 to-violet-900'}`}>
                 <div className="absolute inset-0 bg-[url('https://www.transparenttextures.com/patterns/cubes.png')] opacity-10"></div>
                 <div className="absolute inset-0 bg-gradient-to-t from-black/40 to-transparent"></div>
             </div>
@@ -149,7 +149,7 @@ function Profile() {
                             {editMode && (
                                 <button 
                                     onClick={() => fileInputRef.current.click()}
-                                    className="absolute bottom-2 right-2 p-2.5 bg-indigo-600 dark:bg-indigo-500 text-white rounded-full shadow-lg hover:bg-indigo-700 dark:hover:bg-indigo-600 transition-all hover:scale-110"
+                                    className="absolute bottom-2 right-2 p-2.5 bg-violet-600 dark:bg-violet-500 text-white rounded-full shadow-lg hover:bg-violet-700 dark:hover:bg-violet-600 transition-all hover:scale-110"
                                     title="Upload Photo"
                                 >
                                     <Camera size={18} />
@@ -178,7 +178,7 @@ function Profile() {
                             {!editMode ? (
                                 <button 
                                     onClick={() => setEditMode(true)}
-                                    className="bg-gray-900 hover:bg-black dark:bg-indigo-600 dark:hover:bg-indigo-700 text-white px-6 py-2.5 rounded-xl font-bold shadow-lg hover:shadow-xl transition-all flex items-center gap-2 active:scale-95"
+                                    className="bg-gray-900 hover:bg-black dark:bg-violet-600 dark:hover:bg-violet-700 text-white px-6 py-2.5 rounded-xl font-bold shadow-lg hover:shadow-xl transition-all flex items-center gap-2 active:scale-95"
                                 >
                                     <Edit2 size={16} /> Edit Profile
                                 </button>
@@ -193,7 +193,7 @@ function Profile() {
                                     <button 
                                         onClick={handleUpdateProfile}
                                         disabled={isUpdating}
-                                        className="bg-indigo-600 hover:bg-indigo-700 text-white px-6 py-2.5 rounded-xl font-bold shadow-lg hover:shadow-indigo-500/30 transition-all active:scale-95 flex items-center gap-2"
+                                        className="bg-violet-600 hover:bg-violet-700 text-white px-6 py-2.5 rounded-xl font-bold shadow-lg hover:shadow-violet-500/30 transition-all active:scale-95 flex items-center gap-2"
                                     >
                                         {isUpdating ? <span className="animate-spin">⏳</span> : <Save size={18} />} Save
                                     </button>
@@ -226,7 +226,7 @@ function Profile() {
                             className="bg-white dark:bg-gray-800 rounded-2xl shadow-sm border border-gray-200 dark:border-gray-700 p-6 sm:p-8 transition-colors duration-300"
                         >
                             <h3 className="text-lg font-bold text-gray-800 dark:text-white mb-6 flex items-center gap-2 pb-2 border-b border-gray-100 dark:border-gray-700">
-                                <Briefcase className="text-indigo-500 dark:text-indigo-400" size={20} /> Professional Details
+                                <Briefcase className="text-violet-500 dark:text-violet-400" size={20} /> Professional Details
                             </h3>
 
                             <div className="space-y-6">
@@ -280,7 +280,7 @@ function Profile() {
                                 <div>
                                     <label className="block text-xs font-bold text-gray-400 dark:text-gray-500 uppercase tracking-wider mb-2 ml-1">Current Address</label>
                                     <div className={`relative group transition-all duration-200 rounded-xl overflow-hidden
-                                        ${editMode ? 'ring-2 ring-gray-100 dark:ring-gray-700 focus-within:ring-indigo-500 bg-gray-50 dark:bg-gray-900' : 'bg-transparent border-b border-gray-100 dark:border-gray-700'}`}
+                                        ${editMode ? 'ring-2 ring-gray-100 dark:ring-gray-700 focus-within:ring-violet-500 bg-gray-50 dark:bg-gray-900' : 'bg-transparent border-b border-gray-100 dark:border-gray-700'}`}
                                     >
                                         <div className="absolute top-3 left-3 text-gray-400 dark:text-gray-500">
                                             <MapPin size={18} />
@@ -320,7 +320,7 @@ const InputField = ({ label, icon, name, value, onChange, disabled, editMode, pl
     <div>
         <label className="block text-xs font-bold text-gray-400 dark:text-gray-500 uppercase tracking-wider mb-2 ml-1">{label}</label>
         <div className={`relative flex items-center transition-all duration-200 rounded-xl overflow-hidden
-            ${editMode && !disabled ? 'bg-gray-50 dark:bg-gray-900 ring-2 ring-gray-100 dark:ring-gray-700 focus-within:ring-indigo-500' : 'bg-transparent border-b border-gray-100 dark:border-gray-700 pb-1'}`}
+            ${editMode && !disabled ? 'bg-gray-50 dark:bg-gray-900 ring-2 ring-gray-100 dark:ring-gray-700 focus-within:ring-violet-500' : 'bg-transparent border-b border-gray-100 dark:border-gray-700 pb-1'}`}
         >
             <div className={`pl-3 pr-2 ${disabled ? 'text-gray-300 dark:text-gray-600' : 'text-gray-500 dark:text-gray-400'}`}>
                 {icon}

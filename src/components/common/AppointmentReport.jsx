@@ -81,7 +81,7 @@ const AppointmentReport = () => {
       <div className="flex h-screen items-center justify-center bg-gray-50 flex-col gap-4 p-4 text-center">
         <div className="text-red-500 font-bold text-xl">Error Loading Data</div>
         <p className="text-gray-600">{error}</p>
-        <button onClick={() => window.location.reload()} className="px-4 py-2 bg-indigo-600 text-white rounded-lg shadow">Retry</button>
+        <button onClick={() => window.location.reload()} className="px-4 py-2 bg-violet-600 text-white rounded-lg shadow">Retry</button>
       </div>
     );
   }
@@ -90,7 +90,7 @@ const AppointmentReport = () => {
   if (!appointments) {
     return (
       <div className="flex h-screen items-center justify-center bg-gray-50 dark:bg-gray-900 flex-col p-4">
-        <RefreshCw className="animate-spin text-indigo-600 mb-4" size={40} />
+        <RefreshCw className="animate-spin text-violet-600 mb-4" size={40} />
         <div className="text-gray-500 font-bold animate-pulse">Loading Appointments...</div>
       </div>
     );
@@ -109,7 +109,7 @@ const AppointmentReport = () => {
             <ArrowLeft size={20} className="text-gray-600 dark:text-gray-300"/>
           </button>
           <h1 className="text-xl sm:text-2xl font-extrabold text-gray-900 dark:text-white flex items-center gap-2">
-            <FileText className="text-indigo-600 shrink-0" size={24}/> Appointment Reports
+            <FileText className="text-violet-600 shrink-0" size={24}/> Appointment Reports
             {isSuperAdmin && <span className="text-xs bg-amber-100 text-amber-700 px-2 py-1 rounded-full border border-amber-200 flex items-center gap-1"><Crown size={12}/> Owner</span>}
           </h1>
         </div>
@@ -135,7 +135,7 @@ const AppointmentReport = () => {
             <Search className="absolute left-3 top-3 text-gray-400" size={16}/>
             <input 
               placeholder="Search Client or Ticket ID..." 
-              className="w-full pl-9 pr-4 py-2.5 rounded-lg border border-gray-300 dark:border-gray-600 bg-white dark:bg-gray-800 outline-none focus:ring-2 focus:ring-indigo-500 text-gray-800 dark:text-gray-200 text-sm"
+              className="w-full pl-9 pr-4 py-2.5 rounded-lg border border-gray-300 dark:border-gray-600 bg-white dark:bg-gray-800 outline-none focus:ring-2 focus:ring-violet-500 text-gray-800 dark:text-gray-200 text-sm"
               value={searchTerm}
               onChange={e => setSearchTerm(e.target.value)}
             />

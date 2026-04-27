@@ -34,9 +34,9 @@ function SuperAdminDashboard() {
         const blockedUsers = users.filter(u => u.isBlocked).length;
 
         return [
-            { title: 'Operations Admins', value: totalAdmins, icon: <Shield size={24} />, color: 'from-purple-500 to-indigo-600', bg: 'bg-purple-100 dark:bg-purple-900/30', text: 'text-purple-600 dark:text-purple-400' },
-            { title: 'HR Managers', value: totalHRs, icon: <Users size={24} />, color: 'from-teal-400 to-teal-600', bg: 'bg-teal-100 dark:bg-teal-900/30', text: 'text-teal-600 dark:text-teal-400' },
-            { title: 'Active Employees', value: totalEmployees, icon: <Activity size={24} />, color: 'from-blue-400 to-blue-600', bg: 'bg-blue-100 dark:bg-blue-900/30', text: 'text-blue-600 dark:text-blue-400' },
+            { title: 'Operations Admins', value: totalAdmins, icon: <Shield size={24} />, color: 'from-purple-500 to-violet-600', bg: 'bg-purple-100 dark:bg-purple-900/30', text: 'text-purple-600 dark:text-purple-400' },
+            { title: 'HR Managers', value: totalHRs, icon: <Users size={24} />, color: 'from-emerald-400 to-emerald-600', bg: 'bg-emerald-100 dark:bg-emerald-900/30', text: 'text-emerald-600 dark:text-emerald-400' },
+            { title: 'Active Employees', value: totalEmployees, icon: <Activity size={24} />, color: 'from-purple-400 to-purple-600', bg: 'bg-purple-100 dark:bg-purple-900/30', text: 'text-purple-600 dark:text-purple-400' },
             { title: 'Blocked Accounts', value: blockedUsers, icon: <Lock size={24} />, color: 'from-red-400 to-red-600', bg: 'bg-red-100 dark:bg-red-900/30', text: 'text-red-600 dark:text-red-400' },
         ];
     }, [users]);
@@ -127,14 +127,14 @@ function SuperAdminDashboard() {
                     {/* Left: Quick Actions */}
                     <div className="lg:col-span-2 bg-white dark:bg-gray-800 rounded-3xl shadow-lg border border-gray-100 dark:border-gray-700 p-8">
                         <h3 className="text-xl font-bold text-gray-900 dark:text-white mb-6 flex items-center gap-2">
-                            <Server size={20} className="text-indigo-500"/> Command Center
+                            <Server size={20} className="text-violet-500"/> Command Center
                         </h3>
                         
                         <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
-                            <button onClick={() => navigate('/admin/user-management')} className="group p-5 rounded-2xl border border-gray-200 dark:border-gray-600 hover:border-indigo-500 dark:hover:border-indigo-500 bg-gray-50 dark:bg-gray-700/50 hover:bg-indigo-50 dark:hover:bg-indigo-900/20 transition-all text-left">
+                            <button onClick={() => navigate('/admin/user-management')} className="group p-5 rounded-2xl border border-gray-200 dark:border-gray-600 hover:border-violet-500 dark:hover:border-violet-500 bg-gray-50 dark:bg-gray-700/50 hover:bg-violet-50 dark:hover:bg-violet-900/20 transition-all text-left">
                                 <div className="flex justify-between items-start mb-2">
-                                    <div className="p-2 bg-white dark:bg-gray-800 rounded-lg shadow-sm text-indigo-600"><Users size={20}/></div>
-                                    <ArrowRight size={18} className="text-gray-300 group-hover:text-indigo-500 transition-colors"/>
+                                    <div className="p-2 bg-white dark:bg-gray-800 rounded-lg shadow-sm text-violet-600"><Users size={20}/></div>
+                                    <ArrowRight size={18} className="text-gray-300 group-hover:text-violet-500 transition-colors"/>
                                 </div>
                                 <h4 className="font-bold text-gray-800 dark:text-white">Manage Organization</h4>
                                 <p className="text-xs text-gray-500 dark:text-gray-400 mt-1">Create Admins, HRs & Employees</p>
@@ -168,7 +168,7 @@ function SuperAdminDashboard() {
 
                     {/* Right: Server Status (Visual Only for now) */}
                     <div className="bg-gradient-to-br from-gray-900 to-gray-800 rounded-3xl shadow-xl p-8 text-white relative overflow-hidden">
-                        <div className="absolute top-0 right-0 p-32 bg-indigo-500 rounded-full filter blur-[80px] opacity-20"></div>
+                        <div className="absolute top-0 right-0 p-32 bg-violet-500 rounded-full filter blur-[80px] opacity-20"></div>
                         
                         <h3 className="text-lg font-bold flex items-center gap-2 mb-6 relative z-10"><Globe size={18}/> Live Metrics</h3>
                         
@@ -180,9 +180,9 @@ function SuperAdminDashboard() {
                                 </div>
                             </div>
                             <div>
-                                <div className="flex justify-between text-xs font-bold text-gray-400 mb-1"><span>Storage Used</span> <span className="text-blue-400">45%</span></div>
+                                <div className="flex justify-between text-xs font-bold text-gray-400 mb-1"><span>Storage Used</span> <span className="text-purple-400">45%</span></div>
                                 <div className="w-full h-2 bg-gray-700 rounded-full overflow-hidden">
-                                    <div className="h-full bg-blue-500 w-[45%]"></div>
+                                    <div className="h-full bg-purple-500 w-[45%]"></div>
                                 </div>
                             </div>
                             <div>

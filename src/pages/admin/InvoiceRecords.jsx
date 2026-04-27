@@ -136,7 +136,7 @@ const InvoiceRecords = () => {
         <div className="flex flex-col md:flex-row justify-between items-center mb-8 gap-4">
           <div>
             <h1 className="text-3xl font-extrabold flex items-center gap-3 text-gray-900 dark:text-white">
-              <FileText className="text-indigo-600" size={32} /> Invoice Book
+              <FileText className="text-violet-600" size={32} /> Invoice Book
             </h1>
             <p className="text-sm text-gray-500 dark:text-gray-400 mt-1">
               Complete history of sales invoices.
@@ -161,7 +161,7 @@ const InvoiceRecords = () => {
                 placeholder="Search Invoice No or Party Name..."
                 value={searchTerm}
                 onChange={(e) => setSearchTerm(e.target.value)}
-                className="w-full pl-10 pr-4 py-2 bg-white dark:bg-gray-700 border border-gray-200 dark:border-gray-600 rounded-xl outline-none focus:ring-2 focus:ring-indigo-500 text-sm"
+                className="w-full pl-10 pr-4 py-2 bg-white dark:bg-gray-700 border border-gray-200 dark:border-gray-600 rounded-xl outline-none focus:ring-2 focus:ring-violet-500 text-sm"
               />
             </div>
           </div>
@@ -187,7 +187,7 @@ const InvoiceRecords = () => {
                     <tr key={inv.id} className="hover:bg-gray-50 dark:hover:bg-gray-700/40 transition-colors">
                       <td className="px-6 py-4">
                         <div className="font-bold text-gray-900 dark:text-white flex items-center gap-2">
-                          <FileText size={16} className="text-indigo-500" /> {inv.meta?.invoiceNo}
+                          <FileText size={16} className="text-violet-500" /> {inv.meta?.invoiceNo}
                         </div>
                         <div className="text-xs text-gray-500 flex items-center gap-1 mt-1">
                           <Calendar size={12} /> {inv.meta?.date}
@@ -206,7 +206,7 @@ const InvoiceRecords = () => {
                         <div className="flex justify-center gap-2">
                           <button
                             onClick={() => printInvoice(inv)}
-                            className="p-2 text-blue-600 hover:bg-blue-50 dark:text-blue-400 dark:hover:bg-blue-900/30 rounded-lg transition-colors"
+                            className="p-2 text-purple-600 hover:bg-purple-50 dark:text-purple-400 dark:hover:bg-purple-900/30 rounded-lg transition-colors"
                             title="Download PDF"
                           >
                             <Download size={18} />

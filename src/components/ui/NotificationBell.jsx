@@ -80,7 +80,7 @@ const NotificationBell = () => {
 
         if (msg.includes('rejected')) return <XCircle size={18} className="text-red-500" />;
         if (msg.includes('approved')) return <CheckCircle size={18} className="text-green-500" />;
-        if (type.includes('task')) return <Briefcase size={18} className="text-indigo-500 dark:text-indigo-400" />;
+        if (type.includes('task')) return <Briefcase size={18} className="text-violet-500 dark:text-violet-400" />;
         if (type.includes('leave')) return <Calendar size={18} className="text-orange-500" />;
         
         return <Bell size={18} className="text-gray-500 dark:text-gray-400" />;
@@ -96,7 +96,7 @@ const NotificationBell = () => {
                 className={`
                     relative p-2 rounded-xl transition-all duration-200 focus:outline-none 
                     ${isOpen 
-                        ? 'bg-indigo-50 text-indigo-600 dark:bg-indigo-900/30 dark:text-indigo-400' 
+                        ? 'bg-violet-50 text-violet-600 dark:bg-violet-900/30 dark:text-violet-400' 
                         : 'text-gray-500 hover:bg-gray-100 hover:text-gray-700 dark:text-gray-400 dark:hover:bg-gray-800 dark:hover:text-gray-200'}
                 `}
             >
@@ -120,7 +120,7 @@ const NotificationBell = () => {
                         <div className="px-5 py-4 bg-white dark:bg-gray-800 border-b border-gray-100 dark:border-gray-700 flex justify-between items-center">
                             <h4 className="text-sm font-bold text-gray-800 dark:text-gray-100">Notifications</h4>
                             {unreadNotifications.length > 0 && (
-                                <span className="text-[10px] font-bold px-2 py-0.5 rounded-full bg-indigo-100 dark:bg-indigo-900/50 text-indigo-700 dark:text-indigo-300 uppercase tracking-wide">
+                                <span className="text-[10px] font-bold px-2 py-0.5 rounded-full bg-violet-100 dark:bg-violet-900/50 text-violet-700 dark:text-violet-300 uppercase tracking-wide">
                                     {unreadNotifications.length} New
                                 </span>
                             )}
@@ -140,7 +140,7 @@ const NotificationBell = () => {
                                         onClick={() => handleNotificationClick(notif)}
                                         className="px-5 py-4 cursor-pointer border-b border-gray-100 dark:border-gray-700 last:border-0 hover:bg-white dark:hover:bg-gray-700/50 transition-colors duration-150 group relative"
                                     >
-                                        <div className="absolute left-0 top-0 bottom-0 w-1 bg-indigo-500 dark:bg-indigo-400 opacity-0 group-hover:opacity-100 transition-opacity"></div>
+                                        <div className="absolute left-0 top-0 bottom-0 w-1 bg-violet-500 dark:bg-violet-400 opacity-0 group-hover:opacity-100 transition-opacity"></div>
                                         <div className="flex gap-4">
                                             {/* Icon */}
                                             <div className="mt-0.5 shrink-0 bg-white dark:bg-gray-700 p-1.5 rounded-full shadow-sm border border-gray-100 dark:border-gray-600 h-fit">
@@ -155,7 +155,7 @@ const NotificationBell = () => {
                                                 </p>
                                             </div>
                                             {/* Dot */}
-                                            <div className="mt-2 h-2 w-2 shrink-0 rounded-full bg-indigo-500 dark:bg-indigo-400 shadow-sm shadow-indigo-200 dark:shadow-none"></div>
+                                            <div className="mt-2 h-2 w-2 shrink-0 rounded-full bg-violet-500 dark:bg-violet-400 shadow-sm shadow-violet-200 dark:shadow-none"></div>
                                         </div>
                                     </div>
                                 ))

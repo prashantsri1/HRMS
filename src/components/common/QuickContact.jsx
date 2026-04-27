@@ -13,7 +13,7 @@ import { useAuth } from '../../context/AuthContext';
 
 // --- POP THEME CONFIG ---
 const DEPT_STYLES = {
-    'IT': 'bg-cyan-100 text-cyan-700 border-cyan-200 dark:bg-cyan-900/30 dark:text-cyan-400 dark:border-cyan-800',
+    'IT': 'bg-violet-100 text-violet-700 border-violet-200 dark:bg-violet-900/30 dark:text-violet-400 dark:border-violet-800',
     'HR': 'bg-pink-100 text-pink-700 border-pink-200 dark:bg-pink-900/30 dark:text-pink-400 dark:border-pink-800',
     'Sales': 'bg-orange-100 text-orange-700 border-orange-200 dark:bg-orange-900/30 dark:text-orange-400 dark:border-orange-800',
     'Marketing': 'bg-purple-100 text-purple-700 border-purple-200 dark:bg-purple-900/30 dark:text-purple-400 dark:border-purple-800',
@@ -76,9 +76,9 @@ const QuickContact = () => {
             } else {
                 // Random Vibrant Gradient for Avatar
                 const gradients = [
-                    'from-pink-500 to-rose-400', 'from-indigo-500 to-blue-400', 
-                    'from-emerald-400 to-teal-400', 'from-orange-400 to-amber-400',
-                    'from-purple-500 to-violet-400', 'from-cyan-400 to-sky-400'
+                    'from-pink-500 to-rose-400', 'from-violet-500 to-purple-400', 
+                    'from-emerald-400 to-emerald-400', 'from-orange-400 to-amber-400',
+                    'from-purple-500 to-violet-400', 'from-fuchsia-400 to-pink-400'
                 ];
                 const randomColor = gradients[Math.floor(Math.random() * gradients.length)];
                 
@@ -130,12 +130,12 @@ const QuickContact = () => {
                     <div className="flex items-center gap-3 w-full md:w-auto">
                         <motion.div 
                             whileHover={{ rotate: 15, scale: 1.1 }}
-                            className="bg-gradient-to-tr from-indigo-600 to-purple-500 p-3 rounded-2xl shadow-lg shadow-indigo-500/30 text-white"
+                            className="bg-gradient-to-tr from-violet-600 to-purple-500 p-3 rounded-2xl shadow-lg shadow-violet-500/30 text-white"
                         >
                             <User size={28} strokeWidth={2.5} />
                         </motion.div>
                         <div>
-                            <h1 className="text-2xl font-black text-transparent bg-clip-text bg-gradient-to-r from-indigo-600 via-purple-600 to-pink-500 dark:from-indigo-400 dark:to-pink-400 flex items-center gap-2">
+                            <h1 className="text-2xl font-black text-transparent bg-clip-text bg-gradient-to-r from-violet-600 via-purple-600 to-pink-500 dark:from-violet-400 dark:to-pink-400 flex items-center gap-2">
                                 Quick Connect
                                 {isSuperAdmin && <span className="text-xs bg-amber-100 text-amber-700 border border-amber-200 px-2 py-1 rounded-full"><Crown size={12} className="inline mr-1"/>Owner</span>}
                             </h1>
@@ -147,11 +147,11 @@ const QuickContact = () => {
                     <div className="flex flex-wrap gap-3 w-full md:w-auto justify-end items-center">
                         {/* Search Bar */}
                         <div className="relative group flex-1 md:flex-none">
-                            <Search className="absolute left-3 top-1/2 -translate-y-1/2 text-gray-400 group-focus-within:text-indigo-500 transition-colors" size={18} />
+                            <Search className="absolute left-3 top-1/2 -translate-y-1/2 text-gray-400 group-focus-within:text-violet-500 transition-colors" size={18} />
                             <input 
                                 type="text" 
                                 placeholder="Find someone..." 
-                                className="w-full md:w-64 pl-10 pr-4 py-2.5 bg-gray-100 dark:bg-gray-700/50 border-2 border-transparent focus:border-indigo-500/50 rounded-xl text-sm font-bold focus:ring-0 transition-all outline-none dark:text-white placeholder-gray-400 dark:placeholder-gray-500"
+                                className="w-full md:w-64 pl-10 pr-4 py-2.5 bg-gray-100 dark:bg-gray-700/50 border-2 border-transparent focus:border-violet-500/50 rounded-xl text-sm font-bold focus:ring-0 transition-all outline-none dark:text-white placeholder-gray-400 dark:placeholder-gray-500"
                                 value={searchTerm}
                                 onChange={(e) => setSearchTerm(e.target.value)}
                             />
@@ -160,20 +160,20 @@ const QuickContact = () => {
                         {/* Department Filter */}
                         <div className="relative">
                             <select 
-                                className="appearance-none pl-10 pr-8 py-2.5 bg-white dark:bg-gray-800 border-2 border-gray-200 dark:border-gray-700 rounded-xl text-sm font-bold text-gray-600 dark:text-gray-300 focus:border-indigo-500 outline-none cursor-pointer hover:bg-gray-50 dark:hover:bg-gray-700 transition-colors"
+                                className="appearance-none pl-10 pr-8 py-2.5 bg-white dark:bg-gray-800 border-2 border-gray-200 dark:border-gray-700 rounded-xl text-sm font-bold text-gray-600 dark:text-gray-300 focus:border-violet-500 outline-none cursor-pointer hover:bg-gray-50 dark:hover:bg-gray-700 transition-colors"
                                 value={filterDept}
                                 onChange={(e) => setFilterDept(e.target.value)}
                             >
                                 {departments.map(d => <option key={d} value={d}>{d}</option>)}
                             </select>
-                            <Filter className="absolute left-3 top-1/2 -translate-y-1/2 text-indigo-500" size={16}/>
+                            <Filter className="absolute left-3 top-1/2 -translate-y-1/2 text-violet-500" size={16}/>
                         </div>
 
                         {/* Sort Button */}
                         <motion.button 
                             whileTap={{ scale: 0.9 }}
                             onClick={() => setSortBy(prev => prev === 'name' ? 'role' : 'name')}
-                            className="p-2.5 bg-white dark:bg-gray-800 border-2 border-gray-200 dark:border-gray-700 rounded-xl text-gray-500 hover:text-indigo-600 hover:border-indigo-200 transition-all shadow-sm"
+                            className="p-2.5 bg-white dark:bg-gray-800 border-2 border-gray-200 dark:border-gray-700 rounded-xl text-gray-500 hover:text-violet-600 hover:border-violet-200 transition-all shadow-sm"
                             title={`Sort by ${sortBy === 'name' ? 'Role' : 'Name'}`}
                         >
                             {sortBy === 'name' ? <ArrowDownAZ size={20}/> : <Briefcase size={20}/>}
@@ -185,7 +185,7 @@ const QuickContact = () => {
                                 whileHover={{ scale: 1.05 }}
                                 whileTap={{ scale: 0.95 }}
                                 onClick={() => { setEditingContact(null); setFormData(initialForm); setIsModalOpen(true); }}
-                                className="bg-indigo-600 hover:bg-indigo-700 text-white px-5 py-2.5 rounded-xl font-bold shadow-lg shadow-indigo-500/30 flex items-center gap-2"
+                                className="bg-violet-600 hover:bg-violet-700 text-white px-5 py-2.5 rounded-xl font-bold shadow-lg shadow-violet-500/30 flex items-center gap-2"
                             >
                                 <Plus size={20} strokeWidth={3}/> <span className="hidden sm:inline">Add</span>
                             </motion.button>
@@ -215,7 +215,7 @@ const QuickContact = () => {
                 
                 {processedContacts.length === 0 && (
                     <motion.div initial={{ opacity: 0 }} animate={{ opacity: 1 }} className="flex flex-col items-center justify-center h-64 text-gray-400">
-                        <Search size={64} className="mb-4 opacity-20 text-indigo-500"/>
+                        <Search size={64} className="mb-4 opacity-20 text-violet-500"/>
                         <p className="font-bold text-lg">No contacts found.</p>
                         <p className="text-sm">Try adjusting your filters.</p>
                     </motion.div>
@@ -230,15 +230,15 @@ const QuickContact = () => {
                             initial={{ scale: 0.8, opacity: 0, rotateX: 10 }} 
                             animate={{ scale: 1, opacity: 1, rotateX: 0 }} 
                             exit={{ scale: 0.8, opacity: 0, rotateX: -10 }}
-                            className="bg-white dark:bg-gray-800 w-full max-w-md rounded-[2rem] shadow-2xl overflow-hidden border-4 border-indigo-100 dark:border-gray-700"
+                            className="bg-white dark:bg-gray-800 w-full max-w-md rounded-[2rem] shadow-2xl overflow-hidden border-4 border-violet-100 dark:border-gray-700"
                         >
-                            <div className="p-6 bg-gradient-to-r from-indigo-600 to-purple-600 relative overflow-hidden">
+                            <div className="p-6 bg-gradient-to-r from-violet-600 to-purple-600 relative overflow-hidden">
                                 <div className="absolute top-0 right-0 p-4 opacity-10"><User size={120} /></div>
                                 <h2 className="text-2xl font-black text-white flex items-center gap-2 relative z-10">
                                     {editingContact ? <Edit2 size={24}/> : <Plus size={24}/>} 
                                     {editingContact ? 'Edit Contact' : 'New Contact'}
                                 </h2>
-                                <p className="text-indigo-100 text-sm mt-1 font-medium relative z-10">Enter employee details below.</p>
+                                <p className="text-violet-100 text-sm mt-1 font-medium relative z-10">Enter employee details below.</p>
                             </div>
 
                             <form onSubmit={handleSubmit} className="p-6 space-y-4">
@@ -272,7 +272,7 @@ const QuickContact = () => {
 
                                 <div className="pt-4 flex gap-3">
                                     <button type="button" onClick={() => setIsModalOpen(false)} className="flex-1 py-3 text-gray-500 font-bold hover:bg-gray-100 dark:hover:bg-gray-700 rounded-xl transition-colors">Cancel</button>
-                                    <motion.button whileTap={{ scale: 0.95 }} type="submit" className="flex-1 py-3 bg-indigo-600 hover:bg-indigo-700 text-white font-bold rounded-xl shadow-lg shadow-indigo-500/30 flex items-center justify-center gap-2"><Check size={20}/> Save</motion.button>
+                                    <motion.button whileTap={{ scale: 0.95 }} type="submit" className="flex-1 py-3 bg-violet-600 hover:bg-violet-700 text-white font-bold rounded-xl shadow-lg shadow-violet-500/30 flex items-center justify-center gap-2"><Check size={20}/> Save</motion.button>
                                 </div>
                             </form>
                         </motion.div>
@@ -283,7 +283,7 @@ const QuickContact = () => {
             <style>{`
                 .input-pop { width: 100%; padding: 0.75rem 1rem; background-color: #f3f4f6; border: 2px solid transparent; border-radius: 0.75rem; outline: none; font-weight: 600; transition: all 0.2s; }
                 .dark .input-pop { background-color: #1f2937; color: white; }
-                .input-pop:focus { border-color: #6366f1; background-color: white; box-shadow: 0 0 0 4px rgba(99, 102, 241, 0.1); }
+                .input-pop:focus { border-color: #7C3AED; background-color: white; box-shadow: 0 0 0 4px rgba(124, 58, 237, 0.1); }
                 .dark .input-pop:focus { background-color: #111827; }
                 .custom-scrollbar::-webkit-scrollbar { width: 6px; }
                 .custom-scrollbar::-webkit-scrollbar-thumb { background: #cbd5e1; border-radius: 10px; }
@@ -311,7 +311,7 @@ const ContactCard = ({ contact, canManage, onEdit, onDelete }) => {
             {/* Admin Actions */}
             {canManage && (
                 <div className="absolute top-4 right-4 flex gap-2 opacity-0 group-hover:opacity-100 transition-opacity translate-y-2 group-hover:translate-y-0 duration-300">
-                    <motion.button whileHover={{ scale: 1.1 }} onClick={() => onEdit(contact)} className="p-2 bg-white dark:bg-gray-700 text-indigo-600 rounded-xl shadow-md border border-gray-100 dark:border-gray-600"><Edit2 size={16}/></motion.button>
+                    <motion.button whileHover={{ scale: 1.1 }} onClick={() => onEdit(contact)} className="p-2 bg-white dark:bg-gray-700 text-violet-600 rounded-xl shadow-md border border-gray-100 dark:border-gray-600"><Edit2 size={16}/></motion.button>
                     <motion.button whileHover={{ scale: 1.1 }} onClick={() => onDelete(contact.id)} className="p-2 bg-white dark:bg-gray-700 text-red-500 rounded-xl shadow-md border border-gray-100 dark:border-gray-600"><Trash2 size={16}/></motion.button>
                 </div>
             )}
@@ -335,8 +335,8 @@ const ContactCard = ({ contact, canManage, onEdit, onDelete }) => {
 
             {/* Contact Details */}
             <div className="space-y-3">
-                <a href={`mailto:${contact.email}`} className="flex items-center gap-3 p-3 rounded-2xl bg-gray-50 dark:bg-gray-900/50 hover:bg-indigo-50 dark:hover:bg-indigo-900/20 group/link transition-all border border-transparent hover:border-indigo-100 dark:hover:border-indigo-800">
-                    <div className="p-2 bg-white dark:bg-gray-800 rounded-xl text-gray-400 group-hover/link:text-indigo-500 shadow-sm transition-colors"><Mail size={18}/></div>
+                <a href={`mailto:${contact.email}`} className="flex items-center gap-3 p-3 rounded-2xl bg-gray-50 dark:bg-gray-900/50 hover:bg-violet-50 dark:hover:bg-violet-900/20 group/link transition-all border border-transparent hover:border-violet-100 dark:hover:border-violet-800">
+                    <div className="p-2 bg-white dark:bg-gray-800 rounded-xl text-gray-400 group-hover/link:text-violet-500 shadow-sm transition-colors"><Mail size={18}/></div>
                     <span className="text-xs font-bold text-gray-600 dark:text-gray-300 truncate">{contact.email}</span>
                 </a>
                 <a href={`tel:${contact.phone}`} className="flex items-center gap-3 p-3 rounded-2xl bg-gray-50 dark:bg-gray-900/50 hover:bg-green-50 dark:hover:bg-green-900/20 group/link transition-all border border-transparent hover:border-green-100 dark:hover:border-green-800">

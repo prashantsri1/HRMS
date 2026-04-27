@@ -29,7 +29,7 @@ const formatDate = (date) => {
 
 const calculateStatus = (percentage) => {
     if (percentage >= 100) return { label: 'Excellent', color: 'text-emerald-600 bg-emerald-50 border-emerald-200' };
-    if (percentage >= 70) return { label: 'On Track', color: 'text-blue-600 bg-blue-50 border-blue-200' };
+    if (percentage >= 70) return { label: 'On Track', color: 'text-purple-600 bg-purple-50 border-purple-200' };
     if (percentage >= 40) return { label: 'Lagging', color: 'text-orange-600 bg-orange-50 border-orange-200' };
     return { label: 'Critical', color: 'text-red-600 bg-red-50 border-red-200' };
 };
@@ -172,13 +172,13 @@ const DPRWPRManager = () => {
                     <div className="flex bg-gray-100 dark:bg-gray-700 p-1 rounded-xl">
                         <button 
                             onClick={() => setReportType('DPR')} 
-                            className={`px-6 py-2 rounded-lg text-sm font-bold transition-all ${reportType === 'DPR' ? 'bg-white dark:bg-gray-600 text-indigo-600 dark:text-indigo-300 shadow-sm' : 'text-gray-500'}`}
+                            className={`px-6 py-2 rounded-lg text-sm font-bold transition-all ${reportType === 'DPR' ? 'bg-white dark:bg-gray-600 text-violet-600 dark:text-violet-300 shadow-sm' : 'text-gray-500'}`}
                         >
                             Daily Report
                         </button>
                         <button 
                             onClick={() => setReportType('WPR')} 
-                            className={`px-6 py-2 rounded-lg text-sm font-bold transition-all ${reportType === 'WPR' ? 'bg-white dark:bg-gray-600 text-indigo-600 dark:text-indigo-300 shadow-sm' : 'text-gray-500'}`}
+                            className={`px-6 py-2 rounded-lg text-sm font-bold transition-all ${reportType === 'WPR' ? 'bg-white dark:bg-gray-600 text-violet-600 dark:text-violet-300 shadow-sm' : 'text-gray-500'}`}
                         >
                             Weekly Report
                         </button>
@@ -189,7 +189,7 @@ const DPRWPRManager = () => {
                 <div className="flex gap-3 w-full md:w-auto">
                     {canViewOthers && (
                         <select 
-                            className="px-4 py-2 bg-gray-50 dark:bg-gray-900 border border-gray-200 dark:border-gray-600 rounded-xl text-sm font-bold outline-none focus:ring-2 focus:ring-indigo-500 cursor-pointer"
+                            className="px-4 py-2 bg-gray-50 dark:bg-gray-900 border border-gray-200 dark:border-gray-600 rounded-xl text-sm font-bold outline-none focus:ring-2 focus:ring-violet-500 cursor-pointer"
                             value={selectedEmployee}
                             onChange={(e) => setSelectedEmployee(e.target.value)}
                         >
@@ -203,7 +203,7 @@ const DPRWPRManager = () => {
                     </button>
                     
                     {/* Anyone can submit a report */}
-                    <button onClick={() => setIsModalOpen(true)} className="flex items-center gap-2 bg-indigo-600 hover:bg-indigo-700 text-white px-5 py-2.5 rounded-xl font-bold shadow-lg transition-transform active:scale-95">
+                    <button onClick={() => setIsModalOpen(true)} className="flex items-center gap-2 bg-violet-600 hover:bg-violet-700 text-white px-5 py-2.5 rounded-xl font-bold shadow-lg transition-transform active:scale-95">
                         <Plus size={18}/> Submit {reportType}
                     </button>
                 </div>
@@ -238,7 +238,7 @@ const DPRWPRManager = () => {
                         >
                             <div className="px-6 py-4 border-b border-gray-200 dark:border-gray-700 flex justify-between items-center bg-gray-50 dark:bg-gray-900/50 rounded-t-2xl">
                                 <h2 className="text-lg font-bold text-gray-800 dark:text-white flex items-center gap-2">
-                                    <TrendingUp className="text-indigo-500" /> Submit {reportType}
+                                    <TrendingUp className="text-violet-500" /> Submit {reportType}
                                 </h2>
                                 <button onClick={() => setIsModalOpen(false)}><X className="text-gray-400 hover:text-red-500"/></button>
                             </div>
@@ -274,7 +274,7 @@ const DPRWPRManager = () => {
 
                             <div className="px-6 py-4 border-t border-gray-200 dark:border-gray-700 bg-gray-50 dark:bg-gray-900/50 rounded-b-2xl flex justify-end gap-3">
                                 <button onClick={() => setIsModalOpen(false)} className="px-4 py-2 text-gray-500 hover:bg-gray-200 dark:hover:bg-gray-700 rounded-lg font-bold">Cancel</button>
-                                <button onClick={handleSave} className="px-6 py-2 bg-indigo-600 hover:bg-indigo-700 text-white rounded-lg font-bold shadow-md flex items-center gap-2"><Save size={16}/> Submit Report</button>
+                                <button onClick={handleSave} className="px-6 py-2 bg-violet-600 hover:bg-violet-700 text-white rounded-lg font-bold shadow-md flex items-center gap-2"><Save size={16}/> Submit Report</button>
                             </div>
                         </motion.div>
                     </div>
@@ -285,7 +285,7 @@ const DPRWPRManager = () => {
                 .label { display: block; font-size: 0.75rem; font-weight: 700; color: #6b7280; text-transform: uppercase; margin-bottom: 0.25rem; letter-spacing: 0.05em; }
                 .input-std { width: 100%; padding: 0.6rem; border-radius: 0.5rem; border: 1px solid #e5e7eb; background: #f9fafb; outline: none; transition: all 0.2s; font-size: 0.875rem; }
                 .dark .input-std { background: #1f2937; border-color: #374151; color: white; }
-                .input-std:focus { border-color: #6366f1; background: white; box-shadow: 0 0 0 3px rgba(99, 102, 241, 0.1); }
+                .input-std:focus { border-color: #7C3AED; background: white; box-shadow: 0 0 0 3px rgba(124, 58, 237, 0.1); }
                 .dark .input-std:focus { background: #111827; }
             `}</style>
         </div>
@@ -325,7 +325,7 @@ const ReportCard = ({ report, index }) => {
                         initial={{ width: 0 }} animate={{ width: `${Math.min(report.percentage, 100)}%` }} 
                         className={`h-full rounded-full ${
                             report.percentage >= 100 ? 'bg-gradient-to-r from-emerald-400 to-emerald-600' :
-                            report.percentage >= 70 ? 'bg-gradient-to-r from-blue-400 to-indigo-600' :
+                            report.percentage >= 70 ? 'bg-gradient-to-r from-purple-400 to-violet-600' :
                             report.percentage >= 40 ? 'bg-gradient-to-r from-orange-400 to-orange-600' :
                             'bg-gradient-to-r from-red-400 to-red-600'
                         }`}
