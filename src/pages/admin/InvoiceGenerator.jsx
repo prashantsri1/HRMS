@@ -2,7 +2,6 @@ import React, { useState, useEffect, useMemo } from 'react';
 import { useNavigate } from 'react-router-dom';
 import jsPDF from 'jspdf';
 import autoTable from 'jspdf-autotable';
-// import logoImage from '../../assets/logo manuastro.jpg';
 import {
   Save, Printer, RefreshCw, List, Truck, CreditCard,
   MapPin, Calendar, FileText, User, Layout, Image as ImageIcon,
